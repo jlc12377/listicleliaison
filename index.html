@@ -364,9 +364,39 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
 <!-- FINAL CTA -->
 <section class="final-cta" id="contact">
   <h2>Ready to get <em>visible?</em></h2>
-  <p>Email us your company name and website. We'll reply within 24 hours with a recommended package and a link to get started.</p>
-  <a href="mailto:partnerships@listicleliaison.com" class="final-cta-btn">partnerships@listicleliaison.com</a>
-  <p style="margin-top:20px;font-size:13px;color:rgba(255,255,255,.25);position:relative">Or call us: (615) 555-0199 &middot; Franklin, Tennessee</p>
+  <p>Tell us about your company and we'll reply within 24 hours with a recommended package.</p>
+  <form style="max-width:480px;margin:0 auto;text-align:left;position:relative" onsubmit="event.preventDefault();this.innerHTML='<p style=\'text-align:center;color:var(--gold-light);font-size:16px;padding:40px 0\'>Thank you! We\'ll be in touch within 24 hours.</p>'">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+      <div>
+        <label style="font-size:12px;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">Your name</label>
+        <input type="text" required style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:#fff;font-family:var(--font-body);font-size:14px;outline:none" placeholder="Jane Smith">
+      </div>
+      <div>
+        <label style="font-size:12px;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">Company</label>
+        <input type="text" required style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:#fff;font-family:var(--font-body);font-size:14px;outline:none" placeholder="Acme Corp">
+      </div>
+    </div>
+    <div style="margin-bottom:12px">
+      <label style="font-size:12px;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">Email</label>
+      <input type="email" required style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:#fff;font-family:var(--font-body);font-size:14px;outline:none" placeholder="jane@acmecorp.com">
+    </div>
+    <div style="margin-bottom:12px">
+      <label style="font-size:12px;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">Website</label>
+      <input type="url" style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:#fff;font-family:var(--font-body);font-size:14px;outline:none" placeholder="https://acmecorp.com">
+    </div>
+    <div style="margin-bottom:20px">
+      <label style="font-size:12px;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">What are you interested in?</label>
+      <select style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:rgba(255,255,255,.7);font-family:var(--font-body);font-size:14px;outline:none;-webkit-appearance:none">
+        <option value="">Select a package...</option>
+        <option value="claimed">Claimed Profile ($99/mo)</option>
+        <option value="listicle">Listicle Inclusion ($1,500)</option>
+        <option value="spotlight">Company Spotlight ($2,500)</option>
+        <option value="premium">Full Visibility Package ($4,500)</option>
+        <option value="custom">Not sure — recommend something</option>
+      </select>
+    </div>
+    <button type="submit" class="final-cta-btn" style="width:100%;border:none;cursor:pointer;font-family:var(--font-body);text-align:center">Send Inquiry</button>
+  </form>
 </section>
 
 <!-- FOOTER -->
@@ -393,13 +423,13 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <a href="#">About</a>
-      <a href="#">Contact</a>
+      <a href="#contact">Contact Us</a>
       <a href="#">Editorial Policy</a>
       <a href="#">Careers</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2026 Listicle Liaison LLC. All rights reserved. Franklin, Tennessee.</span>
+    <span>&copy; 2026 Listicle Liaison LLC. All rights reserved.</span>
     <span><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Disclosure</a></span>
   </div>
 </footer>
