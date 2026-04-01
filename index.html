@@ -365,11 +365,11 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
 <section class="final-cta" id="contact">
   <h2>Ready to get <em>visible?</em></h2>
   <p>Tell us about your company and we'll reply within 24 hours with a recommended package.</p>
-  <form id="contactForm" style="max-width:480px;margin:0 auto;text-align:left;position:relative" onsubmit="event.preventDefault();var n=this.fname.value,c=this.company.value,e=this.email.value,w=this.website.value,p=this.package.value;var s='New Inquiry from '+c;var b='Name: '+n+'%0D%0ACompany: '+c+'%0D%0AEmail: '+e+'%0D%0AWebsite: '+w+'%0D%0APackage Interest: '+p;window.location='mailto:partnerships@listicleliaison.com?subject='+encodeURIComponent(s)+'&body='+b;document.getElementById('formSuccess').style.display='block'">
+  <form id="contactForm" style="max-width:480px;margin:0 auto;text-align:left;position:relative" onsubmit="event.preventDefault();var f=this;var b=document.getElementById('submitBtn');b.textContent='Sending...';b.disabled=true;fetch('https://formspree.io/f/maqlbbzd',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}}).then(function(r){if(r.ok){f.style.display='none';document.getElementById('formSuccess').style.display='block'}else{b.textContent='Send Inquiry';b.disabled=false;alert('Something went wrong. Please try again.')}}).catch(function(){b.textContent='Send Inquiry';b.disabled=false;alert('Something went wrong. Please try again.')})">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
       <div>
         <label style="font-size:12px;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">Your name</label>
-        <input type="text" name="fname" required style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:#fff;font-family:var(--font-body);font-size:14px;outline:none" placeholder="Jane Smith">
+        <input type="text" name="name" required style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:#fff;font-family:var(--font-body);font-size:14px;outline:none" placeholder="Jane Smith">
       </div>
       <div>
         <label style="font-size:12px;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">Company</label>
@@ -395,7 +395,7 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
         <option value="Not sure - recommend something">Not sure — recommend something</option>
       </select>
     </div>
-    <button type="submit" class="final-cta-btn" style="width:100%;border:none;cursor:pointer;font-family:var(--font-body);text-align:center">Send Inquiry</button>
+    <button type="submit" id="submitBtn" class="final-cta-btn" style="width:100%;border:none;cursor:pointer;font-family:var(--font-body);text-align:center">Send Inquiry</button>
     <div id="formSuccess" style="display:none;text-align:center;color:var(--gold-light);font-size:16px;padding:40px 0">Thank you! We'll be in touch within 24 hours.</div>
   </form>
 </section>
