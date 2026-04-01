@@ -365,37 +365,39 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
 <section class="final-cta" id="contact">
   <h2>Ready to get <em>visible?</em></h2>
   <p>Tell us about your company and we'll reply within 24 hours with a recommended package.</p>
-  <form style="max-width:480px;margin:0 auto;text-align:left;position:relative" onsubmit="event.preventDefault();this.innerHTML='<p style=\'text-align:center;color:var(--gold-light);font-size:16px;padding:40px 0\'>Thank you! We\'ll be in touch within 24 hours.</p>'">
+  <form id="contactForm" action="https://formspree.io/f/xyzplaceholder" method="POST" style="max-width:480px;margin:0 auto;text-align:left;position:relative">
+    <input type="hidden" name="_subject" value="New inquiry from Listicle Liaison website">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
       <div>
         <label style="font-size:12px;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">Your name</label>
-        <input type="text" required style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:#fff;font-family:var(--font-body);font-size:14px;outline:none" placeholder="Jane Smith">
+        <input type="text" name="name" required style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:#fff;font-family:var(--font-body);font-size:14px;outline:none" placeholder="Jane Smith">
       </div>
       <div>
         <label style="font-size:12px;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">Company</label>
-        <input type="text" required style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:#fff;font-family:var(--font-body);font-size:14px;outline:none" placeholder="Acme Corp">
+        <input type="text" name="company" required style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:#fff;font-family:var(--font-body);font-size:14px;outline:none" placeholder="Acme Corp">
       </div>
     </div>
     <div style="margin-bottom:12px">
       <label style="font-size:12px;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">Email</label>
-      <input type="email" required style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:#fff;font-family:var(--font-body);font-size:14px;outline:none" placeholder="jane@acmecorp.com">
+      <input type="email" name="email" required style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:#fff;font-family:var(--font-body);font-size:14px;outline:none" placeholder="jane@acmecorp.com">
     </div>
     <div style="margin-bottom:12px">
       <label style="font-size:12px;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">Website</label>
-      <input type="url" style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:#fff;font-family:var(--font-body);font-size:14px;outline:none" placeholder="https://acmecorp.com">
+      <input type="url" name="website" style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:#fff;font-family:var(--font-body);font-size:14px;outline:none" placeholder="https://acmecorp.com">
     </div>
     <div style="margin-bottom:20px">
       <label style="font-size:12px;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">What are you interested in?</label>
-      <select style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:rgba(255,255,255,.7);font-family:var(--font-body);font-size:14px;outline:none;-webkit-appearance:none">
+      <select name="package" style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:rgba(255,255,255,.7);font-family:var(--font-body);font-size:14px;outline:none;-webkit-appearance:none">
         <option value="">Select a package...</option>
-        <option value="claimed">Claimed Profile ($99/mo)</option>
-        <option value="listicle">Listicle Inclusion ($1,500)</option>
-        <option value="spotlight">Company Spotlight ($2,500)</option>
-        <option value="premium">Full Visibility Package ($4,500)</option>
-        <option value="custom">Not sure — recommend something</option>
+        <option value="Claimed Profile ($99/mo)">Claimed Profile ($99/mo)</option>
+        <option value="Listicle Inclusion ($1,500)">Listicle Inclusion ($1,500)</option>
+        <option value="Company Spotlight ($2,500)">Company Spotlight ($2,500)</option>
+        <option value="Full Visibility Package ($4,500)">Full Visibility Package ($4,500)</option>
+        <option value="Not sure - recommend something">Not sure — recommend something</option>
       </select>
     </div>
     <button type="submit" class="final-cta-btn" style="width:100%;border:none;cursor:pointer;font-family:var(--font-body);text-align:center">Send Inquiry</button>
+    <div id="formSuccess" style="display:none;text-align:center;color:var(--gold-light);font-size:16px;padding:40px 0">Thank you! We'll be in touch within 24 hours.</div>
   </form>
 </section>
 
