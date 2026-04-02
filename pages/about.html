@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Listicle Liaison</title>
+<meta name="description" content="We built Listicle Liaison because we know how hard it is to get your company noticed. Brand visibility should not be a mystery reserved for companies with massive budgets.">
+<link rel="canonical" href="https://listicleliaison.com/pages/about.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--black-2:#141414;--ink:#0a0a0a;--ink-2:#333;--ink-3:#666;--ink-4:#999;--surface:#fff;--surface-2:#fafafa;--cream:#f9f7f3;--border:#e8e8e6;--border-light:#f0f0ee;--gold:#b8860b;--gold-light:#d4a32a;--gold-pale:#fdf6e3;--gold-deep:#8a6508;--radius:6px;--radius-lg:10px;--shadow-md:0 6px 20px rgba(0,0,0,.07);--font-display:'Playfair Display',Georgia,serif;--font-body:'Sora',-apple-system,sans-serif;--max-w:1140px;--nav-h:64px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-webkit-font-smoothing:antialiased;line-height:1.6}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-light)}.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;justify-content:space-between}.nav-brand{text-decoration:none;display:flex;align-items:center;gap:8px}.nav-brand-text{font-family:var(--font-display);font-size:18px;font-weight:600;color:var(--ink);letter-spacing:-.3px}.nav-brand-dot{width:8px;height:8px;border-radius:50%;background:var(--gold)}.nav-links{display:flex;gap:28px;align-items:center}.nav-links a{font-size:13px;font-weight:500;color:var(--ink-3);text-decoration:none;transition:color .2s}.nav-links a:hover{color:var(--ink)}.nav-cta{background:var(--black)!important;color:#fff!important;padding:8px 20px!important;border-radius:4px!important;font-weight:600!important}
+.mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:4px}.mobile-menu-btn span{display:block;width:20px;height:2px;background:var(--ink);border-radius:1px}
+.page-header{padding:calc(var(--nav-h) + 48px) 32px 48px;background:var(--black);text-align:center}.page-header-eyebrow{font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}.page-header h1{font-family:var(--font-display);font-size:44px;font-weight:400;color:#fff;letter-spacing:-1px;margin-bottom:12px}.page-header h1 em{font-style:italic;color:var(--gold-light)}.page-header p{font-size:17px;color:rgba(255,255,255,.45);max-width:560px;margin:0 auto;font-weight:300}
+.content{max-width:720px;margin:0 auto;padding:64px 32px}.content h2{font-family:var(--font-display);font-size:30px;font-weight:400;letter-spacing:-.5px;margin:48px 0 16px;color:var(--ink)}.content h2:first-child{margin-top:0}.content p{font-size:16px;color:var(--ink-2);line-height:1.8;margin-bottom:18px}.content a{color:var(--gold-deep);text-decoration:underline}
+.pullquote{border-left:3px solid var(--gold);padding:20px 28px;margin:32px 0;background:var(--gold-pale);border-radius:0 var(--radius-lg) var(--radius-lg) 0}.pullquote p{font-family:var(--font-display);font-size:22px;font-weight:400;color:var(--ink);line-height:1.5;margin-bottom:0;font-style:italic}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:40px 0}.value-card{padding:28px 24px;border:1px solid var(--border);border-radius:var(--radius-lg)}.value-card h3{font-family:var(--font-display);font-size:20px;font-weight:500;margin-bottom:8px;letter-spacing:-.2px}.value-card p{font-size:14px;color:var(--ink-3);line-height:1.6;margin-bottom:0}
+.network-section{background:var(--cream);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:64px 32px}.network-inner{max-width:var(--max-w);margin:0 auto}.network-title{font-family:var(--font-display);font-size:30px;font-weight:400;text-align:center;margin-bottom:8px;letter-spacing:-.5px}.network-sub{font-size:15px;color:var(--ink-3);text-align:center;margin-bottom:36px}.network-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.network-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;text-decoration:none;color:var(--ink);transition:all .2s}.network-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}.network-card-type{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:6px}.network-card-name{font-family:var(--font-display);font-size:15px;font-weight:600;margin-bottom:4px}.network-card-desc{font-size:12px;color:var(--ink-3);line-height:1.4}.network-card-status{display:inline-block;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:2px 6px;border-radius:3px;margin-top:8px}.network-card-status.live{background:#ecfdf5;color:#16a34a}
+.cta-section{background:var(--black);text-align:center;padding:72px 32px}.cta-section h2{font-family:var(--font-display);font-size:36px;font-weight:400;color:#fff;letter-spacing:-.8px;margin-bottom:12px}.cta-section h2 em{font-style:italic;color:var(--gold-light)}.cta-section p{font-size:16px;color:rgba(255,255,255,.4);margin-bottom:24px;max-width:480px;margin-left:auto;margin-right:auto;font-weight:300}.cta-btn{display:inline-block;padding:14px 32px;background:var(--gold);color:#fff;font-size:14px;font-weight:600;border-radius:4px;text-decoration:none;transition:background .2s}.cta-btn:hover{background:var(--gold-light)}
+.footer{background:var(--black);padding:56px 32px 36px;border-top:1px solid rgba(255,255,255,.05)}.footer-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}.footer-brand{font-family:var(--font-display);font-size:18px;font-weight:600;color:#fff;margin-bottom:12px}.footer-desc{font-size:13px;color:rgba(255,255,255,.3);line-height:1.6;max-width:260px}.footer-col-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.35);margin-bottom:14px}.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.35);text-decoration:none;margin-bottom:8px;transition:color .2s}.footer-col a:hover{color:var(--gold-light)}.footer-bottom{max-width:var(--max-w);margin:32px auto 0;padding:16px 0 0;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}.footer-bottom a{color:rgba(255,255,255,.2);text-decoration:none;margin-left:16px}
+@media(max-width:900px){.values-grid{grid-template-columns:1fr}.network-grid{grid-template-columns:repeat(2,1fr)}.footer-inner{grid-template-columns:1fr 1fr}.page-header h1{font-size:32px}.nav-links{display:none;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--surface);flex-direction:column;padding:20px 32px;gap:14px;border-bottom:1px solid var(--border)}.nav-links.open{display:flex}.mobile-menu-btn{display:flex}}
+@media(max-width:480px){.network-grid{grid-template-columns:1fr}.page-header h1{font-size:26px}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <span class="nav-brand-dot"></span>
+      <span class="nav-brand-text">Listicle Liaison</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#network">Network</a>
+      <a href="/pages/about.html">About</a>
+      <a href="/#contact" class="nav-cta">Work With Us</a>
+    </div>
+    <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-eyebrow">Our story</div>
+  <h1>We built what we <em>wished existed.</em></h1>
+  <p>Because getting your company noticed shouldn't require a massive budget, insider connections, or years of trial and error.</p>
+</div>
+
+<div class="content">
+
+  <h2>We've been where you are</h2>
+  <p>If you've ever tried to get your company featured on a "best of" list, included in a published ranking, or cited by an industry expert, you know the feeling. You reach out. You get the runaround. Maybe you hear back, maybe you don't. You can't figure out who to talk to, how the process works, or what it costs. And meanwhile, your competitors keep showing up everywhere — in search results, in review sites, in the articles your customers are reading before they buy.</p>
+  <p>We know that feeling because we lived it.</p>
+
+  <div class="pullquote">
+    <p>Brand visibility shouldn't be a mystery reserved for companies with massive budgets and insider connections. It should be clear, accessible, and available to every company doing great work.</p>
+  </div>
+
+  <h2>Why this matters more than ever</h2>
+  <p>The way people discover and evaluate businesses has fundamentally changed — and it's still changing. Search engines reward companies that appear on trusted third-party sites. Review platforms influence buying decisions more than advertising ever could. And now, AI assistants like ChatGPT, Claude, and Perplexity are becoming the default recommendation engine for millions of buyers.</p>
+  <p>When someone asks an AI assistant "what's the best CRM for a growing sales team?" or "which cybersecurity platform should I evaluate?" — the AI pulls its answer from published rankings, expert reviews, and editorial content. If your company isn't in those sources, you're invisible to the fastest-growing discovery channel in the world.</p>
+  <p>This isn't a nice-to-have anymore. It's the difference between getting found and getting forgotten.</p>
+
+  <h2>What we built</h2>
+  <p>Listicle Liaison is the visibility partner we wished we'd had. We publish independent, data-driven rankings across multiple industry verticals, produce editorial content that drives real SEO and AI citation value, and make it straightforward for companies to get featured.</p>
+  <p>No runaround. No mystery pricing. No six-month sales cycle. You pick a package, we produce the content, and your company starts showing up where your customers are looking. It's that simple — because we designed it for people who've been frustrated by how complicated everyone else makes it.</p>
+
+  <h2>How we're different</h2>
+
+  <div class="values-grid">
+    <div class="value-card">
+      <h3>We make it simple</h3>
+      <p>Fixed-price packages with clear deliverables. No retainers, no hourly billing, no confusing proposals. You know exactly what you're getting and what it costs before you commit.</p>
+    </div>
+    <div class="value-card">
+      <h3>We're built for small brands</h3>
+      <p>You don't need a Fortune 500 budget. Our services start at $99/month because we believe every company doing good work deserves to be visible — not just the ones that can afford enterprise PR agencies.</p>
+    </div>
+    <div class="value-card">
+      <h3>We think long-term</h3>
+      <p>Published content works for you permanently. Unlike ads that disappear when you stop paying, a ranking placement or editorial feature drives backlinks, search visibility, and AI citations for years.</p>
+    </div>
+  </div>
+
+  <h2>Built for the way discovery actually works now</h2>
+  <p>We structure everything we publish — every ranking, every article, every company profile — to perform in three discovery channels simultaneously.</p>
+  <p>First, traditional search. Our content is SEO-optimized with proper schema markup, transparent methodology, and fresh update dates. Search engines reward this kind of structured, authoritative content.</p>
+  <p>Second, review platforms and buyer research. Our rankings aggregate data from G2, Capterra, TrustRadius, and other trusted review platforms, which means our content aligns with and reinforces the sources buyers already trust.</p>
+  <p>Third, AI-powered search. AI assistants cite sources that are well-structured, transparent about methodology, and regularly updated. Our content is specifically designed to be the kind of source that AI recommends. Companies featured in our rankings have started appearing in AI-generated recommendations — because our content is exactly what AI models look for when generating answers.</p>
+
+  <h2>Let's get you visible</h2>
+  <p>If you've been struggling to figure out how to get your company featured, ranked, or noticed — we built this for you. No gatekeeping, no insider knowledge required. Just clear packages, quality content, and results you can measure.</p>
+  <p>Reach out at <a href="mailto:partnerships@listicleliaison.com">partnerships@listicleliaison.com</a> or <a href="/#contact">fill out our contact form</a>. We'll reply within 24 hours with a recommended package based on your goals.</p>
+
+</div>
+
+<div class="network-section">
+  <div class="network-inner">
+    <div class="network-title">Our publishing network</div>
+    <div class="network-sub">Specialized publications reaching decision-makers across every major industry.</div>
+    <div class="network-grid">
+      <a href="https://softwareindustryreviews.com" class="network-card" target="_blank">
+        <div class="network-card-type">Review site</div>
+        <div class="network-card-name">Software Industry Reviews</div>
+        <div class="network-card-desc">Rankings across CRM, PM, cybersecurity, ERP, email, HR, accounting, and analytics.</div>
+        <span class="network-card-status live">Live</span>
+      </a>
+      <a href="https://smbnewsroom.com" class="network-card" target="_blank">
+        <div class="network-card-type">Editorial publication</div>
+        <div class="network-card-name">SMB Newsroom</div>
+        <div class="network-card-desc">Listicles, expert roundups, company spotlights, and industry analysis.</div>
+        <span class="network-card-status live">Live</span>
+      </a>
+      <a href="https://aiindustryreviews.com" class="network-card" target="_blank">
+        <div class="network-card-type">Review site</div>
+        <div class="network-card-name">AI Industry Reviews</div>
+        <div class="network-card-desc">Rankings for chatbots, coding tools, image generators, writing, video, and automation.</div>
+        <span class="network-card-status live">Live</span>
+      </a>
+      <a href="https://listicleliaison.com" class="network-card">
+        <div class="network-card-type">Corporate</div>
+        <div class="network-card-name">Listicle Liaison</div>
+        <div class="network-card-desc">Parent company. Visibility services for growing businesses.</div>
+        <span class="network-card-status live">Live</span>
+      </a>
+      <div class="network-card">
+        <div class="network-card-type">Review site</div>
+        <div class="network-card-name">Tech Industry Reviews</div>
+        <div class="network-card-desc">Rankings for cloud infrastructure, dev tools, networking, and enterprise tech platforms.</div>
+        <span class="network-card-status coming">Coming Q2 2026</span>
+      </div>
+      <div class="network-card">
+        <div class="network-card-type">Review site</div>
+        <div class="network-card-name">Financial Industry Reviews</div>
+        <div class="network-card-desc">Rankings for fintech, banking software, payment platforms, and accounting tools.</div>
+        <span class="network-card-status coming">Coming Q2 2026</span>
+      </div>
+      <div class="network-card">
+        <div class="network-card-type">Review site</div>
+        <div class="network-card-name">Biotech Industry Reviews</div>
+        <div class="network-card-desc">Rankings for lab software, LIMS, clinical platforms, and life sciences tools.</div>
+        <span class="network-card-status coming">Coming Q3 2026</span>
+      </div>
+      <div class="network-card">
+        <div class="network-card-type">Visibility platform</div>
+        <div class="network-card-name">AI Mentions</div>
+        <div class="network-card-desc">Track how AI assistants recommend and cite your brand across ChatGPT, Claude, and Perplexity.</div>
+        <span class="network-card-status coming">Coming Q3 2026</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="cta-section">
+  <h2>Ready to stop being <em>invisible?</em></h2>
+  <p>Tell us about your company. We'll recommend the right visibility package for your goals and budget — and we'll reply within 24 hours.</p>
+  <a href="/#contact" class="cta-btn">Get in Touch</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Listicle Liaison</div>
+      <p class="footer-desc">Media and visibility services for companies that deserve to be found.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Services</div>
+      <a href="/#services">Review Site Placements</a>
+      <a href="/#services">Listicle Inclusion</a>
+      <a href="/#services">Company Spotlights</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Network</div>
+      <a href="https://softwareindustryreviews.com">Software Industry Reviews</a>
+      <a href="https://smbnewsroom.com">SMB Newsroom</a>
+      <a href="https://aiindustryreviews.com">AI Industry Reviews</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <a href="/pages/about.html">About</a>
+      <a href="/pages/privacy.html">Privacy Policy</a>
+      <a href="/pages/terms.html">Terms of Service</a>
+      <a href="/pages/disclosure.html">Disclosure</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Listicle Liaison LLC. All rights reserved.</span>
+    <span><a href="/pages/privacy.html">Privacy</a><a href="/pages/terms.html">Terms</a><a href="/pages/disclosure.html">Disclosure</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
