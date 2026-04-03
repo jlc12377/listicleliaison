@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Listicle Liaison</title>
+<meta name="description" content="How we collect, use, and protect your information across our publishing network.">
+<link rel="canonical" href="https://listicleliaison.com/pages/privacy.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0a0a0a;--black-2:#141414;--black-3:#1e1e1e;
+  --ink:#0a0a0a;--ink-2:#333;--ink-3:#666;--ink-4:#999;
+  --surface:#fff;--surface-2:#fafafa;--surface-3:#f4f4f2;--cream:#f9f7f3;
+  --border:#e8e8e6;--border-light:#f0f0ee;
+  --gold:#b8860b;--gold-light:#d4a32a;--gold-pale:#fdf6e3;--gold-deep:#8a6508;
+  --radius:6px;--radius-lg:10px;
+  --shadow-md:0 6px 20px rgba(0,0,0,.07);
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-body:'Sora',-apple-system,sans-serif;
+  --max-w:1140px;--nav-h:64px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-webkit-font-smoothing:antialiased;line-height:1.6}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-light)}
+.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-brand-text{font-family:var(--font-display);font-size:18px;font-weight:600;color:var(--ink);letter-spacing:-.3px}
+.nav-brand-dot{width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:13px;font-weight:500;color:var(--ink-3);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--black)!important;color:#fff!important;padding:8px 20px!important;border-radius:4px!important;font-weight:600!important}
+.mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:4px}
+.mobile-menu-btn span{display:block;width:20px;height:2px;background:var(--ink);border-radius:1px}
+
+.page-header{padding:calc(var(--nav-h) + 48px) 32px 48px;background:var(--black);text-align:center}
+.page-header-eyebrow{font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.page-header h1{font-family:var(--font-display);font-size:44px;font-weight:400;color:#fff;letter-spacing:-1px;margin-bottom:12px}
+.page-header p{font-size:17px;color:rgba(255,255,255,.45);max-width:560px;margin:0 auto;font-weight:300}
+
+.content{max-width:720px;margin:0 auto;padding:64px 32px}
+.content h2{font-family:var(--font-display);font-size:30px;font-weight:400;letter-spacing:-.5px;margin:48px 0 16px;color:var(--ink)}
+.content h2:first-child{margin-top:0}
+.content p{font-size:16px;color:var(--ink-2);line-height:1.8;margin-bottom:18px}
+.content a{color:var(--gold-deep);text-decoration:underline}
+
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:40px 0}
+.value-card{padding:28px 24px;border:1px solid var(--border);border-radius:var(--radius-lg)}
+.value-card h3{font-family:var(--font-display);font-size:20px;font-weight:500;margin-bottom:8px;letter-spacing:-.2px}
+.value-card p{font-size:14px;color:var(--ink-3);line-height:1.6;margin-bottom:0}
+
+.network-section{background:var(--cream);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:64px 32px}
+.network-inner{max-width:var(--max-w);margin:0 auto}
+.network-title{font-family:var(--font-display);font-size:30px;font-weight:400;text-align:center;margin-bottom:8px;letter-spacing:-.5px}
+.network-sub{font-size:15px;color:var(--ink-3);text-align:center;margin-bottom:36px}
+.network-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.network-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;text-decoration:none;color:var(--ink);transition:all .2s}
+.network-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.network-card-type{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:6px}
+.network-card-name{font-family:var(--font-display);font-size:15px;font-weight:600;margin-bottom:4px}
+.network-card-desc{font-size:12px;color:var(--ink-3);line-height:1.4}
+.network-card-status{display:inline-block;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:2px 6px;border-radius:3px;margin-top:8px}
+.network-card-status.live{background:#ecfdf5;color:#16a34a}
+.network-card-status.coming{background:var(--gold-pale);color:var(--gold-deep)}
+
+.cta-section{background:var(--black);text-align:center;padding:72px 32px}
+.cta-section h2{font-family:var(--font-display);font-size:36px;font-weight:400;color:#fff;letter-spacing:-.8px;margin-bottom:12px}
+.cta-section p{font-size:16px;color:rgba(255,255,255,.4);margin-bottom:24px;max-width:460px;margin-left:auto;margin-right:auto;font-weight:300}
+.cta-btn{display:inline-block;padding:14px 32px;background:var(--gold);color:#fff;font-size:14px;font-weight:600;border-radius:4px;text-decoration:none;transition:background .2s}
+.cta-btn:hover{background:var(--gold-light)}
+
+.footer{background:var(--black);padding:56px 32px 36px;border-top:1px solid rgba(255,255,255,.05)}
+.footer-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+.footer-brand{font-family:var(--font-display);font-size:18px;font-weight:600;color:#fff;margin-bottom:12px}
+.footer-desc{font-size:13px;color:rgba(255,255,255,.3);line-height:1.6;max-width:260px}
+.footer-col-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.35);margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.35);text-decoration:none;margin-bottom:8px;transition:color .2s}
+.footer-col a:hover{color:var(--gold-light)}
+.footer-bottom{max-width:var(--max-w);margin:32px auto 0;padding:16px 0 0;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}
+.footer-bottom a{color:rgba(255,255,255,.2);text-decoration:none;margin-left:16px}
+
+@media(max-width:900px){
+  .values-grid{grid-template-columns:1fr}
+  .network-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .page-header h1{font-size:32px}
+  .nav-links{display:none;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--surface);flex-direction:column;padding:20px 32px;gap:14px;border-bottom:1px solid var(--border)}
+  .nav-links.open{display:flex}
+  .mobile-menu-btn{display:flex}
+}
+@media(max-width:480px){
+  .network-grid{grid-template-columns:1fr}
+  .page-header h1{font-size:26px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <span class="nav-brand-dot"></span>
+      <span class="nav-brand-text">Listicle Liaison</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#network">Network</a>
+      <a href="/pages/about.html">About</a>
+      <a href="/#contact" class="nav-cta">Work With Us</a>
+    </div>
+    <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-eyebrow">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p>How we collect, use, and protect your information across our publishing network.</p>
+</div>
+
+<div class="content">
+
+<p style="font-size:13px;color:var(--ink-4)">Last updated: April 1, 2026</p>
+
+<h2>Introduction</h2>
+<p>Listicle Liaison LLC ("we," "us," or "our") operates listicleliaison.com, softwareindustryreviews.com, smbnewsroom.com, aiindustryreviews.com, and affiliated websites (collectively, the "Sites"). This Privacy Policy explains how we collect, use, and protect information when you visit our Sites.</p>
+
+<h2>Information we collect</h2>
+<p>We collect information you voluntarily provide when you fill out contact forms, subscribe to communications, or correspond with us via email. This may include your name, email address, company name, website URL, and any other information you choose to provide.</p>
+<p>We also automatically collect certain technical information when you visit our Sites, including your IP address, browser type, operating system, referring URLs, pages viewed, and time spent on pages. This information is collected through standard web server logs and analytics tools.</p>
+
+<h2>How we use your information</h2>
+<p>We use the information we collect to respond to your inquiries and provide requested services, process and fulfill service orders, send relevant communications about our services, improve our Sites and user experience, analyze usage patterns and site performance, and comply with legal obligations.</p>
+
+<h2>Information sharing</h2>
+<p>We do not sell, trade, or rent your personal information to third parties. We may share information with service providers who assist us in operating our Sites and delivering our services (such as email delivery services and analytics providers), but only to the extent necessary for them to perform their functions.</p>
+<p>We may disclose information if required by law, court order, or governmental regulation, or if we believe disclosure is necessary to protect our rights, your safety, or the safety of others.</p>
+
+<h2>Cookies and tracking</h2>
+<p>Our Sites may use cookies and similar tracking technologies to improve your browsing experience and analyze site traffic. You can control cookie preferences through your browser settings. Disabling cookies may affect some functionality of our Sites.</p>
+
+<h2>Third-party links</h2>
+<p>Our Sites contain links to third-party websites, including the websites of companies featured in our rankings. We are not responsible for the privacy practices or content of these external sites. We encourage you to review the privacy policies of any site you visit.</p>
+
+<h2>Data security</h2>
+<p>We implement reasonable security measures to protect the information we collect. However, no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee absolute security.</p>
+
+<h2>Children's privacy</h2>
+<p>Our Sites are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected information from a child under 18, we will take steps to delete it.</p>
+
+<h2>Changes to this policy</h2>
+<p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date. Your continued use of our Sites after changes are posted constitutes acceptance of the updated policy.</p>
+
+<h2>Contact us</h2>
+<p>If you have questions about this Privacy Policy, contact us at <a href="mailto:partnerships@listicleliaison.com">partnerships@listicleliaison.com</a>.</p>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Listicle Liaison</div>
+      <p class="footer-desc">Media and visibility services connecting companies with the rankings and editorial content that drive real business results.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Services</div>
+      <a href="/#services">Review Site Placements</a>
+      <a href="/#services">Listicle Inclusion</a>
+      <a href="/#services">Company Spotlights</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Network</div>
+      <a href="https://softwareindustryreviews.com">Software Industry Reviews</a>
+      <a href="https://smbnewsroom.com">SMB Newsroom</a>
+      <a href="https://aiindustryreviews.com">AI Industry Reviews</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <a href="/pages/about.html">About</a>
+      <a href="/pages/privacy.html">Privacy Policy</a>
+      <a href="/pages/terms.html">Terms of Service</a>
+      <a href="/pages/disclosure.html">Disclosure</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Listicle Liaison LLC. All rights reserved.</span>
+    <span><a href="/pages/privacy.html">Privacy</a><a href="/pages/terms.html">Terms</a><a href="/pages/disclosure.html">Disclosure</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
