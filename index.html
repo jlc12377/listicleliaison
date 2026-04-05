@@ -155,7 +155,56 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
 @media(max-width:480px){.hero h1{font-size:30px}.hero-sub{font-size:16px}}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Listicle Liaison","url":"https://listicleliaison.com","description":"Media and visibility services company connecting businesses with rankings, editorial placements, and AI citation opportunities across 15+ industry publications.","foundingDate":"2026"}
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Listicle Liaison LLC",
+      "url": "https://listicleliaison.com",
+      "description": "Media and visibility services company that publishes independent rankings, editorial content, and industry analysis across a network of specialized publications. We help companies get featured, get ranked, and get cited by AI.",
+      "foundingDate": "2026",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Franklin",
+        "addressRegion": "TN",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "partnerships@listicleliaison.com",
+        "contactType": "sales"
+      },
+      "sameAs": [
+        "https://softwareindustryreviews.com",
+        "https://aiindustryreviews.com",
+        "https://casinoindustryreviews.com",
+        "https://smbnewsroom.com"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "name": "Listicle Liaison",
+      "url": "https://listicleliaison.com",
+      "description": "Get featured. Get ranked. Get cited by AI. Visibility services for companies that deserve to be found.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Listicle Liaison LLC"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Brand Visibility Services",
+      "provider": {"@type": "Organization", "name": "Listicle Liaison LLC"},
+      "description": "Independent rankings, editorial placements, company spotlights, and AI citation optimization across a network of specialized industry publications.",
+      "offers": [
+        {"@type": "Offer", "name": "Claimed Profile", "price": "99", "priceCurrency": "USD", "description": "Branded profile with logo, custom description, website link, and verified badge"},
+        {"@type": "Offer", "name": "Enhanced Listing", "price": "299", "priceCurrency": "USD", "description": "Priority placement, lead capture, cross-site syndication, and permanent backlinks"},
+        {"@type": "Offer", "name": "Featured Partner", "price": "699", "priceCurrency": "USD", "description": "Number one position, Company Spotlight article, cross-network promotion, and AI citation optimization"}
+      ]
+    }
+  ]
+}
 </script>
 </head>
 <body>
