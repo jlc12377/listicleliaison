@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Set Up Your Listing | Listicle Liaison</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--gold:#b8860b;--gold-soft:#d4a843;--surface:#ffffff;--surface-2:#f9fafb;--ink:#0f0f0f;--ink-2:#374151;--ink-3:#6b7280;--ink-4:#9ca3af;--border:#e5e7eb;--radius:8px;--radius-lg:12px;--font-display:'DM Serif Display',Georgia,serif;--font-body:'Inter',-apple-system,sans-serif;--max-w:680px;--nav-h:60px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font-body);color:var(--ink);background:var(--surface-2);line-height:1.6}
+.nav{background:var(--black);height:var(--nav-h);display:flex;align-items:center;padding:0 28px}
+.nav-logo{font-size:15px;font-weight:600;color:#fff;max-width:var(--max-w);margin:0 auto;width:100%}.nav-logo span{color:var(--gold)}
+.page-header{background:var(--black);padding:40px 28px 48px;text-align:center}
+.page-header h1{font-family:var(--font-display);font-size:36px;color:#fff;margin-bottom:8px}
+.page-header p{font-size:15px;color:rgba(255,255,255,.5);max-width:480px;margin:0 auto}
+.container{max-width:var(--max-w);margin:-24px auto 60px;padding:0 20px}
+.form-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px;margin-bottom:20px}
+.form-card h2{font-family:var(--font-display);font-size:22px;margin-bottom:4px}
+.form-card-sub{font-size:13px;color:var(--ink-3);margin-bottom:24px}
+.tier-badge{display:inline-block;padding:4px 12px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:.06em;margin-bottom:16px}
+.tier-claimed{background:#dbeafe;color:#1d4ed8}
+.tier-enhanced{background:#fef3c7;color:#92400e}
+.tier-featured{background:#dcfce7;color:#166534}
+.form-group{margin-bottom:20px}
+.form-label{display:block;font-size:12px;font-weight:600;color:var(--ink-2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.form-sublabel{font-size:12px;color:var(--ink-4);font-weight:400;text-transform:none;letter-spacing:0;margin-top:2px}
+.form-input{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius);font-family:var(--font-body);font-size:15px;color:var(--ink);outline:none;transition:border-color .2s}
+.form-input:focus{border-color:var(--gold)}
+textarea.form-input{min-height:120px;resize:vertical}
+.form-input::placeholder{color:var(--ink-4)}
+.required::after{content:" *";color:#dc2626}
+.section-divider{border:none;border-top:1px solid var(--border);margin:28px 0}
+.form-note{font-size:12px;color:var(--ink-4);margin-top:4px}
+.form-btn{width:100%;padding:14px;border:none;border-radius:var(--radius);background:var(--black);color:#fff;font-family:var(--font-body);font-size:15px;font-weight:600;cursor:pointer;margin-top:8px;transition:background .2s}
+.form-btn:hover{background:#222}
+.tier-section{margin-bottom:8px;padding:16px;background:var(--surface-2);border-radius:var(--radius);border:1px solid var(--border)}
+.tier-section-title{font-size:13px;font-weight:600;color:var(--ink-2);margin-bottom:4px}
+.tier-section-desc{font-size:12px;color:var(--ink-3)}
+.check-group{display:flex;flex-direction:column;gap:12px}
+.check-item{display:flex;gap:10px;align-items:flex-start}
+.check-item input[type="checkbox"]{margin-top:3px;accent-color:var(--gold)}
+.check-item label{font-size:14px;color:var(--ink-2)}
+.success-msg{display:none;text-align:center;padding:60px 20px}
+.success-msg h2{font-family:var(--font-display);font-size:28px;margin-bottom:12px;color:var(--ink)}
+.success-msg p{font-size:15px;color:var(--ink-3)}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-logo">Listicle <span>Liaison</span></div></nav>
+
+<div class="page-header">
+  <h1>Set up your listing</h1>
+  <p>Thank you for your purchase! Please fill out the information below and we'll have your listing live within 24 hours.</p>
+</div>
+
+<div class="container">
+  <form action="https://formspree.io/f/maqlbbzd" method="POST" id="onboardForm">
+    <input type="hidden" name="_subject" value="New Listing Setup Submission">
+
+    <div class="form-card">
+      <h2>Your plan</h2>
+      <div class="form-card-sub">Select the plan you purchased</div>
+      <div class="form-group">
+        <label class="form-label required">Which plan did you purchase?</label>
+        <select class="form-input" name="plan_tier" required id="planSelect" onchange="showTierFields()">
+          <option value="">Select your plan...</option>
+          <option value="Claimed Profile ($99/mo)">Claimed Profile — $99/mo</option>
+          <option value="Enhanced Listing ($299/mo)">Enhanced Listing — $299/mo</option>
+          <option value="Featured Partner ($699/mo)">Featured Partner — $699/mo</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label required">Your email address (used for purchase)</label>
+        <input type="email" class="form-input" name="customer_email" placeholder="you@company.com" required>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h2>Company information</h2>
+      <div class="form-card-sub">This information will appear on your listing</div>
+
+      <div class="form-group">
+        <label class="form-label required">Company name</label>
+        <input type="text" class="form-input" name="company_name" placeholder="As you want it displayed on your listing" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label required">Company website</label>
+        <input type="url" class="form-input" name="company_website" placeholder="https://yourcompany.com" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label required">Company description</label>
+        <div class="form-sublabel">2-4 sentences describing your company. This replaces the default description on your listing.</div>
+        <textarea class="form-input" name="company_description" placeholder="What does your company do? What makes you different from competitors? Who is your ideal customer?" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Company logo URL</label>
+        <div class="form-sublabel">Link to your logo image (PNG or SVG preferred, minimum 200x200px). Or email it to partnerships@listicleliaison.com</div>
+        <input type="url" class="form-input" name="logo_url" placeholder="https://yourcompany.com/logo.png">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label required">Company location</label>
+        <input type="text" class="form-input" name="company_location" placeholder="City, State/Country" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Year founded</label>
+        <input type="text" class="form-input" name="year_founded" placeholder="e.g. 2015">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label required">Which ranking page are you listed on?</label>
+        <div class="form-sublabel">Select the category where your company is ranked</div>
+        <select class="form-input" name="ranking_category" required>
+          <option value="">Select category...</option>
+          <optgroup label="Software Industry Reviews">
+            <option value="CRM Software">CRM Software</option>
+            <option value="Project Management">Project Management</option>
+            <option value="Cybersecurity">Cybersecurity</option>
+            <option value="Email Marketing">Email Marketing</option>
+            <option value="ERP Systems">ERP Systems</option>
+            <option value="HR & Payroll">HR & Payroll</option>
+            <option value="Accounting">Accounting</option>
+            <option value="Analytics & BI">Analytics & BI</option>
+            <option value="PR & Newswire">PR & Newswire</option>
+          </optgroup>
+          <optgroup label="AI Industry Reviews">
+            <option value="AI Chatbots">AI Chatbots</option>
+            <option value="AI Coding Tools">AI Coding Tools</option>
+            <option value="AI Writing Tools">AI Writing Tools</option>
+            <option value="AI Image Generators">AI Image Generators</option>
+            <option value="AI Video Tools">AI Video Tools</option>
+            <option value="AI Automation">AI Automation</option>
+          </optgroup>
+          <optgroup label="Casino Industry Reviews">
+            <option value="Online Casinos">Online Casinos</option>
+            <option value="Sportsbooks">Sportsbooks</option>
+            <option value="Casino Software">Casino Software</option>
+            <option value="Payment Solutions">Payment Solutions</option>
+            <option value="Responsible Gambling">Responsible Gambling</option>
+            <option value="Affiliate Marketing">Affiliate Marketing</option>
+          </optgroup>
+          <optgroup label="Crypto Industry Reviews">
+            <option value="Crypto Exchanges">Crypto Exchanges</option>
+            <option value="DeFi Platforms">DeFi Platforms</option>
+            <option value="Crypto Wallets">Crypto Wallets</option>
+            <option value="Blockchain Dev Tools">Blockchain Dev Tools</option>
+            <option value="Crypto Analytics">Crypto Analytics</option>
+            <option value="NFT & Web3">NFT & Web3</option>
+          </optgroup>
+          <optgroup label="Healthcare Industry Reviews">
+            <option value="EHR & Medical Records">EHR & Medical Records</option>
+            <option value="Telehealth">Telehealth Platforms</option>
+            <option value="Medical Billing & RCM">Medical Billing & RCM</option>
+            <option value="Clinical Trial Software">Clinical Trial Software</option>
+            <option value="Health & Wellness">Health & Wellness Apps</option>
+            <option value="Pharma & Biotech">Pharma & Biotech Tools</option>
+          </optgroup>
+          <optgroup label="Financial Industry Reviews">
+            <option value="Banking & Core Systems">Banking & Core Systems</option>
+            <option value="Wealth Management">Wealth Management</option>
+            <option value="Insurance Technology">Insurance Technology</option>
+            <option value="Payment Platforms">Payment Platforms</option>
+            <option value="Lending & Mortgage">Lending & Mortgage Tech</option>
+            <option value="Compliance & RegTech">Compliance & RegTech</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-card" id="claimedFields">
+      <div class="tier-badge tier-claimed">CLAIMED PROFILE</div>
+      <h2>Profile customization</h2>
+      <div class="form-card-sub">Included with your Claimed Profile</div>
+
+      <div class="form-group">
+        <label class="form-label">Highlight tag</label>
+        <div class="form-sublabel">A short badge that appears on your listing (e.g. "Best for SMBs", "AI-Powered", "Free Trial Available")</div>
+        <input type="text" class="form-input" name="highlight_tag" placeholder="e.g. Best for Enterprise">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Secondary tag</label>
+        <input type="text" class="form-input" name="secondary_tag" placeholder="e.g. Free Trial Available">
+      </div>
+    </div>
+
+    <div class="form-card" id="enhancedFields" style="display:none">
+      <div class="tier-badge tier-enhanced">ENHANCED LISTING</div>
+      <h2>Enhanced features</h2>
+      <div class="form-card-sub">Additional features included with your Enhanced Listing</div>
+
+      <div class="form-group">
+        <label class="form-label">Lead capture CTA button text</label>
+        <div class="form-sublabel">The button text visitors will click (e.g. "Request Demo", "Start Free Trial", "Get Pricing")</div>
+        <input type="text" class="form-input" name="cta_text" placeholder="e.g. Request a Demo">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">CTA button link</label>
+        <div class="form-sublabel">Where the button should link to</div>
+        <input type="url" class="form-input" name="cta_url" placeholder="https://yourcompany.com/demo">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Key differentiators (up to 3)</label>
+        <div class="form-sublabel">What sets you apart from competitors? These appear as feature highlights.</div>
+        <input type="text" class="form-input" name="differentiator_1" placeholder="Differentiator 1" style="margin-bottom:8px">
+        <input type="text" class="form-input" name="differentiator_2" placeholder="Differentiator 2" style="margin-bottom:8px">
+        <input type="text" class="form-input" name="differentiator_3" placeholder="Differentiator 3">
+      </div>
+    </div>
+
+    <div class="form-card" id="featuredFields" style="display:none">
+      <div class="tier-badge tier-featured">FEATURED PARTNER</div>
+      <h2>Featured Partner details</h2>
+      <div class="form-card-sub">For your Company Spotlight article and cross-network promotion</div>
+
+      <div class="form-group">
+        <label class="form-label">Company founding story</label>
+        <div class="form-sublabel">Tell us your origin story in 3-5 sentences. This will be used in your Company Spotlight article.</div>
+        <textarea class="form-input" name="founding_story" placeholder="How was the company started? What problem were you solving?"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Key achievements or metrics</label>
+        <div class="form-sublabel">Customer count, revenue milestones, awards, notable clients — anything that builds credibility</div>
+        <textarea class="form-input" name="achievements" placeholder="e.g. Trusted by 10,000+ companies, Winner of G2 Best Software 2026, 99.9% uptime"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Quote from founder or executive</label>
+        <div class="form-sublabel">A quote we can feature in your Spotlight article</div>
+        <textarea class="form-input" name="executive_quote" placeholder="Include the quote and the person's name and title"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Additional images or assets</label>
+        <div class="form-sublabel">Links to product screenshots, team photos, or marketing assets for your Spotlight</div>
+        <input type="text" class="form-input" name="additional_assets" placeholder="Links to images or email them to partnerships@listicleliaison.com">
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h2>Contact information</h2>
+      <div class="form-card-sub">Your primary contact for listing management (not displayed publicly)</div>
+      <div class="form-group">
+        <label class="form-label required">Contact name</label>
+        <input type="text" class="form-input" name="contact_name" placeholder="Full name" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label required">Contact email</label>
+        <input type="email" class="form-input" name="contact_email" placeholder="For listing updates and communications" required>
+      </div>
+    </div>
+
+    <button type="submit" class="form-btn">Submit Listing Information &rarr;</button>
+    <p style="font-size:12px;color:var(--ink-4);margin-top:12px;text-align:center">We'll have your listing updated within 24 hours of submission. Questions? Email partnerships@listicleliaison.com</p>
+  </form>
+
+  <div class="success-msg" id="successMsg">
+    <h2>Listing information received!</h2>
+    <p>We'll update your listing within 24 hours. You'll receive a confirmation email when it's live. Thank you for choosing Listicle Liaison!</p>
+  </div>
+</div>
+
+<script>
+function showTierFields() {
+  var plan = document.getElementById('planSelect').value;
+  var claimed = document.getElementById('claimedFields');
+  var enhanced = document.getElementById('enhancedFields');
+  var featured = document.getElementById('featuredFields');
+
+  claimed.style.display = 'block';
+  enhanced.style.display = 'none';
+  featured.style.display = 'none';
+
+  if (plan.indexOf('Enhanced') > -1) {
+    enhanced.style.display = 'block';
+  }
+  if (plan.indexOf('Featured') > -1) {
+    enhanced.style.display = 'block';
+    featured.style.display = 'block';
+  }
+}
+</script>
+
+</body>
+</html>
