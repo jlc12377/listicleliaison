@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing & Plans | Listicle Liaison</title>
+<meta name="description" content="Get listed across our network of 9+ industry review sites. Plans from $99/month for claimed profiles to $699/month for Featured Partner placement.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--black-2:#141414;--black-3:#1e1e1e;--ink:#0a0a0a;--ink-2:#333;--ink-3:#666;--ink-4:#999;--surface:#fff;--surface-2:#fafafa;--cream:#f9f7f3;--border:#e8e8e6;--border-light:#f0f0ee;--gold:#b8860b;--gold-light:#d4a32a;--gold-pale:#fdf6e3;--gold-deep:#8a6508;--green:#16a34a;--radius:6px;--radius-lg:10px;--radius-xl:16px;--shadow-md:0 6px 20px rgba(0,0,0,.07);--shadow-lg:0 16px 48px rgba(0,0,0,.1);--font-display:'Playfair Display',Georgia,serif;--font-body:'Sora',-apple-system,sans-serif;--max-w:1140px;--nav-h:64px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-webkit-font-smoothing:antialiased;line-height:1.6}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:rgba(10,10,10,.96);backdrop-filter:blur(12px)}.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;justify-content:space-between}.nav-brand{text-decoration:none;display:flex;align-items:center;gap:8px}.nav-brand-dot{width:8px;height:8px;border-radius:50%;background:var(--gold)}.nav-brand-text{font-family:var(--font-display);font-size:18px;font-weight:600;color:#fff;letter-spacing:-.3px}.nav-links{display:flex;gap:28px;align-items:center}.nav-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}.nav-links a:hover{color:#fff}.nav-cta{background:var(--gold)!important;color:#fff!important;padding:8px 20px!important;border-radius:4px!important;font-weight:600!important}
+.mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:4px}.mobile-menu-btn span{display:block;width:20px;height:2px;background:#fff;border-radius:1px}
+.page-header{padding:calc(var(--nav-h) + 48px) 32px 48px;background:var(--black);text-align:center;position:relative;overflow:hidden}.page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 80%,rgba(184,134,11,.08) 0%,transparent 60%);pointer-events:none}
+.page-eyebrow{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;position:relative}.page-h1{font-family:var(--font-display);font-size:46px;font-weight:400;color:#fff;letter-spacing:-1px;margin-bottom:12px;position:relative}.page-h1 em{font-style:italic;color:var(--gold-light)}.page-sub{font-size:17px;color:rgba(255,255,255,.4);max-width:520px;margin:0 auto;position:relative;font-weight:300}
+.site-selector{max-width:800px;margin:0 auto;padding:48px 32px}
+.site-selector h2{font-family:var(--font-display);font-size:28px;font-weight:400;text-align:center;margin-bottom:8px;letter-spacing:-.5px}
+.site-selector-sub{text-align:center;font-size:14px;color:var(--ink-3);margin-bottom:32px}
+.site-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.site-option{border:2px solid var(--border);border-radius:var(--radius-lg);padding:20px;cursor:pointer;transition:all .2s;text-align:center}
+.site-option:hover{border-color:var(--gold);box-shadow:var(--shadow-md)}
+.site-option.selected{border-color:var(--gold);background:var(--gold-pale)}
+.site-option-icon{font-size:24px;margin-bottom:8px}
+.site-option-name{font-family:var(--font-display);font-size:15px;font-weight:600;margin-bottom:4px;letter-spacing:-.2px}
+.site-option-cats{font-size:11px;color:var(--ink-4);line-height:1.4}
+.pricing-section{max-width:var(--max-w);margin:0 auto;padding:0 32px 64px;display:none}
+.pricing-section.visible{display:block}
+.pricing-header{text-align:center;margin-bottom:12px}
+.pricing-header h2{font-family:var(--font-display);font-size:28px;font-weight:400;letter-spacing:-.5px}
+.pricing-header p{font-size:14px;color:var(--ink-3);margin-top:4px}
+.selected-site-name{color:var(--gold);font-weight:600}
+.toggle-wrap{display:flex;justify-content:center;margin-bottom:36px}
+.toggle{display:inline-flex;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:3px;gap:2px}
+.toggle-btn{padding:8px 20px;border-radius:4px;border:none;font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;background:transparent;color:var(--ink-3)}
+.toggle-btn.active{background:var(--black);color:#fff}
+.save-tag{font-size:10px;font-weight:700;color:var(--green);margin-left:4px}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.price-card{border:1px solid var(--border);border-radius:var(--radius-xl);padding:36px 28px;transition:all .25s;position:relative;background:var(--surface)}
+.price-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.price-card.popular{border:2px solid var(--gold)}
+.price-card.popular::before{content:"MOST POPULAR";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;padding:4px 14px;border-radius:20px}
+.price-card-name{font-family:var(--font-display);font-size:24px;margin-bottom:4px}
+.price-card-desc{font-size:13px;color:var(--ink-3);margin-bottom:16px;line-height:1.5;min-height:60px}
+.price-card-price{font-family:var(--font-display);font-size:42px;letter-spacing:-1.5px;margin-bottom:2px;line-height:1}
+.price-card-price span{font-size:16px;font-family:var(--font-body);color:var(--ink-3);letter-spacing:0;font-weight:400}
+.price-card-billing{font-size:12px;color:var(--ink-4);margin-bottom:24px;min-height:18px}
+.price-card-features{list-style:none;margin-bottom:28px}
+.price-card-features li{font-size:13px;color:var(--ink-2);padding:8px 0;border-bottom:1px solid var(--border-light);display:flex;align-items:start;gap:8px}
+.price-card-features li::before{content:"\2713";color:var(--green);font-weight:700;flex-shrink:0}
+.price-card-btn{display:block;width:100%;padding:14px;border-radius:var(--radius);font-size:15px;font-weight:600;text-decoration:none;transition:all .2s;text-align:center;font-family:var(--font-body);border:none;cursor:pointer}
+.price-card-btn.primary{background:var(--black);color:#fff}.price-card-btn.primary:hover{background:var(--black-3)}
+.price-card-btn.gold{background:var(--gold);color:#fff}.price-card-btn.gold:hover{background:var(--gold-light)}
+.premium-section{max-width:var(--max-w);margin:0 auto;padding:0 32px 80px;display:none}
+.premium-section.visible{display:block}
+.premium-divider{text-align:center;margin-bottom:40px;position:relative}
+.premium-divider::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:var(--border)}
+.premium-divider span{background:var(--surface);padding:0 20px;position:relative;font-size:12px;font-weight:600;color:var(--ink-4);text-transform:uppercase;letter-spacing:.1em}
+.premium-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.premium-card{border:1px solid var(--border);border-radius:var(--radius-xl);padding:32px 24px;transition:all .2s}
+.premium-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.premium-card-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.premium-card-title{font-family:var(--font-display);font-size:20px;margin-bottom:8px}
+.premium-card-desc{font-size:13px;color:var(--ink-3);line-height:1.6;margin-bottom:16px}
+.premium-card-price{font-family:var(--font-display);font-size:24px;margin-bottom:16px}
+.premium-card-price span{font-size:13px;font-family:var(--font-body);color:var(--ink-4)}
+.premium-card-btn{display:block;width:100%;padding:12px;background:var(--gold);color:#fff;border-radius:var(--radius);text-decoration:none;text-align:center;font-size:13px;font-weight:600;transition:background .2s}
+.premium-card-btn:hover{background:var(--gold-light)}
+.cta-bottom{text-align:center;padding:48px 32px 80px}
+.cta-bottom p{font-size:14px;color:var(--ink-3);margin-bottom:8px}
+.cta-bottom a{color:var(--gold);font-weight:600;text-decoration:none}
+.footer{background:var(--black);padding:56px 32px 36px;border-top:1px solid rgba(255,255,255,.05)}.footer-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}.footer-brand{font-family:var(--font-display);font-size:18px;font-weight:600;color:#fff;margin-bottom:12px}.footer-desc{font-size:13px;color:rgba(255,255,255,.3);line-height:1.6;max-width:260px}.footer-col-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.35);margin-bottom:14px}.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.35);text-decoration:none;margin-bottom:8px}.footer-col a:hover{color:var(--gold-light)}.footer-bottom{max-width:var(--max-w);margin:32px auto 0;padding:16px 0 0;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}.footer-bottom a{color:rgba(255,255,255,.2);text-decoration:none;margin-left:16px}
+@media(max-width:900px){.page-h1{font-size:32px}.site-grid{grid-template-columns:repeat(2,1fr)}.pricing-grid{grid-template-columns:1fr}.premium-grid{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}.nav-links{display:none;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--black);flex-direction:column;padding:20px 32px;gap:14px;border-bottom:1px solid rgba(255,255,255,.06)}.nav-links.open{display:flex}.mobile-menu-btn{display:flex}}
+@media(max-width:480px){.site-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner"><a href="/" class="nav-brand"><span class="nav-brand-dot"></span><span class="nav-brand-text">Listicle Liaison</span></a><div class="nav-links"><a href="/#services">Services</a><a href="/#network">Our Network</a><a href="/pages/about.html">About</a><a href="/#contact" class="nav-cta">Work With Us</a></div><button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
+
+<div class="page-header">
+  <div class="page-eyebrow">Pricing</div>
+  <h1 class="page-h1">Get your company <em>visible</em></h1>
+  <p class="page-sub">Choose your industry, pick your plan, and checkout. Your listing goes live within 24 hours.</p>
+</div>
+
+<div class="site-selector" id="siteSelector">
+  <h2>Which industry are you in?</h2>
+  <p class="site-selector-sub">Select your industry to see relevant listing plans and pricing.</p>
+  <div class="site-grid">
+    <div class="site-option" onclick="selectSite('software',this)"><div class="site-option-icon">&#128187;</div><div class="site-option-name">Software</div><div class="site-option-cats">CRM, PM, Cybersecurity, ERP, Email, HR, Accounting, Analytics, PR</div></div>
+    <div class="site-option" onclick="selectSite('ai',this)"><div class="site-option-icon">&#129302;</div><div class="site-option-name">AI Tools</div><div class="site-option-cats">Chatbots, Coding, Writing, Image, Video, Automation</div></div>
+    <div class="site-option" onclick="selectSite('healthcare',this)"><div class="site-option-icon">&#127973;</div><div class="site-option-name">Healthcare</div><div class="site-option-cats">EHR, Telehealth, Billing, Clinical Trials, Wellness, Pharma</div></div>
+    <div class="site-option" onclick="selectSite('finance',this)"><div class="site-option-icon">&#127974;</div><div class="site-option-name">Financial Services</div><div class="site-option-cats">Banking, Wealth, Insurance, Payments, Lending, Compliance</div></div>
+    <div class="site-option" onclick="selectSite('crypto',this)"><div class="site-option-icon">&#9889;</div><div class="site-option-name">Crypto & Web3</div><div class="site-option-cats">Exchanges, DeFi, Wallets, Dev Tools, Analytics, NFT</div></div>
+    <div class="site-option" onclick="selectSite('casino',this)"><div class="site-option-icon">&#127922;</div><div class="site-option-name">Casino & Gaming</div><div class="site-option-cats">Casinos, Sportsbooks, Software, Payments, Affiliates</div></div>
+  </div>
+</div>
+
+<div class="pricing-section" id="pricingSection">
+  <div class="pricing-header"><h2>Review site listing plans</h2><p>For <span class="selected-site-name" id="selectedSiteName"></span></p></div>
+  <div class="toggle-wrap"><div class="toggle"><button class="toggle-btn active" onclick="setBilling('monthly')">Monthly</button><button class="toggle-btn" onclick="setBilling('semi')">Semi-Annual <span class="save-tag">Save 5%</span></button><button class="toggle-btn" onclick="setBilling('annual')">Annual <span class="save-tag">Save 10%</span></button></div></div>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-card-name">Claimed Profile</div>
+      <div class="price-card-desc">Claim and customize your company profile with branded logo, custom description, direct website link, and verified badge.</div>
+      <div class="price-card-price" id="price-claimed">$99<span>/mo</span></div>
+      <div class="price-card-billing" id="billing-claimed"></div>
+      <ul class="price-card-features"><li>Branded logo placement</li><li>Custom company description</li><li>Direct website link</li><li>Verified badge</li><li>Monthly profile views</li></ul>
+      <a href="" class="price-card-btn primary" id="btn-claimed">Get Started &rarr;</a>
+    </div>
+    <div class="price-card popular">
+      <div class="price-card-name">Enhanced Listing</div>
+      <div class="price-card-desc">Stand out with priority placement, lead capture, cross-site syndication, and permanent backlinks.</div>
+      <div class="price-card-price" id="price-enhanced">$299<span>/mo</span></div>
+      <div class="price-card-billing" id="billing-enhanced"></div>
+      <ul class="price-card-features"><li>Everything in Claimed Profile</li><li>Priority category placement</li><li>Lead capture CTA button</li><li>Competitor comparison view</li><li>Cross-site syndication</li><li>Permanent backlink</li></ul>
+      <a href="" class="price-card-btn gold" id="btn-enhanced">Get Started &rarr;</a>
+    </div>
+    <div class="price-card">
+      <div class="price-card-name">Featured Partner</div>
+      <div class="price-card-desc">The #1 position with gold badge, Company Spotlight article, cross-network promotion, and AI citation optimization.</div>
+      <div class="price-card-price" id="price-featured">$699<span>/mo</span></div>
+      <div class="price-card-billing" id="billing-featured"></div>
+      <ul class="price-card-features"><li>Everything in Enhanced</li><li>#1 position with gold badge</li><li>Company Spotlight article</li><li>Cross-network promotion</li><li>AI citation optimization</li><li>Dedicated account support</li><li>Limited to one per category</li></ul>
+      <a href="" class="price-card-btn primary" id="btn-featured">Get Started &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<div class="premium-section" id="premiumSection">
+  <div class="premium-divider"><span>Premium content services</span></div>
+  <div class="premium-grid">
+    <div class="premium-card"><div class="premium-card-tag">Editorial Content</div><div class="premium-card-title">Listicle & Roundup Inclusion</div><div class="premium-card-desc">Get featured in published "Top 10" listicles and expert roundup articles with permanent backlinks and AI citation structure.</div><div class="premium-card-price">$1,500 <span>per placement</span></div><a href="https://buy.stripe.com/28EaEYadRaUzbkX4hxd7q0b" class="premium-card-btn">Purchase &rarr;</a></div>
+    <div class="premium-card"><div class="premium-card-tag">Premium Content</div><div class="premium-card-title">Company Spotlight</div><div class="premium-card-desc">A dedicated 800-1,200 word editorial article published across our network with 3-5 permanent backlinks and cross-site distribution.</div><div class="premium-card-price">$2,500 <span>per article</span></div><a href="https://buy.stripe.com/8x24gAdq35Afcp1bJZd7q0c" class="premium-card-btn">Purchase &rarr;</a></div>
+    <div class="premium-card"><div class="premium-card-tag">Enterprise</div><div class="premium-card-title">Full Visibility Package</div><div class="premium-card-desc">Featured profiles + listicle inclusions + spotlight + expert roundup + AI citation tracking. Maximum visibility with monthly reporting.</div><div class="premium-card-price">$4,500 <span>per quarter</span></div><a href="https://buy.stripe.com/4gMcN63Pt3s7gFhbJZd7q0d" class="premium-card-btn">Purchase &rarr;</a></div>
+  </div>
+</div>
+
+<div class="cta-bottom">
+  <p>Not sure which plan is right? <a href="mailto:partnerships@listicleliaison.com">partnerships@listicleliaison.com</a></p>
+  <p style="font-size:12px;color:var(--ink-4);margin-top:8px">All payments redirect to our onboarding form where you'll customize your listing.</p>
+</div>
+
+<footer class="footer"><div class="footer-inner"><div><div class="footer-brand">Listicle Liaison</div><p class="footer-desc">Media and visibility services connecting companies with the rankings, editorial content, and AI citations that drive real business results.</p></div><div class="footer-col"><div class="footer-col-title">Network</div><a href="https://softwareindustryreviews.com">Software Reviews</a><a href="https://aiindustryreviews.com">AI Reviews</a><a href="https://healthcareindustryreviews.com">Healthcare Reviews</a><a href="https://financialindustryreviews.com">Financial Reviews</a><a href="https://cryptoindustryreviews.com">Crypto Reviews</a><a href="https://casinoindustryreviews.com">Casino Reviews</a></div><div class="footer-col"><div class="footer-col-title">Tools</div><a href="https://ai-mentions.com">AI Mentions</a><a href="https://smbnewsroom.com">SMB Newsroom</a><a href="/pages/partners.html">Partner Program</a></div><div class="footer-col"><div class="footer-col-title">Company</div><a href="/pages/about.html">About Us</a><a href="/pages/disclosure.html">Disclosure</a><a href="mailto:partnerships@listicleliaison.com">Email Us</a></div></div><div class="footer-bottom"><span>&copy; 2026 Listicle Liaison LLC. All rights reserved.</span><span><a href="/pages/privacy.html">Privacy</a><a href="/pages/terms.html">Terms</a><a href="/pages/disclosure.html">Disclosure</a></span></div></footer>
+
+<script>
+var sites={software:{name:'Software Industry Reviews'},ai:{name:'AI Industry Reviews'},healthcare:{name:'Healthcare Industry Reviews'},finance:{name:'Financial Industry Reviews'},crypto:{name:'Crypto Industry Reviews'},casino:{name:'Casino Industry Reviews'}};
+var stripeLinks={claimed:{monthly:'https://buy.stripe.com/cNi8wQ3Pt3s7bkXdS7d7q04',semi:'https://buy.stripe.com/bJe5kE5XBaUz1Kn6pFd7q05',annual:'https://buy.stripe.com/fZu8wQfyb8Mr9cP01hd7q06'},enhanced:{monthly:'https://buy.stripe.com/3cI8wQdq3geT9cP5lBd7q07',semi:'https://buy.stripe.com/9B6dRa71F9Qv3Sv9BRd7q08',annual:'https://buy.stripe.com/6oU4gAfybaUz3SveWbd7q0a'},featured:{monthly:'https://buy.stripe.com/8x214obhV9Qv3Sv5lBd7q00',semi:'https://buy.stripe.com/cNifZi0DhgeT1KneWbd7q01',annual:'https://buy.stripe.com/eVq8wQ5XBe6LfBd5lBd7q03'}};
+var prices={claimed:{monthly:'$99',semi:'$564',annual:'$1,069'},enhanced:{monthly:'$299',semi:'$1,704',annual:'$3,229'},featured:{monthly:'$699',semi:'$3,985',annual:'$7,550'}};
+var perMonth={claimed:{monthly:'',semi:'$94/mo equivalent',annual:'$89/mo equivalent'},enhanced:{monthly:'',semi:'$284/mo equivalent',annual:'$269/mo equivalent'},featured:{monthly:'',semi:'$664/mo equivalent',annual:'$629/mo equivalent'}};
+var suffix={monthly:'/mo',semi:' every 6 months',annual:'/year'};
+var currentBilling='monthly';
+function selectSite(key,el){document.querySelectorAll('.site-option').forEach(function(e){e.classList.remove('selected')});el.classList.add('selected');document.getElementById('selectedSiteName').textContent=sites[key].name;document.getElementById('pricingSection').classList.add('visible');document.getElementById('premiumSection').classList.add('visible');setBillingDirect(currentBilling);document.getElementById('pricingSection').scrollIntoView({behavior:'smooth',block:'start'})}
+function setBilling(period){currentBilling=period;document.querySelectorAll('.toggle-btn').forEach(function(b){b.classList.remove('active')});if(event&&event.target)event.target.closest('.toggle-btn').classList.add('active');setBillingDirect(period)}
+function setBillingDirect(period){['claimed','enhanced','featured'].forEach(function(tier){document.getElementById('price-'+tier).innerHTML=prices[tier][period]+'<span>'+suffix[period]+'</span>';document.getElementById('billing-'+tier).textContent=perMonth[tier][period];document.getElementById('btn-'+tier).href=stripeLinks[tier][period]})}
+setBillingDirect('monthly');
+</script>
+</body>
+</html>
