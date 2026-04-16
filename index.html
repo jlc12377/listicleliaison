@@ -381,44 +381,409 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
   </form>
 </section>
 
+# UNIVERSAL FOOTER BLOCKS FOR LISTICLE LIAISON NETWORK
+
+## Instructions
+Find the `<footer>` section in each site's index.html and replace with the block below. 
+Each site has its own version where that site is excluded from the network list (so it doesn't self-link).
+
+## CSS for footer (if not already present)
+These styles should already exist on your sites. If not, add this to the <style> block:
+
+```css
+.footer{background:#0a0a0a;padding:56px 32px 36px;border-top:1px solid rgba(255,255,255,.05)}
+.footer-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+.footer-brand{font-size:18px;font-weight:600;color:#fff;margin-bottom:12px}
+.footer-desc{font-size:13px;color:rgba(255,255,255,.3);line-height:1.6;max-width:260px}
+.footer-col-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.35);margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.35);text-decoration:none;margin-bottom:8px;transition:color .2s}
+.footer-col a:hover{color:#d4a32a}
+.footer-bottom{max-width:1140px;margin:32px auto 0;padding:16px 0 0;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}
+.footer-bottom a{color:rgba(255,255,255,.2);text-decoration:none;margin-left:16px}
+@media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr}}
+```
+
+---
+
+## 1. softwareindustryreviews.com
+```html
 <footer class="footer">
   <div class="footer-inner">
     <div>
-      <div class="footer-brand">Listicle Liaison</div>
-      <p class="footer-desc">Media and visibility services connecting companies with the rankings, editorial content, and AI citations that drive real business results.</p>
+      <div class="footer-brand">Software Industry Reviews</div>
+      <p class="footer-desc">Independent, data-driven rankings of the best software platforms across 9 categories. Part of the Listicle Liaison publishing network.</p>
     </div>
     <div class="footer-col">
-      <div class="footer-col-title">Services</div>
-      <a href="#services">Review Site Placements</a>
-      <a href="#services">Listicle Inclusion</a>
-      <a href="#services">Company Spotlights</a>
-      <a href="#services">AI Citation Optimization</a>
+      <div class="footer-col-title">Rankings</div>
+      <a href="/pages/crm-rankings.html">CRM Software</a>
+      <a href="/pages/project-rankings.html">Project Management</a>
+      <a href="/pages/cybersecurity-rankings.html">Cybersecurity</a>
+      <a href="/pages/erp-rankings.html">ERP Systems</a>
+      <a href="/pages/email-rankings.html">Email Marketing</a>
     </div>
     <div class="footer-col">
-      <div class="footer-col-title">Network</div>
-      <a href="https://softwareindustryreviews.com">Software Reviews</a>
-      <a href="https://aiindustryreviews.com">AI Reviews</a>
-      <a href="https://healthcareindustryreviews.com">Healthcare Reviews</a>
-      <a href="https://financialindustryreviews.com">Financial Reviews</a>
-      <a href="https://cryptoindustryreviews.com">Crypto Reviews</a>
-      <a href="https://casinoindustryreviews.com">Casino Reviews</a>
-      <a href="https://smbnewsroom.com">SMB Newsroom</a>
+      <div class="footer-col-title">Our Network</div>
+      <a href="https://aiindustryreviews.com">AI Industry Reviews</a>
+      <a href="https://healthcareindustryreviews.com">Healthcare Industry Reviews</a>
+      <a href="https://financialindustryreviews.com">Financial Industry Reviews</a>
+      <a href="https://cryptoindustryreviews.com">Crypto Industry Reviews</a>
+      <a href="https://casinoindustryreviews.com">Casino Industry Reviews</a>
+      <a href="https://miningindustryreviews.com">Mining Industry Reviews</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Tools & Media</div>
       <a href="https://ai-mentions.com">AI Mentions</a>
-    </div>
-    <div class="footer-col">
-      <div class="footer-col-title">Company</div>
-      <a href="/pages/about.html">About Us</a>
-      <a href="/pages/disclosure.html">Disclosure</a>
-      <a href="/pages/partners.html">Partner Program</a>
-      <a href="mailto:partnerships@listicleliaison.com">Email Us</a>
+      <a href="https://smbnewsroom.com">SMB Newsroom</a>
+      <a href="https://listicleliaison.com">Listicle Liaison</a>
+      <a href="/pages/methodology.html">Methodology</a>
+      <a href="/pages/pricing.html">Get Listed</a>
     </div>
   </div>
   <div class="footer-bottom">
     <span>&copy; 2026 Listicle Liaison LLC. All rights reserved.</span>
-    <span><a href="/pages/privacy.html">Privacy</a><a href="/pages/terms.html">Terms</a><a href="/pages/disclosure.html">Disclosure</a></span>
+    <span><a href="/pages/disclosure.html">Disclosure</a></span>
   </div>
 </footer>
+```
 
+---
+
+## 2. aiindustryreviews.com
+```html
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">AI Industry Reviews</div>
+      <p class="footer-desc">Independent, data-driven rankings of the best AI tools and platforms across 6 categories. Part of the Listicle Liaison publishing network.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Rankings</div>
+      <a href="/pages/chatbot-rankings.html">AI Chatbots</a>
+      <a href="/pages/coding-rankings.html">AI Coding Tools</a>
+      <a href="/pages/writing-rankings.html">AI Writing</a>
+      <a href="/pages/image-rankings.html">AI Image</a>
+      <a href="/pages/automation-rankings.html">AI Automation</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Our Network</div>
+      <a href="https://softwareindustryreviews.com">Software Industry Reviews</a>
+      <a href="https://healthcareindustryreviews.com">Healthcare Industry Reviews</a>
+      <a href="https://financialindustryreviews.com">Financial Industry Reviews</a>
+      <a href="https://cryptoindustryreviews.com">Crypto Industry Reviews</a>
+      <a href="https://casinoindustryreviews.com">Casino Industry Reviews</a>
+      <a href="https://miningindustryreviews.com">Mining Industry Reviews</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Tools & Media</div>
+      <a href="https://ai-mentions.com">AI Mentions</a>
+      <a href="https://smbnewsroom.com">SMB Newsroom</a>
+      <a href="https://listicleliaison.com">Listicle Liaison</a>
+      <a href="/pages/methodology.html">Methodology</a>
+      <a href="/pages/pricing.html">Get Listed</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Listicle Liaison LLC. All rights reserved.</span>
+    <span><a href="/pages/disclosure.html">Disclosure</a></span>
+  </div>
+</footer>
+```
+
+---
+
+## 3. healthcareindustryreviews.com
+```html
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Healthcare Industry Reviews</div>
+      <p class="footer-desc">Independent, data-driven rankings of healthcare technology platforms across 6 categories. Part of the Listicle Liaison publishing network.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Rankings</div>
+      <a href="/pages/ehr-rankings.html">EHR Systems</a>
+      <a href="/pages/telehealth-rankings.html">Telehealth</a>
+      <a href="/pages/billing-rankings.html">Medical Billing</a>
+      <a href="/pages/clinical-rankings.html">Clinical Trials</a>
+      <a href="/pages/wellness-rankings.html">Wellness</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Our Network</div>
+      <a href="https://softwareindustryreviews.com">Software Industry Reviews</a>
+      <a href="https://aiindustryreviews.com">AI Industry Reviews</a>
+      <a href="https://financialindustryreviews.com">Financial Industry Reviews</a>
+      <a href="https://cryptoindustryreviews.com">Crypto Industry Reviews</a>
+      <a href="https://casinoindustryreviews.com">Casino Industry Reviews</a>
+      <a href="https://miningindustryreviews.com">Mining Industry Reviews</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Tools & Media</div>
+      <a href="https://ai-mentions.com">AI Mentions</a>
+      <a href="https://smbnewsroom.com">SMB Newsroom</a>
+      <a href="https://listicleliaison.com">Listicle Liaison</a>
+      <a href="/pages/methodology.html">Methodology</a>
+      <a href="/pages/pricing.html">Get Listed</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Listicle Liaison LLC. All rights reserved.</span>
+    <span><a href="/pages/disclosure.html">Disclosure</a></span>
+  </div>
+</footer>
+```
+
+---
+
+## 4. financialindustryreviews.com
+```html
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Financial Industry Reviews</div>
+      <p class="footer-desc">Independent, data-driven rankings of financial services technology across 6 categories. Part of the Listicle Liaison publishing network.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Rankings</div>
+      <a href="/pages/banking-rankings.html">Banking Tech</a>
+      <a href="/pages/wealth-rankings.html">Wealth Management</a>
+      <a href="/pages/insurtech-rankings.html">InsurTech</a>
+      <a href="/pages/payments-rankings.html">Payments</a>
+      <a href="/pages/lending-rankings.html">Lending</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Our Network</div>
+      <a href="https://softwareindustryreviews.com">Software Industry Reviews</a>
+      <a href="https://aiindustryreviews.com">AI Industry Reviews</a>
+      <a href="https://healthcareindustryreviews.com">Healthcare Industry Reviews</a>
+      <a href="https://cryptoindustryreviews.com">Crypto Industry Reviews</a>
+      <a href="https://casinoindustryreviews.com">Casino Industry Reviews</a>
+      <a href="https://miningindustryreviews.com">Mining Industry Reviews</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Tools & Media</div>
+      <a href="https://ai-mentions.com">AI Mentions</a>
+      <a href="https://smbnewsroom.com">SMB Newsroom</a>
+      <a href="https://listicleliaison.com">Listicle Liaison</a>
+      <a href="/pages/methodology.html">Methodology</a>
+      <a href="/pages/pricing.html">Get Listed</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Listicle Liaison LLC. All rights reserved.</span>
+    <span><a href="/pages/disclosure.html">Disclosure</a></span>
+  </div>
+</footer>
+```
+
+---
+
+## 5. cryptoindustryreviews.com
+```html
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Crypto Industry Reviews</div>
+      <p class="footer-desc">Independent, data-driven rankings of cryptocurrency and Web3 platforms across 6 categories. Part of the Listicle Liaison publishing network.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Rankings</div>
+      <a href="/pages/exchange-rankings.html">Exchanges</a>
+      <a href="/pages/defi-rankings.html">DeFi Platforms</a>
+      <a href="/pages/wallet-rankings.html">Wallets</a>
+      <a href="/pages/devtools-rankings.html">Dev Tools</a>
+      <a href="/pages/nft-rankings.html">NFT & Web3</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Our Network</div>
+      <a href="https://softwareindustryreviews.com">Software Industry Reviews</a>
+      <a href="https://aiindustryreviews.com">AI Industry Reviews</a>
+      <a href="https://healthcareindustryreviews.com">Healthcare Industry Reviews</a>
+      <a href="https://financialindustryreviews.com">Financial Industry Reviews</a>
+      <a href="https://casinoindustryreviews.com">Casino Industry Reviews</a>
+      <a href="https://miningindustryreviews.com">Mining Industry Reviews</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Tools & Media</div>
+      <a href="https://ai-mentions.com">AI Mentions</a>
+      <a href="https://smbnewsroom.com">SMB Newsroom</a>
+      <a href="https://listicleliaison.com">Listicle Liaison</a>
+      <a href="/pages/methodology.html">Methodology</a>
+      <a href="/pages/pricing.html">Get Listed</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Listicle Liaison LLC. All rights reserved.</span>
+    <span><a href="/pages/disclosure.html">Disclosure</a></span>
+  </div>
+</footer>
+```
+
+---
+
+## 6. casinoindustryreviews.com
+```html
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Casino Industry Reviews</div>
+      <p class="footer-desc">Independent, data-driven rankings of online casino and iGaming platforms across 6 categories. Part of the Listicle Liaison publishing network.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Rankings</div>
+      <a href="/pages/casino-rankings.html">Online Casinos</a>
+      <a href="/pages/sportsbook-rankings.html">Sportsbooks</a>
+      <a href="/pages/software-rankings.html">Casino Software</a>
+      <a href="/pages/payment-rankings.html">Payments</a>
+      <a href="/pages/affiliate-rankings.html">Affiliates</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Our Network</div>
+      <a href="https://softwareindustryreviews.com">Software Industry Reviews</a>
+      <a href="https://aiindustryreviews.com">AI Industry Reviews</a>
+      <a href="https://healthcareindustryreviews.com">Healthcare Industry Reviews</a>
+      <a href="https://financialindustryreviews.com">Financial Industry Reviews</a>
+      <a href="https://cryptoindustryreviews.com">Crypto Industry Reviews</a>
+      <a href="https://miningindustryreviews.com">Mining Industry Reviews</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Tools & Media</div>
+      <a href="https://ai-mentions.com">AI Mentions</a>
+      <a href="https://smbnewsroom.com">SMB Newsroom</a>
+      <a href="https://listicleliaison.com">Listicle Liaison</a>
+      <a href="/pages/methodology.html">Methodology</a>
+      <a href="/pages/pricing.html">Get Listed</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Listicle Liaison LLC. All rights reserved.</span>
+    <span><a href="/pages/disclosure.html">Disclosure</a></span>
+  </div>
+</footer>
+```
+
+---
+
+## 7. miningindustryreviews.com (when deployed)
+```html
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Mining Industry Reviews</div>
+      <p class="footer-desc">Independent, data-driven rankings of mining companies across gold, lithium, copper, uranium, and more. Part of the Listicle Liaison publishing network.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Rankings</div>
+      <a href="/pages/gold-rankings.html">Gold & Silver</a>
+      <a href="/pages/lithium-rankings.html">Lithium & Battery Metals</a>
+      <a href="/pages/copper-rankings.html">Base Metals & Copper</a>
+      <a href="/pages/uranium-rankings.html">Uranium & Nuclear</a>
+      <a href="/pages/miningtech-rankings.html">Mining Technology</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Our Network</div>
+      <a href="https://softwareindustryreviews.com">Software Industry Reviews</a>
+      <a href="https://aiindustryreviews.com">AI Industry Reviews</a>
+      <a href="https://healthcareindustryreviews.com">Healthcare Industry Reviews</a>
+      <a href="https://financialindustryreviews.com">Financial Industry Reviews</a>
+      <a href="https://cryptoindustryreviews.com">Crypto Industry Reviews</a>
+      <a href="https://casinoindustryreviews.com">Casino Industry Reviews</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Tools & Media</div>
+      <a href="https://ai-mentions.com">AI Mentions</a>
+      <a href="https://smbnewsroom.com">SMB Newsroom</a>
+      <a href="https://listicleliaison.com">Listicle Liaison</a>
+      <a href="/pages/methodology.html">Methodology</a>
+      <a href="/pages/pricing.html">Get Listed</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Listicle Liaison LLC. All rights reserved.</span>
+    <span><a href="/pages/disclosure.html">Disclosure</a></span>
+  </div>
+</footer>
+```
+
+---
+
+## 8. smbnewsroom.com
+```html
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">SMB Newsroom</div>
+      <p class="footer-desc">Business intelligence, expert rankings, company spotlights, and industry analysis for growing companies. Part of the Listicle Liaison publishing network.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Topics</div>
+      <a href="/articles/">All Articles</a>
+      <a href="/articles/business/">Business</a>
+      <a href="/articles/technology/">Technology</a>
+      <a href="/articles/marketing/">Marketing</a>
+      <a href="/articles/finance/">Finance</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Our Network</div>
+      <a href="https://softwareindustryreviews.com">Software Industry Reviews</a>
+      <a href="https://aiindustryreviews.com">AI Industry Reviews</a>
+      <a href="https://healthcareindustryreviews.com">Healthcare Industry Reviews</a>
+      <a href="https://financialindustryreviews.com">Financial Industry Reviews</a>
+      <a href="https://cryptoindustryreviews.com">Crypto Industry Reviews</a>
+      <a href="https://casinoindustryreviews.com">Casino Industry Reviews</a>
+      <a href="https://miningindustryreviews.com">Mining Industry Reviews</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Tools & Media</div>
+      <a href="https://ai-mentions.com">AI Mentions</a>
+      <a href="https://listicleliaison.com">Listicle Liaison</a>
+      <a href="mailto:partnerships@listicleliaison.com">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Listicle Liaison LLC. All rights reserved.</span>
+  </div>
+</footer>
+```
+
+---
+
+## 9. ai-mentions.com
+```html
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">AI Mentions</div>
+      <p class="footer-desc">Free tool to check if AI assistants like ChatGPT, Claude, and Perplexity recommend your company. Part of the Listicle Liaison publishing network.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">How It Works</div>
+      <a href="#how">Check Your Score</a>
+      <a href="#about">About AI Visibility</a>
+      <a href="#methodology">Methodology</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Our Network</div>
+      <a href="https://softwareindustryreviews.com">Software Industry Reviews</a>
+      <a href="https://aiindustryreviews.com">AI Industry Reviews</a>
+      <a href="https://healthcareindustryreviews.com">Healthcare Industry Reviews</a>
+      <a href="https://financialindustryreviews.com">Financial Industry Reviews</a>
+      <a href="https://cryptoindustryreviews.com">Crypto Industry Reviews</a>
+      <a href="https://casinoindustryreviews.com">Casino Industry Reviews</a>
+      <a href="https://miningindustryreviews.com">Mining Industry Reviews</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Media</div>
+      <a href="https://smbnewsroom.com">SMB Newsroom</a>
+      <a href="https://listicleliaison.com">Listicle Liaison</a>
+      <a href="https://listicleliaison.com/pages/pricing.html">Get Featured</a>
+      <a href="mailto:partnerships@listicleliaison.com">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Listicle Liaison LLC. All rights reserved.</span>
+  </div>
+</footer>
+```
 <script>
 window.addEventListener('scroll',()=>{
   document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>50);
