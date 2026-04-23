@@ -10,6 +10,10 @@
 <meta property="og:description" content="We connect companies with the rankings, listicles, and editorial content that drive real business results.">
 <meta property="og:type" content="website">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Microsoft UET Tag -->
+<script>(function(w, d, t, u, o) {w[u] = w[u] || [], o.ts = (new Date).getTime();var n = d.createElement(t);n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""),n.async = 1, n.onload = n.onreadystatechange = function() {var s = this.readyState;s && "loaded" !== s && "complete" !== s ||(o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"),n.onload = n.onreadystatechange = null)};var i = d.getElementsByTagName(t)[0];i.parentNode.insertBefore(n, i);})(window, document, "script", "uetq", {ti: "187247821",enableAutoSpaTracking: true});</script>
+
 <style>
 :root{
   --black:#0a0a0a;--black-2:#141414;--black-3:#1e1e1e;
@@ -225,21 +229,21 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
         <div class="service-card-price">From $99<span>/month</span></div>
         <div class="service-card-btn">View Plans &rarr;</div>
       </a>
-      <a href="https://buy.stripe.com/28EaEYadRaUzbkX4hxd7q0b" class="service-card" style="text-decoration:none">
+      <a href="https://buy.stripe.com/28EaEYadRaUzbkX4hxd7q0b" class="service-card" style="text-decoration:none" onclick="trackPurchaseClick('Listicle Inclusion', 1500)">
         <div class="service-card-tag">Editorial Content</div>
         <div class="service-card-title">Listicle &amp; Roundup Inclusion</div>
         <div class="service-card-desc">Get featured in published "Top 10" listicles and expert roundup articles on SMB Newsroom and partner publications. Each inclusion comes with permanent backlinks, SEO optimization, and AI citation structure.</div>
         <div class="service-card-price">From $1,500<span> per placement</span></div>
         <div class="service-card-btn">Purchase &rarr;</div>
       </a>
-      <a href="https://buy.stripe.com/8x24gAdq35Afcp1bJZd7q0c" class="service-card" style="text-decoration:none">
+      <a href="https://buy.stripe.com/8x24gAdq35Afcp1bJZd7q0c" class="service-card" style="text-decoration:none" onclick="trackPurchaseClick('Company Spotlight', 2500)">
         <div class="service-card-tag">Premium Content</div>
         <div class="service-card-title">Company Spotlight</div>
         <div class="service-card-desc">A dedicated 800–1,200 word editorial article telling your company's story, published across our network with 3–5 permanent backlinks, social media promotion, newsletter feature, and cross-site distribution.</div>
         <div class="service-card-price">From $2,500<span> per article</span></div>
         <div class="service-card-btn">Purchase &rarr;</div>
       </a>
-      <a href="https://buy.stripe.com/4gMcN63Pt3s7gFhbJZd7q0d" class="service-card" style="text-decoration:none">
+      <a href="https://buy.stripe.com/4gMcN63Pt3s7gFhbJZd7q0d" class="service-card" style="text-decoration:none" onclick="trackPurchaseClick('Full Visibility Package', 4500)">
         <div class="service-card-tag">Enterprise</div>
         <div class="service-card-title">Full Visibility Package</div>
         <div class="service-card-desc">The complete solution: featured review site profiles + listicle inclusions + company spotlight + expert roundup placement + AI citation tracking. Maximum visibility across our entire network with monthly reporting.</div>
@@ -397,6 +401,20 @@ window.addEventListener('scroll',()=>{
   document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>50);
 });
 
+// Track Stripe purchase link clicks in Microsoft UET
+function trackPurchaseClick(packageName, value) {
+  if (typeof window.uetq !== 'undefined') {
+    window.uetq = window.uetq || [];
+    window.uetq.push('event', 'purchase_click', {
+      'event_category': 'ecommerce',
+      'event_label': packageName,
+      'event_value': value,
+      'revenue_value': value,
+      'currency': 'USD'
+    });
+  }
+}
+
 document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
   var form = this;
@@ -404,6 +422,10 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   btn.textContent = 'Sending...';
   btn.disabled = true;
   var data = new FormData(form);
+  var email = data.get('email');
+  var company = data.get('company');
+  var packageVal = data.get('package') || 'Not specified';
+
   fetch('https://formspree.io/f/maqlbbzd', {
     method: 'POST',
     body: data,
@@ -411,6 +433,18 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   })
   .then(function(response) {
     if (response.ok) {
+      // Track form fill in Microsoft UET with enhanced conversions
+      if (typeof window.uetq !== 'undefined') {
+        window.uetq = window.uetq || [];
+        // Enhanced conversions - pass email for better attribution
+        window.uetq.push('set', { 'pid': { 'em': email } });
+        // Conversion event
+        window.uetq.push('event', 'package_inquiry', {
+          'event_category': 'lead',
+          'event_label': company + ' - ' + packageVal,
+          'event_value': 1
+        });
+      }
       form.style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
     } else {
