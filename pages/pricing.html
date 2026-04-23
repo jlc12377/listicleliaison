@@ -6,6 +6,10 @@
 <title>Pricing & Plans | Listicle Liaison</title>
 <meta name="description" content="Get listed across our network of 9+ industry review sites. Plans from $99/month for claimed profiles to $699/month for Featured Partner placement.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Microsoft UET Tag -->
+<script>(function(w, d, t, u, o) {w[u] = w[u] || [], o.ts = (new Date).getTime();var n = d.createElement(t);n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""),n.async = 1, n.onload = n.onreadystatechange = function() {var s = this.readyState;s && "loaded" !== s && "complete" !== s ||(o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"),n.onload = n.onreadystatechange = null)};var i = d.getElementsByTagName(t)[0];i.parentNode.insertBefore(n, i);})(window, document, "script", "uetq", {ti: "187247821",enableAutoSpaTracking: true});</script>
+
 <style>
 :root{--black:#0a0a0a;--black-2:#141414;--black-3:#1e1e1e;--ink:#0a0a0a;--ink-2:#333;--ink-3:#666;--ink-4:#999;--surface:#fff;--surface-2:#fafafa;--cream:#f9f7f3;--border:#e8e8e6;--border-light:#f0f0ee;--gold:#b8860b;--gold-light:#d4a32a;--gold-pale:#fdf6e3;--gold-deep:#8a6508;--green:#16a34a;--radius:6px;--radius-lg:10px;--radius-xl:16px;--shadow-md:0 6px 20px rgba(0,0,0,.07);--shadow-lg:0 16px 48px rgba(0,0,0,.1);--font-display:'Playfair Display',Georgia,serif;--font-body:'Sora',-apple-system,sans-serif;--max-w:1140px;--nav-h:64px}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-webkit-font-smoothing:antialiased;line-height:1.6}
@@ -106,7 +110,7 @@
       <div class="price-card-price" id="price-claimed">$99<span>/mo</span></div>
       <div class="price-card-billing" id="billing-claimed"></div>
       <ul class="price-card-features"><li>Branded logo placement</li><li>Custom company description</li><li>Direct website link</li><li>Verified badge</li><li>Monthly profile views</li></ul>
-      <a href="" class="price-card-btn primary" id="btn-claimed">Get Started &rarr;</a>
+      <a href="" class="price-card-btn primary" id="btn-claimed" onclick="trackPurchaseClick('Claimed Profile', 'claimed')">Get Started &rarr;</a>
     </div>
     <div class="price-card popular">
       <div class="price-card-name">Enhanced Listing</div>
@@ -114,7 +118,7 @@
       <div class="price-card-price" id="price-enhanced">$299<span>/mo</span></div>
       <div class="price-card-billing" id="billing-enhanced"></div>
       <ul class="price-card-features"><li>Everything in Claimed Profile</li><li>Priority category placement</li><li>Lead capture CTA button</li><li>Competitor comparison view</li><li>Cross-site syndication</li><li>Permanent backlink</li></ul>
-      <a href="" class="price-card-btn gold" id="btn-enhanced">Get Started &rarr;</a>
+      <a href="" class="price-card-btn gold" id="btn-enhanced" onclick="trackPurchaseClick('Enhanced Listing', 'enhanced')">Get Started &rarr;</a>
     </div>
     <div class="price-card">
       <div class="price-card-name">Featured Partner</div>
@@ -122,7 +126,7 @@
       <div class="price-card-price" id="price-featured">$699<span>/mo</span></div>
       <div class="price-card-billing" id="billing-featured"></div>
       <ul class="price-card-features"><li>Everything in Enhanced</li><li>#1 position with gold badge</li><li>Company Spotlight article</li><li>Cross-network promotion</li><li>AI citation optimization</li><li>Dedicated account support</li><li>Limited to one per category</li></ul>
-      <a href="" class="price-card-btn primary" id="btn-featured">Get Started &rarr;</a>
+      <a href="" class="price-card-btn primary" id="btn-featured" onclick="trackPurchaseClick('Featured Partner', 'featured')">Get Started &rarr;</a>
     </div>
   </div>
 </div>
@@ -130,9 +134,9 @@
 <div class="premium-section" id="premiumSection">
   <div class="premium-divider"><span>Premium content services</span></div>
   <div class="premium-grid">
-    <div class="premium-card"><div class="premium-card-tag">Editorial Content</div><div class="premium-card-title">Listicle & Roundup Inclusion</div><div class="premium-card-desc">Get featured in published "Top 10" listicles and expert roundup articles with permanent backlinks and AI citation structure.</div><div class="premium-card-price">$1,500 <span>per placement</span></div><a href="https://buy.stripe.com/28EaEYadRaUzbkX4hxd7q0b" class="premium-card-btn">Purchase &rarr;</a></div>
-    <div class="premium-card"><div class="premium-card-tag">Premium Content</div><div class="premium-card-title">Company Spotlight</div><div class="premium-card-desc">A dedicated 800-1,200 word editorial article published across our network with 3-5 permanent backlinks and cross-site distribution.</div><div class="premium-card-price">$2,500 <span>per article</span></div><a href="https://buy.stripe.com/8x24gAdq35Afcp1bJZd7q0c" class="premium-card-btn">Purchase &rarr;</a></div>
-    <div class="premium-card"><div class="premium-card-tag">Enterprise</div><div class="premium-card-title">Full Visibility Package</div><div class="premium-card-desc">Featured profiles + listicle inclusions + spotlight + expert roundup + AI citation tracking. Maximum visibility with monthly reporting.</div><div class="premium-card-price">$4,500 <span>per quarter</span></div><a href="https://buy.stripe.com/4gMcN63Pt3s7gFhbJZd7q0d" class="premium-card-btn">Purchase &rarr;</a></div>
+    <div class="premium-card"><div class="premium-card-tag">Editorial Content</div><div class="premium-card-title">Listicle & Roundup Inclusion</div><div class="premium-card-desc">Get featured in published "Top 10" listicles and expert roundup articles with permanent backlinks and AI citation structure.</div><div class="premium-card-price">$1,500 <span>per placement</span></div><a href="https://buy.stripe.com/28EaEYadRaUzbkX4hxd7q0b" class="premium-card-btn" onclick="trackPurchaseClickDirect('Listicle Inclusion', 1500)">Purchase &rarr;</a></div>
+    <div class="premium-card"><div class="premium-card-tag">Premium Content</div><div class="premium-card-title">Company Spotlight</div><div class="premium-card-desc">A dedicated 800-1,200 word editorial article published across our network with 3-5 permanent backlinks and cross-site distribution.</div><div class="premium-card-price">$2,500 <span>per article</span></div><a href="https://buy.stripe.com/8x24gAdq35Afcp1bJZd7q0c" class="premium-card-btn" onclick="trackPurchaseClickDirect('Company Spotlight', 2500)">Purchase &rarr;</a></div>
+    <div class="premium-card"><div class="premium-card-tag">Enterprise</div><div class="premium-card-title">Full Visibility Package</div><div class="premium-card-desc">Featured profiles + listicle inclusions + spotlight + expert roundup + AI citation tracking. Maximum visibility with monthly reporting.</div><div class="premium-card-price">$4,500 <span>per quarter</span></div><a href="https://buy.stripe.com/4gMcN63Pt3s7gFhbJZd7q0d" class="premium-card-btn" onclick="trackPurchaseClickDirect('Full Visibility Package', 4500)">Purchase &rarr;</a></div>
   </div>
 </div>
 
@@ -147,13 +151,70 @@
 var sites={software:{name:'Software Industry Reviews'},ai:{name:'AI Industry Reviews'},healthcare:{name:'Healthcare Industry Reviews'},finance:{name:'Financial Industry Reviews'},crypto:{name:'Crypto Industry Reviews'},casino:{name:'Casino Industry Reviews'}};
 var stripeLinks={claimed:{monthly:'https://buy.stripe.com/cNi8wQ3Pt3s7bkXdS7d7q04',semi:'https://buy.stripe.com/bJe5kE5XBaUz1Kn6pFd7q05',annual:'https://buy.stripe.com/fZu8wQfyb8Mr9cP01hd7q06'},enhanced:{monthly:'https://buy.stripe.com/3cI8wQdq3geT9cP5lBd7q07',semi:'https://buy.stripe.com/9B6dRa71F9Qv3Sv9BRd7q08',annual:'https://buy.stripe.com/6oU4gAfybaUz3SveWbd7q0a'},featured:{monthly:'https://buy.stripe.com/8x214obhV9Qv3Sv5lBd7q00',semi:'https://buy.stripe.com/cNifZi0DhgeT1KneWbd7q01',annual:'https://buy.stripe.com/eVq8wQ5XBe6LfBd5lBd7q03'}};
 var prices={claimed:{monthly:'$99',semi:'$564',annual:'$1,069'},enhanced:{monthly:'$299',semi:'$1,704',annual:'$3,229'},featured:{monthly:'$699',semi:'$3,985',annual:'$7,550'}};
+var priceValues={claimed:{monthly:99,semi:564,annual:1069},enhanced:{monthly:299,semi:1704,annual:3229},featured:{monthly:699,semi:3985,annual:7550}};
 var perMonth={claimed:{monthly:'',semi:'$94/mo equivalent',annual:'$89/mo equivalent'},enhanced:{monthly:'',semi:'$284/mo equivalent',annual:'$269/mo equivalent'},featured:{monthly:'',semi:'$664/mo equivalent',annual:'$629/mo equivalent'}};
 var suffix={monthly:'/mo',semi:' every 6 months',annual:'/year'};
 var currentBilling='monthly';
-function selectSite(key,el){document.querySelectorAll('.site-option').forEach(function(e){e.classList.remove('selected')});el.classList.add('selected');document.getElementById('selectedSiteName').textContent=sites[key].name;document.getElementById('pricingSection').classList.add('visible');document.getElementById('premiumSection').classList.add('visible');setBillingDirect(currentBilling);document.getElementById('pricingSection').scrollIntoView({behavior:'smooth',block:'start'})}
-function setBilling(period){currentBilling=period;document.querySelectorAll('.toggle-btn').forEach(function(b){b.classList.remove('active')});if(event&&event.target)event.target.closest('.toggle-btn').classList.add('active');setBillingDirect(period)}
-function setBillingDirect(period){['claimed','enhanced','featured'].forEach(function(tier){document.getElementById('price-'+tier).innerHTML=prices[tier][period]+'<span>'+suffix[period]+'</span>';document.getElementById('billing-'+tier).textContent=perMonth[tier][period];document.getElementById('btn-'+tier).href=stripeLinks[tier][period]})}
+var selectedSiteKey='';
+
+function selectSite(key,el){
+  selectedSiteKey=key;
+  document.querySelectorAll('.site-option').forEach(function(e){e.classList.remove('selected')});
+  el.classList.add('selected');
+  document.getElementById('selectedSiteName').textContent=sites[key].name;
+  document.getElementById('pricingSection').classList.add('visible');
+  document.getElementById('premiumSection').classList.add('visible');
+  setBillingDirect(currentBilling);
+  document.getElementById('pricingSection').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function setBilling(period){
+  currentBilling=period;
+  document.querySelectorAll('.toggle-btn').forEach(function(b){b.classList.remove('active')});
+  if(event&&event.target)event.target.closest('.toggle-btn').classList.add('active');
+  setBillingDirect(period);
+}
+
+function setBillingDirect(period){
+  ['claimed','enhanced','featured'].forEach(function(tier){
+    document.getElementById('price-'+tier).innerHTML=prices[tier][period]+'<span>'+suffix[period]+'</span>';
+    document.getElementById('billing-'+tier).textContent=perMonth[tier][period];
+    document.getElementById('btn-'+tier).href=stripeLinks[tier][period];
+  });
+}
+
+// Track subscription tier purchase clicks (tier name + current billing period pulls correct $ value)
+function trackPurchaseClick(tierName, tierKey) {
+  var value = priceValues[tierKey][currentBilling];
+  var billingLabel = currentBilling === 'monthly' ? 'Monthly' : (currentBilling === 'semi' ? 'Semi-Annual' : 'Annual');
+  if (typeof window.uetq !== 'undefined') {
+    window.uetq = window.uetq || [];
+    window.uetq.push('event', 'purchase_click', {
+      'event_category': 'ecommerce',
+      'event_label': tierName + ' - ' + billingLabel + ' - ' + (selectedSiteKey || 'no site selected'),
+      'event_value': value,
+      'revenue_value': value,
+      'currency': 'USD'
+    });
+  }
+}
+
+// Track premium content purchase clicks (direct dollar value)
+function trackPurchaseClickDirect(packageName, value) {
+  if (typeof window.uetq !== 'undefined') {
+    window.uetq = window.uetq || [];
+    window.uetq.push('event', 'purchase_click', {
+      'event_category': 'ecommerce',
+      'event_label': packageName,
+      'event_value': value,
+      'revenue_value': value,
+      'currency': 'USD'
+    });
+  }
+}
+
 setBillingDirect('monthly');
 </script>
 </body>
 </html>
+
