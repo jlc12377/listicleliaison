@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare Plans & Find What's Right for You | Listicle Liaison</title>
+<meta name="description" content="Compare every Listicle Liaison plan side-by-side — subscription tiers, one-time editorial packages, and recommendations for your specific business stage.">
+<link rel="canonical" href="https://listicleliaison.com/pages/compare.html">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Microsoft UET Tag -->
+<script>
+(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"187247821", enableAutoSpaTracking: true};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");
+</script>
+
+<style>
+:root{--black:#0a0a0a;--coral:#ff6b4a;--coral-soft:#ff8566;--gold:#f4b942;--gold-light:#ffc960;--ink:#0a0a0a;--ink-2:#333;--ink-3:#666;--ink-4:#999;--surface:#fff;--surface-2:#fafaf8;--surface-3:#f5f3ee;--cream:#faf7f0;--border:#e8e5de;--border-light:#f0ede5;--radius:8px;--radius-lg:14px;--shadow-md:0 6px 24px rgba(15,31,58,.08);--font-display:'Fraunces',Georgia,serif;--font-body:'Inter',-apple-system,sans-serif;--max-w:1200px;--nav-h:64px;--check:#0a9850;--no:#d14545}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--ink);background:var(--surface-2);-webkit-font-smoothing:antialiased;line-height:1.6}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:rgba(10,10,10,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{text-decoration:none;display:flex;align-items:center;gap:10px}
+.nav-brand-icon{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--coral),var(--gold));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:16px;font-weight:700;color:#fff;font-style:italic}
+.nav-brand-text{font-family:var(--font-display);font-size:17px;font-weight:600;color:#fff}
+.nav-brand-text span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none}
+.nav-links a:hover{color:#fff}
+.mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:4px}
+.mobile-menu-btn span{display:block;width:20px;height:2px;background:#fff;border-radius:1px}
+
+.page-header{padding:calc(var(--nav-h) + 56px) 32px 40px;background:var(--black);text-align:center;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(255,107,74,.1) 0%,transparent 60%);pointer-events:none}
+.page-header-inner{max-width:var(--max-w);margin:0 auto;position:relative;z-index:1}
+.page-eyebrow{display:inline-block;background:rgba(255,107,74,.15);color:var(--coral-soft);padding:6px 16px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
+.page-h1{font-family:var(--font-display);font-size:52px;font-weight:600;color:#fff;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px}
+.page-h1 em{font-style:italic;color:var(--gold);font-weight:400}
+.page-sub{font-size:17px;color:rgba(255,255,255,.55);max-width:680px;margin:0 auto;line-height:1.65;font-weight:300}
+
+/* Two Types Section */
+.types-section{max-width:var(--max-w);margin:0 auto;padding:72px 32px 40px}
+.types-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.type-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px 32px}
+.type-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
+.type-title{font-family:var(--font-display);font-size:26px;font-weight:600;margin-bottom:12px;letter-spacing:-.5px}
+.type-title em{font-style:italic;color:var(--coral);font-weight:400}
+.type-desc{font-size:14px;color:var(--ink-3);line-height:1.7;margin-bottom:18px}
+.type-list{list-style:none;padding:0;font-size:13.5px}
+.type-list li{padding:7px 0;color:var(--ink-2);display:flex;align-items:flex-start;gap:10px;border-bottom:1px solid var(--border-light)}
+.type-list li:last-child{border-bottom:none}
+.type-list li strong{font-weight:600;min-width:140px;color:var(--ink)}
+
+/* Comparison Table */
+.compare-section{max-width:var(--max-w);margin:0 auto;padding:32px 32px 72px}
+.compare-header{text-align:center;margin-bottom:32px}
+.compare-eyebrow{font-size:11px;font-weight:700;color:var(--coral);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.compare-title{font-family:var(--font-display);font-size:36px;font-weight:600;letter-spacing:-.8px;margin-bottom:10px}
+.compare-sub{font-size:15px;color:var(--ink-3);max-width:620px;margin:0 auto}
+
+.table-wrapper{overflow-x:auto;background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border)}
+.compare-table{width:100%;border-collapse:collapse;min-width:920px;font-size:13px}
+.compare-table thead{background:var(--black);color:#fff}
+.compare-table th{padding:22px 14px;text-align:center;font-weight:600;font-size:13px;vertical-align:bottom;border-bottom:2px solid var(--black)}
+.compare-table th:first-child{text-align:left;font-size:12px;font-weight:500;color:rgba(255,255,255,.6);letter-spacing:.05em;text-transform:uppercase}
+.col-name{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.2px;display:block;margin-bottom:4px;color:#fff}
+.col-price{font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--gold);letter-spacing:-.5px}
+.col-price small{font-size:11px;color:rgba(255,255,255,.5);font-family:var(--font-body);font-weight:400;margin-left:2px;letter-spacing:0}
+.col-type{font-size:10px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-top:6px;font-weight:600}
+.col-badge{display:inline-block;background:var(--coral);color:#fff;font-size:9px;font-weight:700;padding:3px 10px;border-radius:4px;letter-spacing:.08em;margin-top:6px}
+
+.compare-table tbody tr{border-bottom:1px solid var(--border-light)}
+.compare-table tbody tr:hover{background:var(--cream)}
+.compare-table tbody tr.section-row{background:var(--surface-3)}
+.compare-table tbody tr.section-row td{padding:12px 16px;font-size:10px;font-weight:700;color:var(--ink-3);letter-spacing:.12em;text-transform:uppercase}
+
+.compare-table td{padding:14px 14px;text-align:center;color:var(--ink-2);vertical-align:middle}
+.compare-table td:first-child{text-align:left;font-weight:500;color:var(--ink);width:280px}
+.compare-table td small{display:block;color:var(--ink-4);font-size:11px;margin-top:2px;font-weight:400}
+
+.check-yes{color:var(--check);font-size:18px;font-weight:700}
+.check-no{color:var(--border);font-size:16px}
+.check-limited{color:var(--ink-3);font-size:12px;font-weight:500}
+.check-val{color:var(--ink);font-weight:600;font-size:13px}
+
+/* Recommended Column */
+.compare-table th.recommended{background:linear-gradient(180deg,#1a1a1a,var(--black));position:relative}
+.compare-table tbody td.recommended{background:rgba(255,107,74,.03)}
+
+/* Best For Section */
+.bestfor-section{background:var(--cream);padding:72px 32px;border-top:1px solid var(--border)}
+.bestfor-inner{max-width:var(--max-w);margin:0 auto}
+.bestfor-header{text-align:center;margin-bottom:48px}
+.bestfor-eyebrow{font-size:11px;font-weight:700;color:var(--coral);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.bestfor-title{font-family:var(--font-display);font-size:40px;font-weight:600;letter-spacing:-1px;margin-bottom:10px}
+.bestfor-title em{font-style:italic;color:var(--coral);font-weight:400}
+.bestfor-sub{font-size:15px;color:var(--ink-3);max-width:580px;margin:0 auto}
+
+.bestfor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:20px}
+.bestfor-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 26px;display:flex;flex-direction:column}
+.bestfor-card.highlight{border:2px solid var(--coral);background:linear-gradient(135deg,#fff7f5,#fff)}
+.bestfor-scenario{font-size:11px;font-weight:700;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.bestfor-h{font-family:var(--font-display);font-size:22px;font-weight:600;margin-bottom:10px;letter-spacing:-.3px;line-height:1.25}
+.bestfor-desc{font-size:13px;color:var(--ink-3);margin-bottom:16px;line-height:1.65;flex-grow:1}
+.bestfor-recommendation{border-top:1px solid var(--border);padding-top:14px;margin-top:auto}
+.bestfor-recommendation-label{font-size:10px;font-weight:700;color:var(--ink-4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+.bestfor-plan{font-family:var(--font-display);font-size:16px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.bestfor-price{font-size:12.5px;color:var(--coral);font-weight:600;margin-bottom:10px}
+.bestfor-btn{display:inline-block;padding:9px 18px;background:var(--black);color:#fff;text-decoration:none;font-size:12px;font-weight:600;border-radius:var(--radius);transition:all .2s}
+.bestfor-card.highlight .bestfor-btn{background:var(--coral)}
+.bestfor-btn:hover{transform:translateY(-1px)}
+
+/* Combo Section */
+.combo-section{max-width:900px;margin:0 auto;padding:72px 32px}
+.combo-card{background:linear-gradient(135deg,#0a0a0a,#2a1810);border-radius:var(--radius-lg);padding:48px 40px;color:#fff;text-align:center;position:relative;overflow:hidden}
+.combo-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(244,185,66,.15) 0%,transparent 55%);pointer-events:none}
+.combo-inner{position:relative;z-index:1}
+.combo-eyebrow{display:inline-block;background:linear-gradient(135deg,var(--coral),var(--gold));color:#fff;font-size:10px;font-weight:700;padding:5px 14px;border-radius:4px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
+.combo-title{font-family:var(--font-display);font-size:34px;font-weight:600;letter-spacing:-.8px;margin-bottom:14px;line-height:1.2}
+.combo-title em{font-style:italic;color:var(--gold);font-weight:400}
+.combo-desc{color:rgba(255,255,255,.6);font-size:15px;max-width:580px;margin:0 auto 24px;line-height:1.65}
+.combo-price{font-family:var(--font-display);font-size:32px;color:var(--gold);font-weight:600;margin-bottom:6px}
+.combo-price small{font-size:13px;color:rgba(255,255,255,.4);font-family:var(--font-body);font-weight:400}
+.combo-savings{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:26px}
+.combo-btn{display:inline-block;padding:14px 32px;background:var(--coral);color:#fff;text-decoration:none;font-size:14px;font-weight:600;border-radius:var(--radius)}
+.combo-btn:hover{background:var(--coral-soft)}
+
+/* FAQ */
+.faq{max-width:760px;margin:0 auto;padding:32px 32px 80px;border-top:1px solid var(--border)}
+.faq-title{font-family:var(--font-display);font-size:32px;font-weight:600;letter-spacing:-.6px;text-align:center;margin-bottom:36px;padding-top:32px}
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0}
+.faq-q{font-family:var(--font-display);font-size:17px;font-weight:600;margin-bottom:8px}
+.faq-a{font-size:14px;color:var(--ink-3);line-height:1.7}
+
+.footer{background:var(--black);padding:64px 32px 36px}
+.footer-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.footer-brand-mark{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.footer-logo{width:28px;height:28px;border-radius:6px;background:linear-gradient(135deg,var(--coral),var(--gold));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:14px;font-weight:700;color:#fff;font-style:italic}
+.footer-brand-name{font-family:var(--font-display);font-size:15px;font-weight:600;color:#fff}
+.footer-brand-name span{color:var(--gold)}
+.footer-desc{font-size:13px;color:rgba(255,255,255,.3);line-height:1.6;max-width:280px}
+.footer-col-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.4);margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.35);text-decoration:none;margin-bottom:10px}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{max-width:var(--max-w);margin:40px auto 0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.2)}
+.footer-bottom a{color:rgba(255,255,255,.25);text-decoration:none;margin-left:20px}
+
+@media(max-width:900px){
+  .page-h1{font-size:36px}
+  .types-grid{grid-template-columns:1fr}
+  .bestfor-grid{grid-template-columns:1fr}
+  .compare-title,.bestfor-title{font-size:26px}
+  .combo-title{font-size:24px}
+  .combo-card{padding:32px 24px}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .nav-links{display:none;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--black);flex-direction:column;padding:20px 32px;gap:14px}
+  .nav-links.open{display:flex}
+  .mobile-menu-btn{display:flex}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <div class="nav-brand-icon">Ll</div>
+      <div class="nav-brand-text">Listicle <span>Liaison</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/pages/pricing.html">Pricing</a>
+      <a href="/pages/compare.html">Compare Plans</a>
+      <a href="mailto:partnerships@listicleliaison.com">Contact</a>
+    </div>
+    <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow">Plan Comparison</div>
+    <h1 class="page-h1">Compare every plan — <em>find what's right for you</em></h1>
+    <p class="page-sub">Two types of offerings, built to work together. See how subscriptions and editorial packages compare, then find the recommendation that matches your business stage.</p>
+  </div>
+</section>
+
+<section class="types-section">
+  <div class="types-grid">
+    <div class="type-card">
+      <div class="type-label">Type 1: Subscriptions</div>
+      <h2 class="type-title">Ongoing category <em>visibility</em></h2>
+      <p class="type-desc">Monthly or annual subscriptions control how your business appears on our network's category ranking pages. Think of it like a premium directory listing — you're paying to control your presence and placement.</p>
+      <ul class="type-list">
+        <li><strong>Basic:</strong> Name, address, phone on the list</li>
+        <li><strong>Claimed Profile:</strong> Verified badge, custom description, photos, website</li>
+        <li><strong>Enhanced Listing:</strong> Top-of-category placement, unlimited content, reporting</li>
+        <li><strong>Featured Partner:</strong> #1 position, gold border, homepage promotion, manager</li>
+      </ul>
+    </div>
+
+    <div class="type-card">
+      <div class="type-label">Type 2: Editorial Packages</div>
+      <h2 class="type-title">One-time <em>content creation</em></h2>
+      <p class="type-desc">One-time fees that get you dedicated editorial content — articles, features, or comprehensive visibility packages. Best for businesses with a specific story to tell or ready to invest in long-term content assets.</p>
+      <ul class="type-list">
+        <li><strong>Listicle Inclusion:</strong> Dedicated article + 12-month directory listing</li>
+        <li><strong>Spotlight Feature:</strong> Full editorial feature + homepage placement</li>
+        <li><strong>Full Visibility Package:</strong> Both packages + 3 months Featured + AI optimization</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="compare-section">
+  <div class="compare-header">
+    <div class="compare-eyebrow">Full Comparison</div>
+    <h2 class="compare-title">Every plan, side-by-side</h2>
+    <p class="compare-sub">Scroll horizontally on mobile. Recommended tier highlighted in coral.</p>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Plan Features</th>
+          <th>
+            <span class="col-name">Basic</span>
+            <span class="col-price">$49<small>/mo</small></span>
+            <span class="col-type">Subscription</span>
+          </th>
+          <th>
+            <span class="col-name">Claimed</span>
+            <span class="col-price">$99<small>/mo</small></span>
+            <span class="col-type">Subscription</span>
+          </th>
+          <th class="recommended">
+            <span class="col-name">Enhanced</span>
+            <span class="col-price">$299<small>/mo</small></span>
+            <span class="col-type">Subscription</span>
+            <span class="col-badge">MOST POPULAR</span>
+          </th>
+          <th>
+            <span class="col-name">Featured</span>
+            <span class="col-price">$699<small>/mo</small></span>
+            <span class="col-type">Subscription</span>
+          </th>
+          <th>
+            <span class="col-name">Listicle</span>
+            <span class="col-price">$1,500<small>&nbsp;once</small></span>
+            <span class="col-type">Editorial</span>
+          </th>
+          <th>
+            <span class="col-name">Spotlight</span>
+            <span class="col-price">$2,500<small>&nbsp;once</small></span>
+            <span class="col-type">Editorial</span>
+          </th>
+          <th>
+            <span class="col-name">Full</span>
+            <span class="col-price">$4,500<small>&nbsp;once</small></span>
+            <span class="col-type">Editorial</span>
+            <span class="col-badge">BEST VALUE</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="section-row"><td colspan="8">Directory Listing</td></tr>
+
+        <tr>
+          <td>Listed on category ranking page</td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td class="recommended"><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;<br><small>12 months</small></span></td>
+          <td><span class="check-yes">&#10003;<br><small>12 months</small></span></td>
+          <td><span class="check-yes">&#10003;<br><small>12 months</small></span></td>
+        </tr>
+        <tr>
+          <td>Verified "Claimed" badge</td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td class="recommended"><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+        </tr>
+        <tr>
+          <td>Custom business description</td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td class="recommended"><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+        </tr>
+        <tr>
+          <td>Photos & media</td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-val">Up to 3</span></td>
+          <td class="recommended"><span class="check-val">Unlimited</span></td>
+          <td><span class="check-val">Unlimited</span></td>
+          <td><span class="check-val">Up to 3</span></td>
+          <td><span class="check-val">Unlimited</span></td>
+          <td><span class="check-val">Unlimited</span></td>
+        </tr>
+        <tr>
+          <td>Top-of-category placement</td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td class="recommended"><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;<br><small>#1 slot</small></span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;<br><small>#1 slot (3mo)</small></span></td>
+        </tr>
+        <tr>
+          <td>Gold border / "Featured Partner" styling</td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td class="recommended"><span class="check-no">&#8212;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-yes">&#10003;<br><small>3 months</small></span></td>
+        </tr>
+
+        <tr class="section-row"><td colspan="8">Editorial Content</td></tr>
+
+        <tr>
+          <td>Dedicated article on SMB Newsroom</td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td class="recommended"><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-yes">&#10003;<br><small>1,500-2,500 words</small></span></td>
+          <td><span class="check-yes">&#10003;<br><small>2,500-4,000 words</small></span></td>
+          <td><span class="check-yes">&#10003;<br><small>Both</small></span></td>
+        </tr>
+        <tr>
+          <td>Homepage promotion</td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td class="recommended"><span class="check-no">&#8212;</span></td>
+          <td><span class="check-yes">&#10003;<br><small>Category homepage</small></span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-yes">&#10003;<br><small>Network homepages</small></span></td>
+          <td><span class="check-yes">&#10003;<br><small>All networks</small></span></td>
+        </tr>
+        <tr>
+          <td>Newsletter feature</td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td class="recommended"><span class="check-no">&#8212;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;<br><small>Dedicated feature</small></span></td>
+          <td><span class="check-yes">&#10003;<br><small>Multiple features</small></span></td>
+        </tr>
+        <tr>
+          <td>LinkedIn promotion</td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td class="recommended"><span class="check-no">&#8212;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+        </tr>
+        <tr>
+          <td>Internal links from related content</td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td class="recommended"><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+        </tr>
+
+        <tr class="section-row"><td colspan="8">AI & SEO</td></tr>
+
+        <tr>
+          <td>Schema markup for AI discovery</td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td class="recommended"><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+        </tr>
+        <tr>
+          <td>Dedicated AI visibility optimization</td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td class="recommended"><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+        </tr>
+        <tr>
+          <td>AI citation monitoring report</td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td class="recommended"><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-val">30-day</span></td>
+          <td><span class="check-val">60-day</span></td>
+          <td><span class="check-val">90-day</span></td>
+        </tr>
+
+        <tr class="section-row"><td colspan="8">Support & Reporting</td></tr>
+
+        <tr>
+          <td>Monthly performance report</td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td class="recommended"><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-yes">&#10003;<br><small>3 months</small></span></td>
+        </tr>
+        <tr>
+          <td>Dedicated account manager</td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td class="recommended"><span class="check-no">&#8212;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+        </tr>
+        <tr>
+          <td>Priority support</td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td class="recommended"><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+          <td><span class="check-yes">&#10003;</span></td>
+        </tr>
+
+        <tr class="section-row"><td colspan="8">Commitment & Flexibility</td></tr>
+
+        <tr>
+          <td>Billing type</td>
+          <td><span class="check-val">Monthly<br><small>Cancel anytime</small></span></td>
+          <td><span class="check-val">Monthly<br><small>Cancel anytime</small></span></td>
+          <td class="recommended"><span class="check-val">Monthly<br><small>Cancel anytime</small></span></td>
+          <td><span class="check-val">Monthly<br><small>Cancel anytime</small></span></td>
+          <td><span class="check-val">One-time<br><small>No renewal</small></span></td>
+          <td><span class="check-val">One-time<br><small>No renewal</small></span></td>
+          <td><span class="check-val">One-time<br><small>No renewal</small></span></td>
+        </tr>
+        <tr>
+          <td>Semi-annual / annual discounts</td>
+          <td><span class="check-yes">&#10003;<br><small>Up to 20% off</small></span></td>
+          <td><span class="check-yes">&#10003;<br><small>Up to 20% off</small></span></td>
+          <td class="recommended"><span class="check-yes">&#10003;<br><small>Up to 20% off</small></span></td>
+          <td><span class="check-yes">&#10003;<br><small>Up to 20% off</small></span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+          <td><span class="check-no">&#8212;</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="bestfor-section">
+  <div class="bestfor-inner">
+    <div class="bestfor-header">
+      <div class="bestfor-eyebrow">Find Your Match</div>
+      <h2 class="bestfor-title">Best for <em>your business stage</em></h2>
+      <p class="bestfor-sub">Different plans fit different situations. Here's how to think about it based on where your business is today.</p>
+    </div>
+
+    <div class="bestfor-grid">
+
+      <div class="bestfor-card">
+        <div class="bestfor-scenario">Just starting out</div>
+        <h3 class="bestfor-h">I'm a new or emerging business</h3>
+        <p class="bestfor-desc">You're newer to market, building credibility, and want to establish a professional online presence without a big upfront commitment.</p>
+        <div class="bestfor-recommendation">
+          <div class="bestfor-recommendation-label">Recommended</div>
+          <div class="bestfor-plan">Claimed Profile</div>
+          <div class="bestfor-price">$99/month</div>
+          <a href="/pages/pricing.html" class="bestfor-btn">Start with Claimed &rarr;</a>
+        </div>
+      </div>
+
+      <div class="bestfor-card highlight">
+        <div class="bestfor-scenario">Ready to grow</div>
+        <h3 class="bestfor-h">I want prominent visibility and ongoing support</h3>
+        <p class="bestfor-desc">You have a real business with clients and momentum. You want to be seen prominently in your category and get ongoing performance data.</p>
+        <div class="bestfor-recommendation">
+          <div class="bestfor-recommendation-label">Recommended</div>
+          <div class="bestfor-plan">Enhanced Listing</div>
+          <div class="bestfor-price">$299/month</div>
+          <a href="/pages/pricing.html" class="bestfor-btn">Get Enhanced &rarr;</a>
+        </div>
+      </div>
+
+      <div class="bestfor-card">
+        <div class="bestfor-scenario">Category leader</div>
+        <h3 class="bestfor-h">I want to dominate my category</h3>
+        <p class="bestfor-desc">You're an established business ready to commit to being the #1 visible choice in your category with dedicated account management.</p>
+        <div class="bestfor-recommendation">
+          <div class="bestfor-recommendation-label">Recommended</div>
+          <div class="bestfor-plan">Featured Partner</div>
+          <div class="bestfor-price">$699/month</div>
+          <a href="/pages/pricing.html" class="bestfor-btn">Become Featured &rarr;</a>
+        </div>
+      </div>
+
+      <div class="bestfor-card">
+        <div class="bestfor-scenario">Have a story to tell</div>
+        <h3 class="bestfor-h">I have a specific story, launch, or milestone</h3>
+        <p class="bestfor-desc">You're launching a new product, hit a major milestone, or have a differentiated approach worth a dedicated article. You want a content asset you can promote.</p>
+        <div class="bestfor-recommendation">
+          <div class="bestfor-recommendation-label">Recommended</div>
+          <div class="bestfor-plan">Listicle Inclusion</div>
+          <div class="bestfor-price">$1,500 one-time</div>
+          <a href="/pages/pricing.html" class="bestfor-btn">Get Listicle &rarr;</a>
+        </div>
+      </div>
+
+      <div class="bestfor-card">
+        <div class="bestfor-scenario">Editorial credibility</div>
+        <h3 class="bestfor-h">I want a major editorial feature, not just a listing</h3>
+        <p class="bestfor-desc">You want a full editorial spotlight — deep-dive storytelling, homepage placement, network-wide promotion. Best for established businesses investing in PR-level content.</p>
+        <div class="bestfor-recommendation">
+          <div class="bestfor-recommendation-label">Recommended</div>
+          <div class="bestfor-plan">Spotlight Feature</div>
+          <div class="bestfor-price">$2,500 one-time</div>
+          <a href="/pages/pricing.html" class="bestfor-btn">Get Spotlight &rarr;</a>
+        </div>
+      </div>
+
+      <div class="bestfor-card">
+        <div class="bestfor-scenario">Go all-in</div>
+        <h3 class="bestfor-h">I want maximum visibility, period</h3>
+        <p class="bestfor-desc">You want every advantage — listicle, spotlight, featured placement, and AI-optimization. Best value for businesses serious about owning their category online.</p>
+        <div class="bestfor-recommendation">
+          <div class="bestfor-recommendation-label">Recommended</div>
+          <div class="bestfor-plan">Full Visibility Package</div>
+          <div class="bestfor-price">$4,500 one-time</div>
+          <a href="/pages/pricing.html" class="bestfor-btn">Get Full Package &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="combo-section">
+  <div class="combo-card">
+    <div class="combo-inner">
+      <div class="combo-eyebrow">Popular Combination</div>
+      <h2 class="combo-title">Listicle + <em>Enhanced Listing</em></h2>
+      <p class="combo-desc">Many businesses combine a one-time Listicle article with an ongoing Enhanced Listing subscription. The article drives initial traffic and credibility; the subscription keeps you prominently placed in your category month after month.</p>
+      <div class="combo-price">$1,500 + $299<small>/mo</small></div>
+      <p class="combo-savings">One-time editorial asset + ongoing category dominance</p>
+      <a href="/pages/pricing.html" class="combo-btn">Explore This Combo &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <h2 class="faq-title">Common questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Do I need a subscription AND an editorial package?</div>
+    <p class="faq-a">No &mdash; each can work independently. All our editorial packages include a 12-month directory listing equivalent to our Claimed Profile tier. If you want top-of-category placement or ongoing visibility beyond 12 months, a subscription complements the editorial package nicely but isn't required.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Can I upgrade from a subscription to an editorial package later?</div>
+    <p class="faq-a">Yes, and we recommend it for many businesses. Start with a Claimed Profile or Enhanced Listing to establish presence, then add a Listicle or Spotlight Feature once you have a clear story to tell. Your subscription carries over.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What's the difference between Listicle Inclusion and Spotlight Feature?</div>
+    <p class="faq-a">The Listicle Inclusion ($1,500) gets you a 1,500-2,500 word article that features your business among others in your category &mdash; think "Top 10 X Companies." The Spotlight Feature ($2,500) is a longer, dedicated 2,500-4,000 word profile purely about you, with homepage promotion across our network.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">How do I know which category my business fits into?</div>
+    <p class="faq-a">Email partnerships@listicleliaison.com with a brief description of your business and we'll recommend the right site in our network. We have 11+ category-specific sites covering software, AI, healthcare, financial services, trading education, local services, and more.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">How long until I see results?</div>
+    <p class="faq-a">Directory listings go live within 48 hours (Basic, Claimed) or 1-2 weeks (Enhanced, Featured). Editorial packages publish within 2-4 weeks depending on scope. AI citation pickup typically happens within 2-8 weeks after publication, depending on how AI systems index and cite new content.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Can I cancel anytime?</div>
+    <p class="faq-a">Yes. Monthly subscriptions can be cancelled anytime. Semi-annual and annual plans are committed terms but renew on your schedule. Editorial packages are one-time payments with no recurring charges &mdash; your article and directory listing stay live for the duration included.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Do you vet the businesses you feature?</div>
+    <p class="faq-a">Yes. Every business goes through editorial verification including business registration confirmation, website review, and category fit evaluation. Some industries (financial services, health, legal) have additional compliance steps. Businesses that don't pass verification are not listed.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-mark"><div class="footer-logo">Ll</div><div class="footer-brand-name">Listicle <span>Liaison</span></div></div>
+      <p class="footer-desc">Independent publishing network helping businesses get found in the AI-driven discovery era.</p>
+    </div>
+    <div class="footer-col"><div class="footer-col-title">Our Network</div><a href="https://softwareindustryreviews.com">Software Reviews</a><a href="https://aiindustryreviews.com">AI Reviews</a><a href="https://healthcareindustryreviews.com">Healthcare Reviews</a><a href="https://financialindustryreviews.com">Financial Reviews</a><a href="https://localindustryreviews.com">Local Reviews</a></div>
+    <div class="footer-col"><div class="footer-col-title">Tools & Media</div><a href="https://ai-mentions.com">AI Mentions</a><a href="https://smbnewsroom.com">SMB Newsroom</a><a href="/pages/pricing.html">Pricing</a><a href="/pages/compare.html">Compare Plans</a></div>
+    <div class="footer-col"><div class="footer-col-title">Company</div><a href="mailto:partnerships@listicleliaison.com">Contact</a><a href="/pages/privacy.html">Privacy</a><a href="/pages/terms.html">Terms</a><a href="/pages/disclosure.html">Disclosure</a></div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Listicle Liaison LLC. All rights reserved.</span>
+    <span><a href="/pages/privacy.html">Privacy</a><a href="/pages/terms.html">Terms</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
