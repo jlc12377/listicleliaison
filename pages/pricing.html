@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pricing & Plans | Listicle Liaison</title>
-<meta name="description" content="Get listed across our network of 11 industry review sites. Plans from $99/month for claimed profiles to $699/month for Featured Partner placement.">
+<meta name="description" content="Get listed across our network of 11 industry review sites. Plans from $99/month for claimed profiles to $699/month for Featured Partner placement, plus Editorial Review subscriptions from $800/month.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Microsoft UET Tag -->
@@ -56,19 +56,35 @@
 .price-card-btn.gold{background:var(--gold);color:#fff}.price-card-btn.gold:hover{background:var(--gold-light)}
 .premium-section{max-width:var(--max-w);margin:0 auto;padding:0 32px 80px;display:none}
 .premium-section.visible{display:block}
-.premium-divider{text-align:center;margin-bottom:40px;position:relative}
+.premium-divider{text-align:center;margin-bottom:16px;position:relative}
 .premium-divider::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:var(--border)}
 .premium-divider span{background:var(--surface);padding:0 20px;position:relative;font-size:12px;font-weight:600;color:var(--ink-4);text-transform:uppercase;letter-spacing:.1em}
+.premium-intro{text-align:center;max-width:680px;margin:0 auto 36px;font-size:14px;color:var(--ink-3);line-height:1.6}
+.premium-intro strong{color:var(--ink)}
 .premium-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.premium-card{border:1px solid var(--border);border-radius:var(--radius-xl);padding:32px 24px;transition:all .2s}
+.premium-card{border:1px solid var(--border);border-radius:var(--radius-xl);padding:32px 24px;transition:all .2s;position:relative;background:var(--surface)}
 .premium-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.premium-card.best-value{border:2px solid var(--gold)}
+.premium-card.best-value::before{content:"BEST VALUE";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;padding:4px 14px;border-radius:20px}
 .premium-card-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.premium-card-title{font-family:var(--font-display);font-size:20px;margin-bottom:8px}
-.premium-card-desc{font-size:13px;color:var(--ink-3);line-height:1.6;margin-bottom:16px}
-.premium-card-price{font-family:var(--font-display);font-size:24px;margin-bottom:16px}
-.premium-card-price span{font-size:13px;font-family:var(--font-body);color:var(--ink-4)}
-.premium-card-btn{display:block;width:100%;padding:12px;background:var(--gold);color:#fff;border-radius:var(--radius);text-decoration:none;text-align:center;font-size:13px;font-weight:600;transition:background .2s}
-.premium-card-btn:hover{background:var(--gold-light)}
+.premium-card-title{font-family:var(--font-display);font-size:22px;margin-bottom:8px;letter-spacing:-.3px}
+.premium-card-desc{font-size:13px;color:var(--ink-3);line-height:1.6;margin-bottom:20px;min-height:60px}
+.premium-card-price{font-family:var(--font-display);font-size:36px;letter-spacing:-1.2px;margin-bottom:2px;line-height:1}
+.premium-card-price span{font-size:14px;font-family:var(--font-body);color:var(--ink-3);letter-spacing:0;font-weight:400}
+.premium-card-pereview{font-size:12px;color:var(--ink-4);margin-bottom:20px;min-height:18px}
+.premium-card-features{list-style:none;margin-bottom:24px}
+.premium-card-features li{font-size:13px;color:var(--ink-2);padding:7px 0;border-bottom:1px solid var(--border-light);display:flex;align-items:start;gap:8px}
+.premium-card-features li::before{content:"\2713";color:var(--green);font-weight:700;flex-shrink:0}
+.premium-card-features li:last-child{border-bottom:none}
+.premium-card-btn{display:block;width:100%;padding:13px;background:var(--black);color:#fff;border-radius:var(--radius);text-decoration:none;text-align:center;font-size:14px;font-weight:600;transition:background .2s;border:none;cursor:pointer;font-family:var(--font-body)}
+.premium-card-btn:hover{background:var(--black-3)}
+.premium-card-btn.gold{background:var(--gold)}.premium-card-btn.gold:hover{background:var(--gold-light)}
+.bundle-callout{margin-top:48px;padding:32px;background:linear-gradient(135deg,#fdf6e3 0%,#faf3d7 100%);border:2px solid var(--gold);border-radius:var(--radius-xl);text-align:center}
+.bundle-callout-tag{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px}
+.bundle-callout-title{font-family:var(--font-display);font-size:26px;margin-bottom:8px;letter-spacing:-.4px}
+.bundle-callout-desc{font-size:14px;color:var(--ink-2);max-width:540px;margin:0 auto 16px;line-height:1.6}
+.bundle-callout-cta{display:inline-block;padding:12px 28px;background:var(--gold);color:#fff;border-radius:var(--radius);text-decoration:none;font-size:14px;font-weight:600;transition:background .2s}
+.bundle-callout-cta:hover{background:var(--gold-light)}
 .cta-bottom{text-align:center;padding:48px 32px 80px}
 .cta-bottom p{font-size:14px;color:var(--ink-3);margin-bottom:8px}
 .cta-bottom a{color:var(--gold);font-weight:600;text-decoration:none}
@@ -134,17 +150,73 @@
 </div>
 
 <div class="premium-section" id="premiumSection">
-  <div class="premium-divider"><span>Premium content services</span></div>
+  <div class="premium-divider"><span>Editorial Review Subscriptions</span></div>
+  <p class="premium-intro">Add <strong>editorial channel reviews</strong> to amplify your visibility. Each review is a dedicated 1,500-word editorial deep-dive published on Newswire newsroom — driving permanent backlinks, AI citation authority, and brand credibility. <strong>More reviews per month = lower per-review rate.</strong></p>
   <div class="premium-grid">
-    <div class="premium-card"><div class="premium-card-tag">Editorial Content</div><div class="premium-card-title">Listicle & Roundup Inclusion</div><div class="premium-card-desc">Get featured in published "Top 10" listicles and expert roundup articles with permanent backlinks and AI citation structure.</div><div class="premium-card-price">$1,500 <span>per placement</span></div><a href="https://buy.stripe.com/28EaEYadRaUzbkX4hxd7q0b" class="premium-card-btn" onclick="trackPurchaseClickDirect('Listicle Inclusion', 1500)">Purchase &rarr;</a></div>
-    <div class="premium-card"><div class="premium-card-tag">Premium Content</div><div class="premium-card-title">Company Spotlight</div><div class="premium-card-desc">A dedicated 800-1,200 word editorial article published across our network with 3-5 permanent backlinks and cross-site distribution.</div><div class="premium-card-price">$2,500 <span>per article</span></div><a href="https://buy.stripe.com/8x24gAdq35Afcp1bJZd7q0c" class="premium-card-btn" onclick="trackPurchaseClickDirect('Company Spotlight', 2500)">Purchase &rarr;</a></div>
-    <div class="premium-card"><div class="premium-card-tag">Enterprise</div><div class="premium-card-title">Full Visibility Package</div><div class="premium-card-desc">Featured profiles + listicle inclusions + spotlight + expert roundup + AI citation tracking. Maximum visibility with monthly reporting.</div><div class="premium-card-price">$4,500 <span>per quarter</span></div><a href="https://buy.stripe.com/4gMcN63Pt3s7gFhbJZd7q0d" class="premium-card-btn" onclick="trackPurchaseClickDirect('Full Visibility Package', 4500)">Purchase &rarr;</a></div>
+    <div class="premium-card">
+      <div class="premium-card-tag">Tier 1 &middot; Starter</div>
+      <div class="premium-card-title">1 Review / Month</div>
+      <div class="premium-card-desc">A single dedicated editorial review per month. Best for testing the format or single-product companies.</div>
+      <div class="premium-card-price">$800<span>/mo</span></div>
+      <div class="premium-card-pereview">$800 per review</div>
+      <ul class="premium-card-features">
+        <li>1 editorial review per month</li>
+        <li>~1,500 words per review</li>
+        <li>Published on Newswire newsroom</li>
+        <li>3 permanent backlinks per review</li>
+        <li>AI citation optimization</li>
+        <li>Quarterly content refresh</li>
+      </ul>
+      <a href="https://buy.stripe.com/3cI6oI3PtfaP3SveWbd7q0f" class="premium-card-btn" id="btn-review-tier1" onclick="trackPurchaseClickDirect('Editorial Reviews Tier 1', 800)">Subscribe &rarr;</a>
+    </div>
+    <div class="premium-card">
+      <div class="premium-card-tag">Tier 2 &middot; Growth</div>
+      <div class="premium-card-title">2 Reviews / Month</div>
+      <div class="premium-card-desc">Two dedicated editorial reviews per month. Best for companies with multiple products, channels, or services to feature.</div>
+      <div class="premium-card-price">$1,500<span>/mo</span></div>
+      <div class="premium-card-pereview">$750 per review &middot; Save $100/mo</div>
+      <ul class="premium-card-features">
+        <li>2 editorial reviews per month</li>
+        <li>~1,500 words each</li>
+        <li>Published on Newswire newsroom</li>
+        <li>6 permanent backlinks per month</li>
+        <li>AI citation optimization</li>
+        <li>Quarterly content refresh</li>
+        <li>Bi-weekly publication cadence</li>
+      </ul>
+      <a href="https://buy.stripe.com/aFaeVe1Hl3s71KndS7d7q0g" class="premium-card-btn" id="btn-review-tier2" onclick="trackPurchaseClickDirect('Editorial Reviews Tier 2', 1500)">Subscribe &rarr;</a>
+    </div>
+    <div class="premium-card best-value">
+      <div class="premium-card-tag">Tier 3 &middot; Network</div>
+      <div class="premium-card-title">4 Reviews / Month</div>
+      <div class="premium-card-desc">Four dedicated editorial reviews per month. Best for networks, multi-channel operators, and full-coverage strategies.</div>
+      <div class="premium-card-price">$2,400<span>/mo</span></div>
+      <div class="premium-card-pereview">$600 per review &middot; Save $800/mo</div>
+      <ul class="premium-card-features">
+        <li>4 editorial reviews per month</li>
+        <li>~1,500 words each</li>
+        <li>Published on Newswire newsroom</li>
+        <li>12 permanent backlinks per month</li>
+        <li>AI citation optimization</li>
+        <li>Quarterly content refresh</li>
+        <li>Weekly publication cadence</li>
+        <li>Priority editorial scheduling</li>
+      </ul>
+      <a href="https://buy.stripe.com/eVq8wQdq3faP9cP8xNd7q0h" class="premium-card-btn gold" id="btn-review-tier3" onclick="trackPurchaseClickDirect('Editorial Reviews Tier 3', 2400)">Subscribe &rarr;</a>
+    </div>
+  </div>
+
+  <div class="bundle-callout">
+    <div class="bundle-callout-tag">Bundle &amp; Save</div>
+    <div class="bundle-callout-title">Listicle Inclusion + Editorial Reviews</div>
+    <p class="bundle-callout-desc">Combine your network listicle subscription with editorial review tier for maximum visibility. Talk to our team about custom bundle pricing for multi-channel networks and enterprise accounts.</p>
+    <a href="mailto:partnerships@listicleliaison.com?subject=Bundle%20Pricing%20Inquiry" class="bundle-callout-cta">Request Custom Quote &rarr;</a>
   </div>
 </div>
 
 <div class="cta-bottom">
   <p>Not sure which plan is right? <a href="mailto:partnerships@listicleliaison.com">partnerships@listicleliaison.com</a></p>
-  <p style="font-size:12px;color:var(--ink-4);margin-top:8px">All payments redirect to our onboarding form where you'll customize your listing.</p>
+  <p style="font-size:12px;color:var(--ink-4);margin-top:8px">All payments redirect to our onboarding form where you'll customize your listing. 90-day minimum on Editorial Review subscriptions.</p>
 </div>
 
 <footer class="footer"><div class="footer-inner"><div><div class="footer-brand">Listicle Liaison</div><p class="footer-desc">Media and visibility services connecting companies with the rankings, editorial content, and AI citations that drive real business results.</p></div><div class="footer-col"><div class="footer-col-title">Network</div><a href="https://softwareindustryreviews.com">Software Reviews</a><a href="https://aiindustryreviews.com">AI Reviews</a><a href="https://healthcareindustryreviews.com">Healthcare Reviews</a><a href="https://financialindustryreviews.com">Financial Reviews</a><a href="https://cryptoindustryreviews.com">Crypto Reviews</a><a href="https://casinoindustryreviews.com">Casino Reviews</a><a href="https://miningindustryreviews.com">Mining Reviews</a><a href="https://localsmallbusinessreviews.com">Local Small Business</a></div><div class="footer-col"><div class="footer-col-title">Tools</div><a href="https://ai-mentions.com">AI Mentions</a><a href="https://smbnewsroom.com">SMB Newsroom</a><a href="/pages/partners.html">Partner Program</a></div><div class="footer-col"><div class="footer-col-title">Company</div><a href="/pages/about.html">About Us</a><a href="/pages/disclosure.html">Disclosure</a><a href="mailto:partnerships@listicleliaison.com">Email Us</a></div></div><div class="footer-bottom"><span>&copy; 2026 Listicle Liaison LLC. All rights reserved.</span><span><a href="/pages/privacy.html">Privacy</a><a href="/pages/terms.html">Terms</a><a href="/pages/disclosure.html">Disclosure</a></span></div></footer>
@@ -201,7 +273,7 @@ function trackPurchaseClick(tierName, tierKey) {
   }
 }
 
-// Track premium content purchase clicks (direct dollar value)
+// Track editorial review subscription purchase clicks (direct dollar value)
 function trackPurchaseClickDirect(packageName, value) {
   if (typeof window.uetq !== 'undefined') {
     window.uetq = window.uetq || [];
