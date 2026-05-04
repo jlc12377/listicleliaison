@@ -144,6 +144,10 @@ body { font-family: var(--font-body); background: var(--cream); color: var(--ink
 .form-submit:hover { background: var(--accent); }
 .form-note { text-align: center; font-size: 12.5px; color: var(--ink-3); margin-top: 16px; line-height: 1.5; }
 
+.form-success { text-align: center; padding: 60px 20px; }
+.form-success h3 { font-family: var(--font-display); font-size: 32px; color: var(--accent); margin-bottom: 16px; font-weight: 600; }
+.form-success p { font-size: 16px; color: var(--ink-2); }
+
 /* CONFIDENCE FOOTER - the closing line */
 .closing { padding: 80px 28px; background: var(--black); color: var(--cream); text-align: center; }
 .closing-inner { max-width: 720px; margin: 0 auto; }
@@ -175,7 +179,7 @@ footer a:hover { text-decoration: underline; }
   .closing h2 { font-size: 28px; }
 }
 </style>
-  <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18137816472"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -183,7 +187,6 @@ footer a:hover { text-decoration: underline; }
   gtag('js', new Date());
   gtag('config', 'AW-18137816472');
 </script>
-</head>
 </head>
 <body>
 
@@ -303,7 +306,7 @@ footer a:hover { text-decoration: underline; }
       <h2>Tell us about your <em>brand</em>.</h2>
       <p class="apply-sub">Quick application. Reviewed within 24 hours. We'll respond with placement recommendations across our network and editorial partnership options.</p>
     </div>
-    <form class="form-card" action="https://formspree.io/f/xjgjqlkr" method="POST">
+    <form id="applyForm" class="form-card" action="https://formspree.io/f/xjgjqlkr" method="POST">
       <input type="hidden" name="_subject" value="New Listicle Application - Listicle Liaison">
       <input type="hidden" name="_source" value="get-listed-landing-page">
       <div class="form-row">
@@ -334,9 +337,13 @@ footer a:hover { text-decoration: underline; }
         <label for="goals">What are you trying to accomplish?</label>
         <textarea id="goals" name="goals" placeholder="AI search visibility, SEO authority, brand mentions in industry roundups, traffic from listicle placements..."></textarea>
       </div>
-      <button type="submit" class="form-submit">Submit Application →</button>
+      <button type="submit" id="applySubmitBtn" class="form-submit">Submit Application →</button>
       <p class="form-note">24-hour response. No spam. No automated drip. Real reply from our partnerships team.</p>
     </form>
+    <div id="applySuccess" class="form-success" style="display:none;">
+      <h3>Application received.</h3>
+      <p>We'll respond within 24 hours with placement recommendations.</p>
+    </div>
   </div>
 </section>
 
@@ -353,14 +360,55 @@ footer a:hover { text-decoration: underline; }
 </footer>
 
 <script>
-document.querySelector('form').addEventListener('submit', function() {
-  if (typeof window.uetq !== 'undefined') {
-    window.uetq.push('event', 'submit_lead_form', {
-      'event_category': 'form',
-      'event_label': 'placement_application',
-      'event_value': 1
-    });
-  }
+document.getElementById('applyForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var form = this;
+  var btn = document.getElementById('applySubmitBtn');
+  var originalText = btn.innerHTML;
+  btn.innerHTML = 'Sending...';
+  btn.disabled = true;
+
+  var data = new FormData(form);
+
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(function(response) {
+    if (response.ok) {
+      // Fire Google Ads conversion
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18137816472/zLIrCNmqiqccEJi75MhD',
+          'value': 1.0,
+          'currency': 'USD'
+      });
+
+      // Fire Microsoft Bing UET conversion
+      if (typeof window.uetq !== 'undefined') {
+        window.uetq.push('event', 'submit_lead_form', {
+          'event_category': 'form',
+          'event_label': 'placement_application',
+          'event_value': 1
+        });
+      }
+
+      // Show success message, hide form
+      form.style.display = 'none';
+      document.getElementById('applySuccess').style.display = 'block';
+    } else {
+      return response.json().then(function(d) {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        alert('Error submitting form: ' + JSON.stringify(d.errors || d));
+      });
+    }
+  })
+  .catch(function(err) {
+    btn.innerHTML = originalText;
+    btn.disabled = false;
+    alert('Network error: ' + err.message);
+  });
 });
 </script>
 
