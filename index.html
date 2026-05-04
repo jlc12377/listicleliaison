@@ -518,6 +518,12 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   })
   .then(function(response) {
     if (response.ok) {
+      // Fire Google Ads conversion
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18137816472/zLIrCNmqiqccEJi75MhD',
+          'value': 1.0,
+          'currency': 'USD'
+      });
       form.style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
     } else {
