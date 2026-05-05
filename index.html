@@ -126,6 +126,13 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
 .final-cta-btn{display:inline-block;padding:16px 40px;background:var(--gold);color:#fff;font-size:15px;font-weight:600;border-radius:4px;text-decoration:none;transition:background .2s;position:relative;font-family:var(--font-body)}
 .final-cta-btn:hover{background:var(--gold-light)}
 
+/* Form success state */
+.form-success-message{display:none;max-width:480px;margin:0 auto;text-align:center;padding:48px 32px;background:rgba(184,134,11,.08);border:1px solid rgba(184,134,11,.3);border-radius:var(--radius-lg);position:relative}
+.form-success-message.visible{display:block;animation:fadeUp .5s ease both}
+.form-success-icon{width:56px;height:56px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 20px}
+.form-success-message h3{font-family:var(--font-display);font-size:24px;color:#fff;font-weight:500;margin-bottom:10px;letter-spacing:-.3px}
+.form-success-message p{font-size:14px;color:rgba(255,255,255,.6);margin:0;max-width:none}
+
 /* Footer */
 .footer{background:var(--black);padding:56px 32px 36px;border-top:1px solid rgba(255,255,255,.05)}
 .footer-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
@@ -212,7 +219,8 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
   ]
 }
 </script>
-<!-- Google tag (gtag.js) -->
+
+<!-- Google Ads tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18137816472"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -220,6 +228,12 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
   gtag('js', new Date());
   gtag('config', 'AW-18137816472');
 </script>
+
+<!-- Microsoft Bing UET tag -->
+<script>
+(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"187247821", enableAutoSpaTracking: true};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");
+</script>
+
 </head>
 <body>
 
@@ -445,6 +459,7 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
 <section class="final-cta" id="contact">
   <h2>Ready to get <em>visible?</em></h2>
   <p>Tell us about your company and we'll reply within 24 hours with a recommended package.</p>
+
   <form id="contactForm" style="max-width:480px;margin:0 auto;text-align:left;position:relative">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
       <div>
@@ -476,8 +491,14 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
       </select>
     </div>
     <button type="submit" id="submitBtn" class="final-cta-btn" style="width:100%;border:none;cursor:pointer;font-family:var(--font-body);text-align:center">Send Inquiry</button>
-    <div id="formSuccess" style="display:none;text-align:center;color:var(--gold-light);font-size:16px;padding:40px 0">Thank you! We'll be in touch within 24 hours.</div>
   </form>
+
+  <!-- Success message OUTSIDE the form so it actually shows when the form hides -->
+  <div id="formSuccess" class="form-success-message">
+    <div class="form-success-icon">✓</div>
+    <h3>Thank you!</h3>
+    <p>Your inquiry has been received. Emma from our team will reply within 24 hours with a recommended package and next steps.</p>
+  </div>
 </section>
 
 <!-- FOOTER -->
@@ -527,9 +548,9 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   var btn = document.getElementById('submitBtn');
   btn.textContent = 'Sending...';
   btn.disabled = true;
-  
+
   var data = new FormData(form);
-  
+
   fetch('https://formspree.io/f/maqlbbzd', {
     method: 'POST',
     body: data,
@@ -538,13 +559,27 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   .then(function(response) {
     if (response.ok) {
       // Fire Google Ads conversion
-      gtag('event', 'conversion', {
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
           'send_to': 'AW-18137816472/zLIrCNmqiqccEJi75MhD',
           'value': 1.0,
           'currency': 'USD'
-      });
+        });
+      }
+      // Fire Bing UET conversion
+      if (typeof window.uetq !== 'undefined') {
+        window.uetq.push('event', 'lead_submission', {
+          'event_category': 'lead',
+          'event_label': 'contact_form',
+          'revenue_value': 1.0,
+          'currency': 'USD'
+        });
+      }
+      // Hide form, show success message OUTSIDE the form
       form.style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
+      document.getElementById('formSuccess').classList.add('visible');
+      // Scroll to make sure the user sees it
+      document.getElementById('formSuccess').scrollIntoView({behavior:'smooth', block:'center'});
     } else {
       return response.json().then(function(d) {
         btn.textContent = 'Send Inquiry';
