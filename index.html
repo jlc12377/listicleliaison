@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Listicle Liaison — Get Featured. Get Ranked. Get Cited by AI.</title>
-<meta name="description" content="Listicle Liaison connects companies with visibility opportunities across 15+ industry publications. Expert rankings, editorial placements, and AI citation optimization that drive SEO authority and revenue.">
+<meta name="description" content="Listicle Liaison connects companies with visibility opportunities across our network of industry publications. Expert rankings, editorial placements, and AI citation optimization that drive SEO authority and revenue.">
 <link rel="canonical" href="https://listicleliaison.com/">
 <meta property="og:title" content="Listicle Liaison — Get Featured. Get Ranked. Get Cited by AI.">
 <meta property="og:description" content="We connect companies with the rankings, listicles, and editorial content that drive real business results.">
@@ -101,8 +101,8 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
 
 /* Network / Portfolio */
 .network-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
-.network-card{border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 24px;transition:all .2s;text-decoration:none;color:var(--ink)}
-.network-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.network-card{border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 24px;transition:all .2s;text-decoration:none;color:var(--ink);display:block}
+.network-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);border-color:var(--gold)}
 .network-card-name{font-family:var(--font-display);font-size:17px;font-weight:600;margin-bottom:4px;letter-spacing:-.2px}
 .network-card-type{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:8px}
 .network-card-desc{font-size:13px;color:var(--ink-3);line-height:1.5}
@@ -178,8 +178,14 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
       "sameAs": [
         "https://softwareindustryreviews.com",
         "https://aiindustryreviews.com",
+        "https://healthcareindustryreviews.com",
+        "https://financialindustryreviews.com",
+        "https://cryptoindustryreviews.com",
         "https://casinoindustryreviews.com",
-        "https://smbnewsroom.com"
+        "https://miningindustryreviews.com",
+        "https://localsmallbusinessreviews.com",
+        "https://smbnewsroom.com",
+        "https://ai-mentions.com"
       ]
     },
     {
@@ -200,7 +206,7 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
       "offers": [
         {"@type": "Offer", "name": "Claimed Profile", "price": "99", "priceCurrency": "USD", "description": "Branded profile with logo, custom description, website link, and verified badge"},
         {"@type": "Offer", "name": "Enhanced Listing", "price": "299", "priceCurrency": "USD", "description": "Priority placement, cross-site syndication, and indexed editorial placements"},
-        {"@type": "Offer", "name": "Featured Partner", "price": "699", "priceCurrency": "USD", "description": "Number one position, Company Spotlight article, cross-network promotion, and AI citation optimization"}
+        {"@type": "Offer", "name": "Featured Partner", "price": "699", "priceCurrency": "USD", "description": "Top supplementary position, Company Spotlight article, cross-network promotion, and AI citation optimization"}
       ]
     }
   ]
@@ -240,26 +246,26 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
     <div class="fade-up">
       <div class="hero-eyebrow">Media &amp; Visibility Services</div>
       <h1>Get featured.<br>Get ranked.<br>Get cited by <em>AI.</em></h1>
-      <p class="hero-sub">Your competitors are showing up in rankings, listicles, and AI recommendations. You should be too. We publish expert-backed content across 15+ industry sites that drives ongoing SEO value and AI citations.</p>
+      <p class="hero-sub">Your competitors are showing up in rankings, listicles, and AI recommendations. You should be too. We publish expert-backed content across our network of industry sites that drives ongoing SEO value and AI citations.</p>
       <div class="hero-ctas">
         <a href="#contact" class="hero-btn primary">Get Started</a>
         <a href="#network" class="hero-btn outline">View Our Network</a>
       </div>
       <div class="hero-stats">
         <div>
-          <div class="hero-stat-num">15+</div>
+          <div class="hero-stat-num">10</div>
           <div class="hero-stat-label">Publications in Network</div>
         </div>
         <div>
           <div class="hero-stat-num">80+</div>
-          <div class="hero-stat-label">Products Ranked</div>
+          <div class="hero-stat-label">Companies Ranked</div>
         </div>
         <div>
           <div class="hero-stat-num">380k+</div>
           <div class="hero-stat-label">Reviews Analyzed</div>
         </div>
         <div>
-          <div class="hero-stat-num">8</div>
+          <div class="hero-stat-num">9</div>
           <div class="hero-stat-label">Industries Covered</div>
         </div>
       </div>
@@ -278,7 +284,7 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
     <div class="proof-grid">
       <div class="proof-card">
         <div class="proof-num">93%</div>
-        <div class="proof-label">of B2B buyers consult review sites before purchasing</div>
+        <div class="proof-label">of buyers consult review sites before purchasing</div>
       </div>
       <div class="proof-card">
         <div class="proof-num">4.5x</div>
@@ -358,68 +364,80 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
 <!-- NETWORK / PORTFOLIO -->
 <section class="section" id="network">
   <div class="section-eyebrow">Our network</div>
-  <div class="section-title">15+ industry publications and growing</div>
+  <div class="section-title">10 industry publications and growing</div>
   <div class="section-sub">Your content reaches decision-makers across our portfolio of specialized industry publications.</div>
   <div class="network-grid">
-    <a href="https://softwareindustryreviews.com" class="network-card" target="_blank">
+
+    <a href="https://softwareindustryreviews.com" class="network-card" target="_blank" rel="noopener">
       <div class="network-card-type">Review Site</div>
       <div class="network-card-name">Software Industry Reviews</div>
       <div class="network-card-desc">Data-driven rankings across CRM, project management, cybersecurity, ERP, email marketing, HR, accounting, and analytics.</div>
       <span class="network-card-status live">Live</span>
     </a>
-    <a href="https://smbnewsroom.com" class="network-card" target="_blank">
+
+    <a href="https://aiindustryreviews.com" class="network-card" target="_blank" rel="noopener">
+      <div class="network-card-type">Review Site</div>
+      <div class="network-card-name">AI Industry Reviews</div>
+      <div class="network-card-desc">Rankings and analysis of AI tools, platforms, and services across writing, coding, image generation, and automation.</div>
+      <span class="network-card-status live">Live</span>
+    </a>
+
+    <a href="https://healthcareindustryreviews.com" class="network-card" target="_blank" rel="noopener">
+      <div class="network-card-type">Review Site</div>
+      <div class="network-card-name">Healthcare Industry Reviews</div>
+      <div class="network-card-desc">Independent rankings of healthcare technology, EMR systems, telehealth platforms, and medical practice solutions.</div>
+      <span class="network-card-status live">Live</span>
+    </a>
+
+    <a href="https://financialindustryreviews.com" class="network-card" target="_blank" rel="noopener">
+      <div class="network-card-type">Review Site</div>
+      <div class="network-card-name">Financial Industry Reviews</div>
+      <div class="network-card-desc">Rankings for forex signal services, copy trading platforms, fintech tools, financial advisors, and wealth management firms.</div>
+      <span class="network-card-status live">Live</span>
+    </a>
+
+    <a href="https://cryptoindustryreviews.com" class="network-card" target="_blank" rel="noopener">
+      <div class="network-card-type">Review Site</div>
+      <div class="network-card-name">Crypto Industry Reviews</div>
+      <div class="network-card-desc">Independent rankings of crypto exchanges, DeFi platforms, wallets, blockchain tools, and Web3 services.</div>
+      <span class="network-card-status live">Live</span>
+    </a>
+
+    <a href="https://casinoindustryreviews.com" class="network-card" target="_blank" rel="noopener">
+      <div class="network-card-type">Review Site</div>
+      <div class="network-card-name">Casino Industry Reviews</div>
+      <div class="network-card-desc">Rankings for iGaming platforms, casino software providers, sports betting technology, and compliance solutions.</div>
+      <span class="network-card-status live">Live</span>
+    </a>
+
+    <a href="https://miningindustryreviews.com" class="network-card" target="_blank" rel="noopener">
+      <div class="network-card-type">Review Site</div>
+      <div class="network-card-name">Mining Industry Reviews</div>
+      <div class="network-card-desc">Rankings of mining technology, equipment suppliers, exploration platforms, and resource sector service providers.</div>
+      <span class="network-card-status live">Live</span>
+    </a>
+
+    <a href="https://localsmallbusinessreviews.com" class="network-card" target="_blank" rel="noopener">
+      <div class="network-card-type">Review Site</div>
+      <div class="network-card-name">Local Small Business Reviews</div>
+      <div class="network-card-desc">City-level "best of" rankings for real estate, plastic surgeons, financial advisors, concierge medicine, and other local services.</div>
+      <span class="network-card-status live">Live</span>
+    </a>
+
+    <a href="https://smbnewsroom.com" class="network-card" target="_blank" rel="noopener">
       <div class="network-card-type">Editorial Publication</div>
       <div class="network-card-name">SMB Newsroom</div>
       <div class="network-card-desc">Business intelligence, expert rankings, company spotlights, and industry analysis for growing companies.</div>
       <span class="network-card-status live">Live</span>
     </a>
-    <a href="https://aiindustryreviews.com" class="network-card">
-      <div class="network-card-type">Review Site</div>
-      <div class="network-card-name">AI Industry Reviews</div>
-      <div class="network-card-desc">Rankings and analysis of AI tools, platforms, and services across writing, coding, image generation, and automation.</div>
-      <span class="network-card-status coming">Coming Soon</span>
-    </a>
-    <a href="#" class="network-card">
-      <div class="network-card-type">Review Site</div>
-      <div class="network-card-name">Tech Industry Reviews</div>
-      <div class="network-card-desc">Comprehensive technology company rankings spanning IT services, hardware, managed services, and cloud infrastructure.</div>
-      <span class="network-card-status coming">Coming Soon</span>
-    </a>
-    <a href="#" class="network-card">
-      <div class="network-card-type">Review Site</div>
-      <div class="network-card-name">Financial Industry Reviews</div>
-      <div class="network-card-desc">Rankings for fintech platforms, financial advisors, banking technology, and insurance solutions.</div>
-      <span class="network-card-status coming">Coming Soon</span>
-    </a>
-    <a href="#" class="network-card">
-      <div class="network-card-type">Review Site</div>
-      <div class="network-card-name">Local Industry Reviews</div>
-      <div class="network-card-desc">City-level "best of" rankings for local services, contractors, professional services, and small businesses.</div>
-      <span class="network-card-status coming">Coming Soon</span>
-    </a>
-    <a href="#" class="network-card">
-      <div class="network-card-type">AI Visibility</div>
+
+    <a href="https://ai-mentions.com" class="network-card" target="_blank" rel="noopener">
+      <div class="network-card-type">AI Visibility Tool</div>
       <div class="network-card-name">AI Mentions</div>
       <div class="network-card-desc">Track and optimize how your brand appears in AI-generated recommendations across ChatGPT, Claude, Perplexity, and more.</div>
-      <span class="network-card-status coming">Coming Soon</span>
+      <span class="network-card-status live">Live</span>
     </a>
-    <a href="#" class="network-card">
-      <div class="network-card-type">Review Site</div>
-      <div class="network-card-name">Biotech Industry Reviews</div>
-      <div class="network-card-desc">Rankings for biotech, pharma, life sciences, and healthcare technology companies and platforms.</div>
-      <span class="network-card-status coming">Coming Soon</span>
-    </a>
-    <a href="https://cryptoindustryreviews.com" class="network-card">
-      <div class="network-card-type">Review Site</div>
-      <div class="network-card-name">Crypto Industry Reviews</div>
-      <div class="network-card-desc">Independent rankings of crypto exchanges, DeFi platforms, wallets, and blockchain tools.</div>
-    </a>
-    <a href="https://casinoindustryreviews.com" class="network-card">
-      <div class="network-card-type">Review Site</div>
-      <div class="network-card-name">Casino Industry Reviews</div>
-      <div class="network-card-desc">Rankings for iGaming platforms, casino software providers, sports betting technology, and compliance solutions.</div>
-      <span class="network-card-status coming">Coming Soon</span>
-    </a>
+
   </div>
 </section>
 
@@ -479,8 +497,9 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
     <div class="footer-col">
       <div class="footer-col-title">Network</div>
       <a href="https://softwareindustryreviews.com">Software Industry Reviews</a>
-      <a href="https://smbnewsroom.com">SMB Newsroom</a>
       <a href="https://aiindustryreviews.com">AI Industry Reviews</a>
+      <a href="https://financialindustryreviews.com">Financial Industry Reviews</a>
+      <a href="https://localsmallbusinessreviews.com">Local Small Business Reviews</a>
       <a href="#network">All Publications</a>
     </div>
     <div class="footer-col">
