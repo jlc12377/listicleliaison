@@ -566,12 +566,10 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
           'currency': 'USD'
         });
       }
-      // Fire Bing UET conversion
+      // Fire Bing UET conversion (matches Microsoft Ads goal: submit_lead_form, $500 value)
       if (typeof window.uetq !== 'undefined') {
-        window.uetq.push('event', 'lead_submission', {
-          'event_category': 'lead',
-          'event_label': 'contact_form',
-          'revenue_value': 1.0,
+        window.uetq.push('event', 'submit_lead_form', {
+          'revenue_value': 500,
           'currency': 'USD'
         });
       }
