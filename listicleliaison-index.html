@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Listicle Liaison — Get Featured. Get Ranked. Get Cited by AI.</title>
+<meta name="description" content="Listicle Liaison connects companies with visibility opportunities across 11 industry publications. Expert rankings, editorial placements, and AI citation optimization that drive SEO authority and revenue.">
+<link rel="canonical" href="https://listicleliaison.com/">
+<meta property="og:title" content="Listicle Liaison — Get Featured. Get Ranked. Get Cited by AI.">
+<meta property="og:description" content="We connect companies with the rankings, listicles, and editorial content that drive real business results.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0a0a0a;--black-2:#141414;--black-3:#1e1e1e;
+  --ink:#0a0a0a;--ink-2:#333;--ink-3:#666;--ink-4:#999;--ink-5:#bbb;
+  --surface:#fff;--surface-2:#fafafa;--surface-3:#f4f4f2;--cream:#f9f7f3;
+  --border:#e8e8e6;--border-light:#f0f0ee;
+  --gold:#b8860b;--gold-light:#d4a32a;--gold-pale:#fdf6e3;--gold-deep:#8a6508;
+  --accent:#1a1a2e;
+  --radius:6px;--radius-lg:10px;--radius-xl:16px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.04);--shadow-md:0 6px 20px rgba(0,0,0,.07);--shadow-lg:0 16px 48px rgba(0,0,0,.1);
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-body:'Sora',-apple-system,sans-serif;
+  --max-w:1140px;--nav-h:64px;
+}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-webkit-font-smoothing:antialiased;line-height:1.6}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .7s ease both}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);transition:all .3s}
+.nav.light{background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-light)}
+.nav.dark{background:transparent}
+.nav.dark.scrolled{background:rgba(10,10,10,.95);backdrop-filter:blur(12px)}
+.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-brand-text{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.3px}
+.nav.dark .nav-brand-text{color:#fff}
+.nav.light .nav-brand-text{color:var(--ink)}
+.nav-brand-dot{width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:13px;font-weight:500;text-decoration:none;transition:all .2s;letter-spacing:.01em}
+.nav.dark .nav-links a{color:rgba(255,255,255,.55)}.nav.dark .nav-links a:hover{color:#fff}
+.nav.light .nav-links a{color:var(--ink-3)}.nav.light .nav-links a:hover{color:var(--ink)}
+.nav-cta{padding:8px 20px!important;border-radius:4px!important;font-weight:600!important;transition:all .2s!important}
+.nav.dark .nav-cta{background:var(--gold)!important;color:#fff!important}.nav.dark .nav-cta:hover{background:var(--gold-light)!important}
+.nav.light .nav-cta{background:var(--black)!important;color:#fff!important}
+.mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:4px}
+.mobile-menu-btn span{display:block;width:20px;height:2px;border-radius:1px}
+.nav.dark .mobile-menu-btn span{background:#fff}
+.nav.light .mobile-menu-btn span{background:var(--ink)}
+
+/* Hero */
+.hero{min-height:100vh;background:var(--black);display:flex;align-items:center;position:relative;overflow:hidden;padding:0 32px}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(184,134,11,.06) 0%,transparent 50%),radial-gradient(ellipse at 70% 70%,rgba(184,134,11,.04) 0%,transparent 40%);pointer-events:none}
+.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:80px 80px;pointer-events:none}
+.hero-inner{max-width:var(--max-w);margin:0 auto;position:relative;z-index:1;width:100%}
+.hero-eyebrow{font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold)}
+.hero h1{font-family:var(--font-display);font-size:62px;font-weight:400;line-height:1.1;letter-spacing:-1.5px;color:#fff;margin-bottom:24px;max-width:700px}
+.hero h1 em{font-style:italic;color:var(--gold-light)}
+.hero-sub{font-size:18px;color:rgba(255,255,255,.45);max-width:520px;margin-bottom:40px;line-height:1.7;font-weight:300}
+.hero-ctas{display:flex;gap:14px;align-items:center}
+.hero-btn{padding:14px 32px;border-radius:4px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;font-family:var(--font-body)}
+.hero-btn.primary{background:var(--gold);color:#fff}.hero-btn.primary:hover{background:var(--gold-light)}
+.hero-btn.outline{background:transparent;border:1.5px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7)}.hero-btn.outline:hover{border-color:rgba(255,255,255,.4);color:#fff}
+.hero-stats{display:flex;gap:48px;margin-top:64px;padding-top:32px;border-top:1px solid rgba(255,255,255,.06)}
+.hero-stat-num{font-family:var(--font-display);font-size:40px;color:#fff;letter-spacing:-1px;line-height:1}
+.hero-stat-label{font-size:12px;color:rgba(255,255,255,.3);font-weight:500;margin-top:6px;letter-spacing:.02em}
+
+/* Sections */
+.section{max-width:var(--max-w);margin:0 auto;padding:96px 32px}
+.section-eyebrow{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+.section-title{font-family:var(--font-display);font-size:38px;font-weight:400;letter-spacing:-.8px;line-height:1.2;margin-bottom:12px}
+.section-sub{font-size:16px;color:var(--ink-3);max-width:480px;line-height:1.65;font-weight:300}
+
+/* How it works */
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:56px}
+.how-card{padding:36px 28px;border:1px solid var(--border);border-radius:var(--radius-lg);transition:all .3s;position:relative}
+.how-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+.how-num{font-family:var(--font-display);font-size:48px;color:var(--border);font-weight:400;line-height:1;margin-bottom:16px}
+.how-card:hover .how-num{color:var(--gold)}
+.how-title{font-size:17px;font-weight:600;margin-bottom:8px;letter-spacing:-.2px}
+.how-desc{font-size:14px;color:var(--ink-3);line-height:1.6}
+
+/* Services */
+.services-section{background:var(--black);color:#fff}
+.services-section .section-title{color:#fff}
+.services-section .section-sub{color:rgba(255,255,255,.4)}
+.services-product-line{margin-top:48px}
+.services-product-line + .services-product-line{margin-top:72px}
+.services-product-line-header{margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.services-product-line-tag{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.services-product-line-title{font-family:var(--font-display);font-size:24px;font-weight:500;color:#fff;letter-spacing:-.3px;margin-bottom:6px}
+.services-product-line-desc{font-size:14px;color:rgba(255,255,255,.5);line-height:1.6;max-width:640px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.services-grid.two-col{grid-template-columns:repeat(2,1fr);max-width:760px;margin-left:auto;margin-right:auto}
+.service-card{background:var(--black-2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-lg);padding:32px 28px;transition:all .3s;display:flex;flex-direction:column}
+.service-card:hover{border-color:rgba(184,134,11,.3);transform:translateY(-2px)}
+.service-card.popular{border:1.5px solid var(--gold);position:relative}
+.service-card.popular::before{content:"MOST POPULAR";position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:9px;font-weight:700;letter-spacing:.08em;padding:3px 12px;border-radius:20px}
+.service-card-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.service-card-title{font-family:var(--font-display);font-size:22px;font-weight:500;margin-bottom:8px;letter-spacing:-.3px}
+.service-card-desc{font-size:13.5px;color:rgba(255,255,255,.45);line-height:1.6;margin-bottom:18px;flex-grow:1}
+.service-card-price{font-family:var(--font-display);font-size:24px;color:var(--gold-light);margin-bottom:14px}
+.service-card-price span{font-size:13px;font-family:var(--font-body);color:rgba(255,255,255,.3)}
+.service-card-btn{display:inline-block;padding:10px 20px;background:rgba(184,134,11,.12);border:1px solid rgba(184,134,11,.3);color:var(--gold-light);font-size:13px;font-weight:600;border-radius:4px;text-decoration:none;text-align:center;transition:all .2s}
+.service-card-btn:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+
+/* Network / Portfolio */
+.network-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.network-card{border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 24px;transition:all .2s;text-decoration:none;color:var(--ink);display:block}
+.network-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);border-color:var(--gold)}
+.network-card-name{font-family:var(--font-display);font-size:17px;font-weight:600;margin-bottom:4px;letter-spacing:-.2px}
+.network-card-type{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:8px}
+.network-card-desc{font-size:13px;color:var(--ink-3);line-height:1.5}
+.network-card-status{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border-radius:3px;margin-top:10px}
+.network-card-status.live{background:#ecfdf5;color:#16a34a}
+.network-card-status.coming{background:var(--gold-pale);color:var(--gold-deep)}
+
+/* Testimonial / Social proof */
+.proof-section{background:var(--cream);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px}
+.proof-card{text-align:center;padding:20px}
+.proof-num{font-family:var(--font-display);font-size:36px;font-weight:400;color:var(--ink);letter-spacing:-1px;line-height:1}
+.proof-label{font-size:12.5px;color:var(--ink-4);margin-top:6px;font-weight:500}
+
+/* CTA */
+.final-cta{background:var(--black);text-align:center;padding:96px 32px;position:relative;overflow:hidden}
+.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(184,134,11,.06) 0%,transparent 60%);pointer-events:none}
+.final-cta h2{font-family:var(--font-display);font-size:42px;font-weight:400;color:#fff;letter-spacing:-1px;margin-bottom:16px;position:relative}
+.final-cta h2 em{font-style:italic;color:var(--gold-light)}
+.final-cta p{font-size:17px;color:rgba(255,255,255,.4);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;position:relative;font-weight:300}
+.final-cta-btn{display:inline-block;padding:16px 40px;background:var(--gold);color:#fff;font-size:15px;font-weight:600;border-radius:4px;text-decoration:none;transition:background .2s;position:relative;font-family:var(--font-body)}
+.final-cta-btn:hover{background:var(--gold-light)}
+
+/* Form success state */
+.form-success-message{display:none;max-width:480px;margin:0 auto;text-align:center;padding:48px 32px;background:rgba(184,134,11,.08);border:1px solid rgba(184,134,11,.3);border-radius:var(--radius-lg);position:relative}
+.form-success-message.visible{display:block;animation:fadeUp .5s ease both}
+.form-success-icon{width:56px;height:56px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 20px}
+.form-success-message h3{font-family:var(--font-display);font-size:24px;color:#fff;font-weight:500;margin-bottom:10px;letter-spacing:-.3px}
+.form-success-message p{font-size:14px;color:rgba(255,255,255,.6);margin:0;max-width:none}
+
+/* Footer */
+.footer{background:var(--black);padding:56px 32px 36px;border-top:1px solid rgba(255,255,255,.05)}
+.footer-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+.footer-brand{font-family:var(--font-display);font-size:18px;font-weight:600;color:#fff;margin-bottom:12px}
+.footer-desc{font-size:13px;color:rgba(255,255,255,.3);line-height:1.6;max-width:260px}
+.footer-col-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.35);margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.35);text-decoration:none;margin-bottom:8px;transition:color .2s}
+.footer-col a:hover{color:var(--gold-light)}
+.footer-bottom{max-width:var(--max-w);margin:32px auto 0;padding:16px 0 0;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}
+.footer-bottom a{color:rgba(255,255,255,.2);text-decoration:none;margin-left:16px}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero h1{font-size:38px}
+  .hero-stats{gap:24px;flex-wrap:wrap}
+  .how-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .services-grid.two-col{grid-template-columns:1fr}
+  .network-grid{grid-template-columns:1fr}
+  .proof-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .section-title{font-size:28px}
+  .final-cta h2{font-size:30px}
+  .nav-links{display:none;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--black);flex-direction:column;padding:20px 32px;gap:14px;border-bottom:1px solid rgba(255,255,255,.06)}
+  .nav-links.open{display:flex}
+  .mobile-menu-btn{display:flex}
+}
+@media(max-width:480px){.hero h1{font-size:30px}.hero-sub{font-size:16px}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Listicle Liaison LLC",
+      "url": "https://listicleliaison.com",
+      "description": "Media and visibility services company that publishes independent rankings, editorial content, and industry analysis across a network of 11 specialized publications. We help companies get featured, get ranked, and get cited by AI.",
+      "foundingDate": "2026",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Franklin",
+        "addressRegion": "TN",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "partnerships@listicleliaison.com",
+        "contactType": "sales"
+      },
+      "sameAs": [
+        "https://softwareindustryreviews.com",
+        "https://aiindustryreviews.com",
+        "https://healthcareindustryreviews.com",
+        "https://financialindustryreviews.com",
+        "https://cryptoindustryreviews.com",
+        "https://casinoindustryreviews.com",
+        "https://miningindustryreviews.com",
+        "https://localsmallbusinessreviews.com",
+        "https://smbnewsroom.com",
+        "https://ai-mentions.com"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "name": "Listicle Liaison",
+      "url": "https://listicleliaison.com",
+      "description": "Get featured. Get ranked. Get cited by AI. Visibility services for companies that deserve to be found.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Listicle Liaison LLC"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Brand Visibility Services",
+      "provider": {"@type": "Organization", "name": "Listicle Liaison LLC"},
+      "description": "Independent rankings, editorial placements, and AI citation optimization across a network of 11 specialized industry publications.",
+      "offers": [
+        {"@type": "Offer", "name": "Claimed Profile", "price": "99", "priceCurrency": "USD", "description": "Branded profile with logo, custom description, website link, and verified badge"},
+        {"@type": "Offer", "name": "Enhanced Listing", "price": "299", "priceCurrency": "USD", "description": "Priority placement, cross-site syndication, and indexed editorial placements"},
+        {"@type": "Offer", "name": "Editorial Reviews Tier 1", "price": "800", "priceCurrency": "USD", "description": "1 dedicated editorial review per month published on Newswire newsroom"},
+        {"@type": "Offer", "name": "Editorial Reviews Tier 2", "price": "1500", "priceCurrency": "USD", "description": "2 dedicated editorial reviews per month at $750 per review"},
+        {"@type": "Offer", "name": "Editorial Reviews Tier 3", "price": "2400", "priceCurrency": "USD", "description": "4 dedicated editorial reviews per month at $600 per review"}
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- Google Ads tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18137816472"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18137816472');
+</script>
+
+<!-- Microsoft Bing UET tag -->
+<script>
+(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"187247821", enableAutoSpaTracking: true};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i);})(window,document,"script","//bat.bing.com/bat.js","uetq");
+</script>
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav dark" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <span class="nav-brand-dot"></span>
+      <span class="nav-brand-text">Listicle Liaison</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="/pages/pricing.html">Pricing</a>
+      <a href="#network">Our Network</a>
+      <a href="/pages/about.html">About</a>
+      <a href="/pages/partners.html">Affiliate Program</a>
+      <a href="#contact" class="nav-cta">Work With Us</a>
+    </div>
+    <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="fade-up">
+      <div class="hero-eyebrow">Media &amp; Visibility Services</div>
+      <h1>Get featured.<br>Get ranked.<br>Get cited by <em>AI.</em></h1>
+      <p class="hero-sub">Your competitors are showing up in rankings, listicles, and AI recommendations. You should be too. We publish expert-backed content across our network of industry sites that drives ongoing SEO value and AI citations.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="hero-btn primary">Get Started</a>
+        <a href="#network" class="hero-btn outline">View Our Network</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">11</div>
+          <div class="hero-stat-label">Publications in Network</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">8</div>
+          <div class="hero-stat-label">Industries Covered</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">80+</div>
+          <div class="hero-stat-label">Companies Ranked</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">380k+</div>
+          <div class="hero-stat-label">Reviews Analyzed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF BAR -->
+<div class="proof-section">
+  <div class="section" style="padding:56px 32px">
+    <div style="text-align:center">
+      <div class="section-eyebrow" style="justify-content:center"><span></span></div>
+      <div class="section-title" style="text-align:center">Why companies invest in visibility</div>
+      <div class="section-sub" style="text-align:center;margin:8px auto 0">The companies that show up in rankings, listicles, and AI recommendations win the customers who are actively buying.</div>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-num">93%</div>
+        <div class="proof-label">Studies show most buyers consult review sites before purchasing</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-num">4.5x</div>
+        <div class="proof-label">Studies show companies in 3+ rankings are more likely to be shortlisted</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-num">67%</div>
+        <div class="proof-label">Studies show software searches now starting with AI assistants</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-num">11</div>
+        <div class="proof-label">Specialized publications in our growing network</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+  <div class="section-eyebrow">How it works</div>
+  <div class="section-title">Three steps to visibility</div>
+  <div class="section-sub">No strategy calls. No onboarding. No ongoing management. Just results.</div>
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="how-num">01</div>
+      <div class="how-title">Choose your package</div>
+      <div class="how-desc">Select from listicle inclusion subscriptions or editorial review subscriptions. Every package includes indexed editorial placements, SEO optimization, and AI citation structure.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">02</div>
+      <div class="how-title">We produce your content</div>
+      <div class="how-desc">Our editorial process creates professional, data-backed content that positions your company alongside industry leaders. Your listing or review is published within 2–3 weeks of subscription start.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">03</div>
+      <div class="how-title">You get ongoing visibility</div>
+      <div class="how-desc">Your published content works for you over time — driving search rankings, AI citations, and brand authority. Quarterly content refreshes keep your placements current as markets evolve.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<div class="services-section" id="services">
+  <div class="section">
+    <div class="section-eyebrow" style="color:var(--gold)">Services</div>
+    <div class="section-title">Two product lines, every visibility need</div>
+    <div class="section-sub">Subscription-based services with clear deliverables and no surprise pricing. Choose the right product line for your goals — or combine both for maximum impact.</div>
+
+    <!-- PRODUCT LINE 1: LISTICLE INCLUSION SUBSCRIPTIONS -->
+    <div class="services-product-line">
+      <div class="services-product-line-header">
+        <div class="services-product-line-tag">Product Line 1</div>
+        <div class="services-product-line-title">Listicle Inclusion Subscriptions</div>
+        <div class="services-product-line-desc">Get your company listed in our network of 11 industry review publications. Choose your tier based on the visibility level you need. Position #1 in any ranking is editorial-only and is never sold.</div>
+      </div>
+      <div class="services-grid two-col">
+        <div class="service-card">
+          <div class="service-card-tag">Entry tier</div>
+          <div class="service-card-title">Claimed Profile</div>
+          <div class="service-card-desc">Branded company profile with logo, custom description, direct website link, and verified badge. Listed in your category's rankings across the network.</div>
+          <div class="service-card-price">$99<span>/month</span></div>
+          <a href="/pages/pricing.html" class="service-card-btn">View Details &rarr;</a>
+        </div>
+        <div class="service-card popular">
+          <div class="service-card-tag">Most chosen</div>
+          <div class="service-card-title">Enhanced Listing</div>
+          <div class="service-card-desc">Priority category placement, cross-site syndication across the full network, and indexed editorial placement on high-authority domains. AI visibility built in.</div>
+          <div class="service-card-price">$299<span>/month</span></div>
+          <a href="/pages/pricing.html" class="service-card-btn">View Details &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT LINE 2: EDITORIAL REVIEW SUBSCRIPTIONS -->
+    <div class="services-product-line">
+      <div class="services-product-line-header">
+        <div class="services-product-line-tag">Product Line 2</div>
+        <div class="services-product-line-title">Editorial Review Subscriptions</div>
+        <div class="services-product-line-desc">Dedicated 1,500-word editorial deep-dives published on Newswire newsroom. Drive indexed editorial placements, AI citation authority, and brand credibility. More reviews per month = lower per-review rate.</div>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-card-tag">Tier 1 · Starter</div>
+          <div class="service-card-title">1 Review / Month</div>
+          <div class="service-card-desc">A single dedicated editorial review per month. Best for testing the format or single-product companies. $800 per review.</div>
+          <div class="service-card-price">$800<span>/month</span></div>
+          <a href="/pages/pricing.html" class="service-card-btn">View Details &rarr;</a>
+        </div>
+        <div class="service-card">
+          <div class="service-card-tag">Tier 2 · Growth</div>
+          <div class="service-card-title">2 Reviews / Month</div>
+          <div class="service-card-desc">Two dedicated reviews per month for companies with multiple products, channels, or services. $750 per review — save $100/month.</div>
+          <div class="service-card-price">$1,500<span>/month</span></div>
+          <a href="/pages/pricing.html" class="service-card-btn">View Details &rarr;</a>
+        </div>
+        <div class="service-card popular">
+          <div class="service-card-tag">Tier 3 · Network</div>
+          <div class="service-card-title">4 Reviews / Month</div>
+          <div class="service-card-desc">Four dedicated reviews per month for networks, multi-channel operators, and full-coverage strategies. $600 per review — save $800/month.</div>
+          <div class="service-card-price">$2,400<span>/month</span></div>
+          <a href="/pages/pricing.html" class="service-card-btn">View Details &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:48px">
+      <p style="font-size:14px;color:rgba(255,255,255,.4);margin-bottom:14px">Need a custom bundle? Multi-channel networks and enterprise accounts qualify for custom pricing.</p>
+      <a href="mailto:partnerships@listicleliaison.com?subject=Custom%20Bundle%20Inquiry" style="font-size:14px;color:var(--gold-light);text-decoration:underline">Request a custom quote &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- NETWORK / PORTFOLIO -->
+<section class="section" id="network">
+  <div class="section-eyebrow">Our network</div>
+  <div class="section-title">11 industry publications and growing</div>
+  <div class="section-sub">Your content reaches decision-makers and consumers across our portfolio of specialized industry publications.</div>
+  <div class="network-grid">
+
+    <a href="https://softwareindustryreviews.com" class="network-card" target="_blank" rel="noopener">
+      <div class="network-card-type">Review Site</div>
+      <div class="network-card-name">Software Industry Reviews</div>
+      <div class="network-card-desc">Data-driven rankings across CRM, project management, cybersecurity, ERP, email marketing, HR, accounting, and analytics.</div>
+      <span class="network-card-status live">Live</span>
+    </a>
+
+    <a href="https://aiindustryreviews.com" class="network-card" target="_blank" rel="noopener">
+      <div class="network-card-type">Review Site</div>
+      <div class="network-card-name">AI Industry Reviews</div>
+      <div class="network-card-desc">Rankings and analysis of AI tools, platforms, and services across writing, coding, image generation, and automation.</div>
+      <span class="network-card-status live">Live</span>
+    </a>
+
+    <a href="https://healthcareindustryreviews.com" class="network-card" target="_blank" rel="noopener">
+      <div class="network-card-type">Review Site</div>
+      <div class="network-card-name">Healthcare Industry Reviews</div>
+      <div class="network-card-desc">Independent rankings of healthcare technology, EMR systems, telehealth platforms, and medical practice solutions.</div>
+      <span class="network-card-status live">Live</span>
+    </a>
+
+    <a href="https://financialindustryreviews.com" class="network-card" target="_blank" rel="noopener">
+      <div class="network-card-type">Review Site</div>
+      <div class="network-card-name">Financial Industry Reviews</div>
+      <div class="network-card-desc">Rankings for forex signal services, copy trading platforms, fintech tools, financial advisors, and wealth management firms.</div>
+      <span class="network-card-status live">Live</span>
+    </a>
+
+    <a href="https://cryptoindustryreviews.com" class="network-card" target="_blank" rel="noopener">
+      <div class="network-card-type">Review Site</div>
+      <div class="network-card-name">Crypto Industry Reviews</div>
+      <div class="network-card-desc">Independent rankings of crypto exchanges, DeFi platforms, wallets, blockchain tools, and Web3 services.</div>
+      <span class="network-card-status live">Live</span>
+    </a>
+
+    <a href="https://casinoindustryreviews.com" class="network-card" target="_blank" rel="noopener">
+      <div class="network-card-type">Review Site</div>
+      <div class="network-card-name">Casino Industry Reviews</div>
+      <div class="network-card-desc">Rankings for iGaming platforms, casino software providers, sports betting technology, and compliance solutions.</div>
+      <span class="network-card-status live">Live</span>
+    </a>
+
+    <a href="https://miningindustryreviews.com" class="network-card" target="_blank" rel="noopener">
+      <div class="network-card-type">Review Site</div>
+      <div class="network-card-name">Mining Industry Reviews</div>
+      <div class="network-card-desc">Rankings of mining technology, equipment suppliers, exploration platforms, and resource sector service providers.</div>
+      <span class="network-card-status live">Live</span>
+    </a>
+
+    <a href="https://localsmallbusinessreviews.com" class="network-card" target="_blank" rel="noopener">
+      <div class="network-card-type">Review Site</div>
+      <div class="network-card-name">Local Small Business Reviews</div>
+      <div class="network-card-desc">City-level "best of" rankings for real estate, plastic surgeons, financial advisors, concierge medicine, and other local services.</div>
+      <span class="network-card-status live">Live</span>
+    </a>
+
+    <a href="https://smbnewsroom.com" class="network-card" target="_blank" rel="noopener">
+      <div class="network-card-type">Editorial Publication</div>
+      <div class="network-card-name">SMB Newsroom</div>
+      <div class="network-card-desc">Business intelligence, expert rankings, company spotlights, and industry analysis for growing companies.</div>
+      <span class="network-card-status live">Live</span>
+    </a>
+
+    <a href="https://ai-mentions.com" class="network-card" target="_blank" rel="noopener">
+      <div class="network-card-type">AI Visibility Tool</div>
+      <div class="network-card-name">AI Mentions</div>
+      <div class="network-card-desc">Track and optimize how your brand appears in AI-generated recommendations across ChatGPT, Claude, Perplexity, and more.</div>
+      <span class="network-card-status live">Live</span>
+    </a>
+
+    <a href="https://listicleliaison.com" class="network-card">
+      <div class="network-card-type">Corporate</div>
+      <div class="network-card-name">Listicle Liaison</div>
+      <div class="network-card-desc">Parent company. Visibility services connecting companies across consumer and commercial categories.</div>
+      <span class="network-card-status live">Live</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="contact">
+  <h2>Ready to get <em>visible?</em></h2>
+  <p>Tell us about your company and we'll reply within 24 hours with a recommended package.</p>
+
+  <form id="contactForm" style="max-width:480px;margin:0 auto;text-align:left;position:relative">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+      <div>
+        <label style="font-size:12px;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">Your name</label>
+        <input type="text" name="name" required style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:#fff;font-family:var(--font-body);font-size:14px;outline:none" placeholder="Jane Smith">
+      </div>
+      <div>
+        <label style="font-size:12px;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">Company</label>
+        <input type="text" name="company" required style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:#fff;font-family:var(--font-body);font-size:14px;outline:none" placeholder="Acme Corp">
+      </div>
+    </div>
+    <div style="margin-bottom:12px">
+      <label style="font-size:12px;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">Email</label>
+      <input type="email" name="email" required style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:#fff;font-family:var(--font-body);font-size:14px;outline:none" placeholder="jane@acmecorp.com">
+    </div>
+    <div style="margin-bottom:12px">
+      <label style="font-size:12px;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">Website</label>
+      <input type="text" name="website" style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:#fff;font-family:var(--font-body);font-size:14px;outline:none" placeholder="https://acmecorp.com">
+    </div>
+    <div style="margin-bottom:20px">
+      <label style="font-size:12px;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">What are you interested in?</label>
+      <select name="package" style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:rgba(255,255,255,.7);font-family:var(--font-body);font-size:14px;outline:none;-webkit-appearance:none">
+        <option value="">Select a package...</option>
+        <option value="Claimed Profile ($99/mo)">Claimed Profile ($99/mo)</option>
+        <option value="Enhanced Listing ($299/mo)">Enhanced Listing ($299/mo)</option>
+        <option value="Editorial Review Tier 1 ($800/mo)">Editorial Review Tier 1 ($800/mo)</option>
+        <option value="Editorial Review Tier 2 ($1,500/mo)">Editorial Review Tier 2 ($1,500/mo)</option>
+        <option value="Editorial Review Tier 3 ($2,400/mo)">Editorial Review Tier 3 ($2,400/mo)</option>
+        <option value="Custom bundle">Custom bundle / Enterprise</option>
+        <option value="Not sure - recommend something">Not sure — recommend something</option>
+      </select>
+    </div>
+    <button type="submit" id="submitBtn" class="final-cta-btn" style="width:100%;border:none;cursor:pointer;font-family:var(--font-body);text-align:center">Send Inquiry</button>
+  </form>
+
+  <!-- Success message OUTSIDE the form so it actually shows when the form hides -->
+  <div id="formSuccess" class="form-success-message">
+    <div class="form-success-icon">✓</div>
+    <h3>Thank you!</h3>
+    <p>Your inquiry has been received. Emma from our team will reply within 24 hours with a recommended package and next steps.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Listicle Liaison</div>
+      <p class="footer-desc">Media and visibility services connecting companies with the rankings, editorial content, and AI citations that drive real business results.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Network</div>
+      <a href="https://softwareindustryreviews.com">Software Industry Reviews</a>
+      <a href="https://aiindustryreviews.com">AI Industry Reviews</a>
+      <a href="https://healthcareindustryreviews.com">Healthcare Reviews</a>
+      <a href="https://financialindustryreviews.com">Financial Reviews</a>
+      <a href="https://cryptoindustryreviews.com">Crypto Reviews</a>
+      <a href="https://casinoindustryreviews.com">Casino Reviews</a>
+      <a href="https://miningindustryreviews.com">Mining Reviews</a>
+      <a href="https://localsmallbusinessreviews.com">Local Small Business</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Tools</div>
+      <a href="https://ai-mentions.com">AI Mentions</a>
+      <a href="https://smbnewsroom.com">SMB Newsroom</a>
+      <a href="/pages/partners.html">Affiliate Program</a>
+      <a href="/pages/pricing.html">Pricing</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <a href="/pages/about.html">About Us</a>
+      <a href="/pages/disclosure.html">Disclosure</a>
+      <a href="#contact">Contact Us</a>
+      <a href="mailto:partnerships@listicleliaison.com">Email Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Listicle Liaison LLC. All rights reserved.</span>
+    <span><a href="/pages/privacy.html">Privacy</a><a href="/pages/terms.html">Terms</a><a href="/pages/disclosure.html">Disclosure</a></span>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>50);
+});
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var form = this;
+  var btn = document.getElementById('submitBtn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  var data = new FormData(form);
+
+  fetch('https://formspree.io/f/maqlbbzd', {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(function(response) {
+    if (response.ok) {
+      // Fire Google Ads conversion
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18137816472/zLIrCNmqiqccEJi75MhD',
+          'value': 1.0,
+          'currency': 'USD'
+        });
+      }
+      // Fire Bing UET conversion (matches Microsoft Ads goal: submit_lead_form, $500 value)
+      if (typeof window.uetq !== 'undefined') {
+        window.uetq.push('event', 'submit_lead_form', {
+          'revenue_value': 500,
+          'currency': 'USD'
+        });
+      }
+      // Hide form, show success message OUTSIDE the form
+      form.style.display = 'none';
+      document.getElementById('formSuccess').classList.add('visible');
+      // Scroll to make sure the user sees it
+      document.getElementById('formSuccess').scrollIntoView({behavior:'smooth', block:'center'});
+    } else {
+      return response.json().then(function(d) {
+        btn.textContent = 'Send Inquiry';
+        btn.disabled = false;
+        alert('Error: ' + JSON.stringify(d.errors || d));
+      });
+    }
+  })
+  .catch(function(err) {
+    btn.textContent = 'Send Inquiry';
+    btn.disabled = false;
+    alert('Network error: ' + err.message);
+  });
+});
+</script>
+</body>
+</html>
