@@ -3,20 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Pricing &amp; Plans | Listicle Liaison</title>
-<meta name="description" content="Get listed across our network of 11 industry review sites. Placement tiers from $99 to $499/month, plus Editorial Review subscriptions from $800/month.">
+<title>Get Listed — Plans &amp; Options | Listicle Liaison</title>
+<meta name="description" content="Get your company featured across our network of 11 industry review sites. Free claimed profiles, verified listings, and featured editorial placements available.">
 <link rel="canonical" href="https://listicleliaison.com/pages/pricing.html">
-
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://listicleliaison.com/pages/pricing.html">
-<meta property="og:title" content="Pricing & Plans | Listicle Liaison">
-<meta property="og:description" content="Get listed across our network of 11 industry review sites. Placement tiers from $99/mo to $499/mo.">
+<meta property="og:title" content="Get Listed | Listicle Liaison">
+<meta property="og:description" content="Get your company featured across our network of 11 industry review sites. Free claimed profiles, verified listings, and featured editorial placements available.">
 <meta property="og:site_name" content="Listicle Liaison">
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <!-- Google Ads tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18137816472"></script>
 <script>
@@ -25,12 +21,10 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'AW-18137816472');
 </script>
-
 <!-- Microsoft Bing UET tag -->
 <script>
 (function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"187247821", enableAutoSpaTracking: true};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i);})(window,document,"script","//bat.bing.com/bat.js","uetq");
 </script>
-
 <style>
 :root{
   --black:#0a0a0a;--black-2:#141414;
@@ -48,7 +42,6 @@ gtag('config', 'AW-18137816472');
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:var(--font-body);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;line-height:1.6}
-
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:rgba(10,10,10,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,165,60,.15)}
 .nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;justify-content:space-between}
 .nav-brand{text-decoration:none;display:flex;align-items:center;gap:10px}
@@ -66,80 +59,95 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--paper);-webk
 .hero h1 em{font-style:italic;color:var(--gold-deep)}
 .hero-sub{font-family:var(--font-display);font-size:20px;font-weight:400;font-style:italic;color:var(--ink-3);max-width:620px;margin:0 auto;line-height:1.5}
 
-.billing-toggle{display:flex;justify-content:center;gap:6px;margin:48px auto 0;padding:6px;background:var(--cream);border:1px solid var(--border);border-radius:50px;width:fit-content}
-.billing-btn{padding:10px 22px;border-radius:50px;background:transparent;border:none;font-family:var(--font-body);font-size:13px;font-weight:600;color:var(--ink-3);cursor:pointer;transition:all .2s;letter-spacing:.02em}
-.billing-btn.active{background:var(--ink);color:#fff}
-.billing-btn .save{font-size:10px;color:var(--gold-deep);margin-left:6px;font-weight:700;letter-spacing:.05em}
-.billing-btn.active .save{color:var(--gold)}
-
-.tiers{max-width:var(--max-w);margin:0 auto;padding:48px 32px 64px}
 .section-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px}
 .section-title{font-family:var(--font-display);font-size:36px;font-weight:500;letter-spacing:-.5px;text-align:center;color:var(--ink);margin-bottom:14px}
 .section-sub{font-size:15px;color:var(--ink-3);text-align:center;max-width:640px;margin:0 auto 48px;line-height:1.65}
 
-.tier-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.industries{max-width:var(--max-w);margin:0 auto;padding:48px 32px 0}
+.industry-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
+.industry-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 16px;text-align:center;cursor:pointer;transition:all .2s;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:6px}
+.industry-card:hover{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 8px 20px rgba(0,0,0,.04)}
+.industry-icon{font-size:28px;line-height:1;margin-bottom:2px}
+.industry-name{font-family:var(--font-display);font-size:15px;font-weight:600;color:var(--ink)}
+.industry-desc{font-size:10.5px;color:var(--ink-4);line-height:1.4}
 
-.tier{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px 24px;display:flex;flex-direction:column;position:relative;transition:all .25s}
-.tier:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,.06);border-color:rgba(212,165,60,.4)}
-.tier.popular{border:2px solid var(--gold);background:linear-gradient(180deg,var(--surface) 0%,var(--gold-pale) 100%)}
-.tier.featured{border:2px solid var(--ink);background:linear-gradient(180deg,var(--surface) 0%,#fafafa 100%)}
-.tier-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 14px;border-radius:50px;white-space:nowrap}
-.tier.featured .tier-badge{background:var(--ink)}
-.tier-name{font-family:var(--font-display);font-size:21px;font-weight:600;letter-spacing:-.3px;color:var(--ink);margin-bottom:8px}
-.tier-desc{font-size:12.5px;color:var(--ink-3);line-height:1.55;margin-bottom:22px;min-height:68px}
-.tier-price{font-family:var(--font-display);font-size:40px;font-weight:500;color:var(--ink);line-height:1;margin-bottom:6px;letter-spacing:-1px}
-.tier-price-period{font-family:var(--font-body);font-size:13px;color:var(--ink-3);font-weight:500;display:inline}
-.tier-price-meta{font-size:11.5px;color:var(--ink-4);margin-bottom:22px;min-height:16px}
-.tier-features{list-style:none;margin-bottom:22px;flex-grow:1}
-.tier-features li{font-size:12.5px;color:var(--ink-2);padding:7px 0 7px 22px;position:relative;line-height:1.5}
-.tier-features li::before{content:"";position:absolute;left:0;top:13px;width:12px;height:1.5px;background:var(--gold)}
-.tier-cta-group{display:flex;flex-direction:column;gap:8px}
-.tier-cta{display:block;padding:13px;background:var(--ink);color:#fff;text-decoration:none;text-align:center;font-size:13px;font-weight:600;border-radius:var(--radius);transition:all .2s;font-family:var(--font-body);letter-spacing:.02em}
-.tier-cta:hover{background:var(--gold);transform:translateY(-1px)}
-.tier.popular .tier-cta{background:var(--gold)}
-.tier.popular .tier-cta:hover{background:var(--gold-deep)}
-.tier-info-btn{background:transparent;border:1px solid var(--border);color:var(--ink-3);padding:11px;text-align:center;font-size:12px;font-weight:500;border-radius:var(--radius);cursor:pointer;transition:all .2s;font-family:var(--font-body)}
-.tier-info-btn:hover{border-color:var(--gold-deep);color:var(--ink)}
+.options-section{max-width:var(--max-w);margin:0 auto;padding:64px 32px}
+.options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+.option-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px 28px;display:flex;flex-direction:column;position:relative;transition:all .25s}
+.option-card:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,.06);border-color:rgba(212,165,60,.4)}
+.option-card.premium{border:2px solid var(--gold);background:linear-gradient(180deg,var(--surface) 0%,var(--gold-pale) 100%)}
+.option-card.premium::before{content:"PREMIUM";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 14px;border-radius:50px;white-space:nowrap}
+
+.option-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);background:var(--gold-pale);padding:4px 10px;border-radius:3px;margin-bottom:14px;align-self:flex-start}
+.option-tag.free{background:#e8f4ea;color:var(--green)}
+.option-name{font-family:var(--font-display);font-size:24px;font-weight:600;letter-spacing:-.3px;color:var(--ink);margin-bottom:10px}
+.option-tagline{font-size:13.5px;color:var(--ink-3);line-height:1.55;margin-bottom:24px;min-height:60px}
+.option-features{list-style:none;margin-bottom:28px;flex-grow:1}
+.option-features li{font-size:13px;color:var(--ink-2);padding:7px 0 7px 22px;position:relative;line-height:1.5}
+.option-features li::before{content:"";position:absolute;left:0;top:13px;width:12px;height:1.5px;background:var(--gold)}
+.option-cta{display:block;padding:14px;background:var(--ink);color:#fff;text-decoration:none;text-align:center;font-size:13.5px;font-weight:600;border-radius:var(--radius);transition:all .2s;font-family:var(--font-body);letter-spacing:.02em;border:none;cursor:pointer;width:100%}
+.option-cta:hover{background:var(--gold);transform:translateY(-1px)}
+.option-cta.gold{background:var(--gold)}
+.option-cta.gold:hover{background:var(--gold-deep)}
+.option-cta.outline{background:transparent;color:var(--ink);border:1px solid var(--border)}
+.option-cta.outline:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 
 /* Editorial Review section */
 .editorial-section{background:var(--cream);padding:80px 32px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .editorial-inner{max-width:var(--max-w);margin:0 auto}
-.editorial-intro{text-align:center;max-width:680px;margin:0 auto 48px}
+.editorial-intro{text-align:center;max-width:680px;margin:0 auto 36px}
 .editorial-intro p{font-size:15px;color:var(--ink-2);line-height:1.7;margin-top:14px}
 .editorial-intro p strong{color:var(--ink);font-weight:600}
-.editorial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.editorial-tier{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px 28px;display:flex;flex-direction:column;transition:all .25s}
-.editorial-tier:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,.06);border-color:rgba(212,165,60,.4)}
-.editorial-tier-eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px}
-.editorial-tier-name{font-family:var(--font-display);font-size:22px;font-weight:600;letter-spacing:-.3px;color:var(--ink);margin-bottom:10px}
-.editorial-tier-desc{font-size:13.5px;color:var(--ink-3);line-height:1.55;margin-bottom:24px;min-height:62px}
-.editorial-tier-price{font-family:var(--font-display);font-size:36px;font-weight:500;color:var(--ink);line-height:1;margin-bottom:4px}
-.editorial-tier-period{font-family:var(--font-body);font-size:13px;color:var(--ink-3);font-weight:500;display:inline}
-.editorial-tier-meta{font-size:12px;color:var(--ink-4);margin-bottom:24px}
-.editorial-tier-meta.savings{color:var(--green);font-weight:600}
-.editorial-tier-features{list-style:none;margin-bottom:24px;flex-grow:1}
-.editorial-tier-features li{font-size:13px;color:var(--ink-2);padding:6px 0 6px 24px;position:relative;line-height:1.5}
-.editorial-tier-features li::before{content:"";position:absolute;left:0;top:12px;width:12px;height:1.5px;background:var(--gold)}
-.editorial-cta-group{display:flex;flex-direction:column;gap:8px}
-.editorial-cta{display:block;padding:12px;background:var(--ink);color:#fff;text-decoration:none;text-align:center;font-size:13px;font-weight:600;border-radius:var(--radius);transition:all .2s;font-family:var(--font-body)}
-.editorial-cta:hover{background:var(--gold);transform:translateY(-1px)}
+.editorial-callout{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px 36px;max-width:680px;margin:0 auto;text-align:center}
+.editorial-callout h3{font-family:var(--font-display);font-size:24px;font-weight:600;color:var(--ink);margin-bottom:12px;letter-spacing:-.3px}
+.editorial-callout p{font-size:14.5px;color:var(--ink-3);line-height:1.65;margin-bottom:22px}
+.editorial-callout ul{list-style:none;text-align:left;max-width:440px;margin:0 auto 24px}
+.editorial-callout ul li{font-size:13.5px;color:var(--ink-2);padding:7px 0 7px 22px;position:relative;line-height:1.5}
+.editorial-callout ul li::before{content:"";position:absolute;left:0;top:13px;width:12px;height:1.5px;background:var(--gold)}
+.editorial-cta{display:inline-block;padding:14px 32px;background:var(--gold);color:#fff;text-decoration:none;font-size:14px;font-weight:600;border-radius:var(--radius);transition:all .2s;border:none;cursor:pointer;font-family:var(--font-body)}
+.editorial-cta:hover{background:var(--gold-deep);transform:translateY(-1px)}
 
-.bundle{max-width:var(--max-w);margin:64px auto 0;padding:32px 36px;background:linear-gradient(135deg,var(--black) 0%,var(--black-2) 100%);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:space-between;gap:24px}
-.bundle-content h3{font-family:var(--font-display);font-size:22px;font-weight:500;color:#fff;margin-bottom:6px;letter-spacing:-.3px}
-.bundle-content p{font-size:13.5px;color:rgba(255,255,255,.6);line-height:1.55;max-width:520px}
-.bundle-cta{background:var(--gold);color:#fff;padding:14px 24px;border-radius:var(--radius);text-decoration:none;font-size:13.5px;font-weight:600;white-space:nowrap;transition:all .2s}
-.bundle-cta:hover{background:#e0b449;transform:translateY(-1px)}
+/* Disclosure section */
+.disclosure-section{padding:56px 32px;background:var(--paper)}
+.disclosure-inner{max-width:760px;margin:0 auto;text-align:center}
+.disclosure-eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:12px}
+.disclosure-title{font-family:var(--font-display);font-size:24px;color:var(--ink);margin-bottom:14px;letter-spacing:-.3px}
+.disclosure-text{font-size:14px;color:var(--ink-3);line-height:1.75;margin-bottom:16px}
+.disclosure-text strong{color:var(--ink-2);font-weight:600}
+.disclosure-text a{color:var(--gold-deep);text-decoration:none;font-weight:600;border-bottom:1px solid var(--gold);padding-bottom:1px}
+.disclosure-text a:hover{color:var(--ink)}
 
-.help{max-width:var(--max-w);margin:0 auto;padding:64px 32px;text-align:center}
-.help h3{font-family:var(--font-display);font-size:26px;font-weight:500;letter-spacing:-.3px;color:var(--ink);margin-bottom:14px}
-.help p{font-size:14.5px;color:var(--ink-3);max-width:520px;margin:0 auto 24px;line-height:1.65}
+/* Inquiry form */
+.inquiry-section{background:var(--black);padding:80px 32px;color:#fff}
+.inquiry-inner{max-width:640px;margin:0 auto}
+.inquiry-eyebrow{text-align:center;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.inquiry-title{font-family:var(--font-display);font-size:34px;font-weight:500;color:#fff;text-align:center;margin-bottom:12px;letter-spacing:-.5px}
+.inquiry-sub{font-size:15px;color:rgba(255,255,255,.55);text-align:center;margin-bottom:36px;line-height:1.6}
+.form-card{background:var(--paper);border-radius:var(--radius-lg);padding:40px 36px;color:var(--ink)}
+
+.form-field{margin-bottom:14px}
+.form-field label{display:block;font-size:12px;font-weight:600;color:var(--ink-2);margin-bottom:5px;letter-spacing:.02em}
+.form-field .req{color:var(--gold-deep)}
+.form-field input,.form-field select,.form-field textarea{width:100%;padding:11px 14px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);color:var(--ink);font-family:var(--font-body);font-size:14px;outline:none;transition:border-color .2s}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--gold)}
+.form-field textarea{resize:vertical;min-height:90px;font-family:var(--font-body)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-submit{display:block;width:100%;padding:14px;background:var(--ink);color:#fff;border:none;border-radius:var(--radius);font-size:14px;font-weight:600;cursor:pointer;font-family:var(--font-body);margin-top:8px;transition:all .2s}
+.form-submit:hover{background:var(--gold)}
+.form-submit:disabled{opacity:.6;cursor:not-allowed}
+.form-success{display:none;text-align:center;padding:30px 0}
+.form-success.active{display:block}
+.form-success-icon{width:52px;height:52px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 16px}
+.form-success h4{font-family:var(--font-display);font-size:24px;color:var(--ink);margin-bottom:8px}
+.form-success p{font-size:14px;color:var(--ink-3);line-height:1.55}
+
+.help{max-width:var(--max-w);margin:0 auto;padding:56px 32px;text-align:center}
+.help h3{font-family:var(--font-display);font-size:24px;font-weight:500;letter-spacing:-.3px;color:var(--ink);margin-bottom:14px}
+.help p{font-size:14.5px;color:var(--ink-3);max-width:520px;margin:0 auto 22px;line-height:1.65}
 .help a{color:var(--gold-deep);text-decoration:none;font-weight:600;font-size:14.5px;border-bottom:1px solid var(--gold);padding-bottom:2px;transition:all .2s}
 .help a:hover{color:var(--ink)}
 
-.disclosure{max-width:var(--max-w);margin:0 auto;padding:32px 32px 0;text-align:center;font-size:12px;color:var(--ink-4);line-height:1.6}
-.disclosure p{margin-bottom:6px}
-
-.footer{background:var(--black);padding:48px 32px 28px;border-top:1px solid rgba(255,255,255,.05);margin-top:64px;color:rgba(255,255,255,.4)}
+.footer{background:var(--black);padding:48px 32px 28px;border-top:1px solid rgba(255,255,255,.05);color:rgba(255,255,255,.4)}
 .footer-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
 .footer-brand{font-family:var(--font-display);font-size:17px;font-weight:600;color:#fff;margin-bottom:10px}
 .footer-desc{font-size:12.5px;line-height:1.6;color:rgba(255,255,255,.4);max-width:240px}
@@ -149,57 +157,22 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--paper);-webk
 .footer-bottom{max-width:var(--max-w);margin:28px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.25)}
 .footer-bottom a{color:rgba(255,255,255,.25);text-decoration:none;margin-left:14px}
 
-/* Modal */
-.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,10,.75);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:center;justify-content:center;padding:24px;animation:fadeIn .2s ease}
-.modal-overlay.active{display:flex}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.modal{background:var(--paper);border-radius:var(--radius-lg);max-width:540px;width:100%;max-height:90vh;overflow-y:auto;padding:40px 36px;position:relative;animation:slideUp .3s ease}
-@keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
-.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:24px;color:var(--ink-3);cursor:pointer;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .2s}
-.modal-close:hover{background:var(--cream);color:var(--ink)}
-.modal-eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px}
-.modal h3{font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--ink);margin-bottom:8px;letter-spacing:-.4px;line-height:1.2}
-.modal-sub{font-size:14px;color:var(--ink-3);margin-bottom:28px;line-height:1.55}
-.form-field{margin-bottom:14px}
-.form-field label{display:block;font-size:12px;font-weight:600;color:var(--ink-2);margin-bottom:5px;letter-spacing:.02em}
-.form-field .req{color:var(--gold-deep)}
-.form-field input,.form-field select,.form-field textarea{width:100%;padding:11px 14px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);color:var(--ink);font-family:var(--font-body);font-size:14px;outline:none;transition:border-color .2s}
-.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--gold)}
-.form-field textarea{resize:vertical;min-height:80px;font-family:var(--font-body)}
-.form-submit{display:block;width:100%;padding:14px;background:var(--ink);color:#fff;border:none;border-radius:var(--radius);font-size:14px;font-weight:600;cursor:pointer;font-family:var(--font-body);margin-top:8px;transition:all .2s}
-.form-submit:hover{background:var(--gold)}
-.form-submit:disabled{opacity:.6;cursor:not-allowed}
-.form-success{display:none;text-align:center;padding:20px 0}
-.form-success.active{display:block}
-.form-success-icon{width:52px;height:52px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 16px}
-.form-success h4{font-family:var(--font-display);font-size:24px;color:var(--ink);margin-bottom:8px}
-.form-success p{font-size:14px;color:var(--ink-3);line-height:1.55}
-
 @media (max-width:1000px){
-  .tier-grid{grid-template-columns:repeat(2,1fr)}
+  .options-grid{grid-template-columns:1fr;gap:16px}
 }
 @media (max-width:680px){
-  .tier-grid,.editorial-grid{grid-template-columns:1fr}
-  .bundle{flex-direction:column;text-align:center}
+  .industry-grid{grid-template-columns:repeat(2,1fr)}
   .footer-inner{grid-template-columns:1fr 1fr}
   .nav-links{display:none}
   .hero h1{font-size:36px}
   .hero-sub{font-size:17px}
-  .modal{padding:28px 20px}
+  .form-row{grid-template-columns:1fr}
+  .form-card{padding:28px 22px}
+  .editorial-callout{padding:32px 24px}
 }
-
-.industries{max-width:var(--max-w);margin:0 auto;padding:48px 32px 0}
-.industry-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
-.industry-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 16px;text-align:center;cursor:pointer;transition:all .2s;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:6px}
-.industry-card:hover{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 8px 20px rgba(0,0,0,.04)}
-.industry-icon{font-size:28px;line-height:1;margin-bottom:2px}
-.industry-name{font-family:var(--font-display);font-size:15px;font-weight:600;color:var(--ink)}
-.industry-desc{font-size:10.5px;color:var(--ink-4);line-height:1.4}
-@media (max-width:680px){.industry-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
-
 <nav class="nav">
   <div class="nav-inner">
     <a href="https://listicleliaison.com/" class="nav-brand">
@@ -208,7 +181,7 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--paper);-webk
     </a>
     <div class="nav-links">
       <a href="https://listicleliaison.com/#services">Services</a>
-      <a href="https://listicleliaison.com/pages/pricing.html">Pricing</a>
+      <a href="https://listicleliaison.com/pages/pricing.html">Get Listed</a>
       <a href="https://listicleliaison.com/#network">Our Network</a>
       <a href="https://listicleliaison.com/pages/about.html">About</a>
       <a href="https://listicleliaison.com/#contact" class="nav-cta">Get Started</a>
@@ -218,9 +191,9 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--paper);-webk
 
 <section class="hero">
   <div class="hero-inner">
-    <span class="eyebrow">Pricing</span>
+    <span class="eyebrow">Get Listed</span>
     <h1>Get your company <em>visible</em></h1>
-    <p class="hero-sub">Choose your industry, pick a placement tier, and checkout. Your placement goes live within 24 hours.</p>
+    <p class="hero-sub">Choose your industry, explore your options, and tell us what you're trying to accomplish. Most placements go live within a few days of agreement.</p>
   </div>
 </section>
 
@@ -228,7 +201,6 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--paper);-webk
   <div class="section-label">Step 1 · Choose Your Industry</div>
   <h2 class="section-title">Which industry are you in?</h2>
   <p class="section-sub">Your placement publishes on the relevant industry review site within our network of 11 publications.</p>
-
   <div class="industry-grid">
     <a href="https://softwareindustryreviews.com" class="industry-card" target="_blank" rel="noopener">
       <div class="industry-icon">💻</div>
@@ -273,93 +245,58 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--paper);-webk
   </div>
 </section>
 
-<section class="tiers">
+<section class="options-section">
+  <div class="section-label">Step 2 · Choose Your Visibility</div>
+  <h2 class="section-title">Three ways to be present</h2>
+  <p class="section-sub">From a free claimed profile to featured editorial coverage, we work with companies at every stage. All paid placements are clearly disclosed and our ranking criteria stay editorial.</p>
 
-  <div class="billing-toggle" role="tablist">
-    <button class="billing-btn active" data-billing="monthly">Monthly</button>
-    <button class="billing-btn" data-billing="semi-annual">Semi-Annual <span class="save">SAVE 5%</span></button>
-    <button class="billing-btn" data-billing="annual">Annual <span class="save">SAVE 10%</span></button>
-  </div>
+  <div class="options-grid">
 
-  <div style="margin-top:48px"></div>
-  <div class="section-label">Step 2 · Placement Tiers</div>
-  <h2 class="section-title">Choose your visibility level</h2>
-  <p class="section-sub">All placement tiers include high domain authority site listing, indexed editorial placement, and cross-network syndication. No setup fees.</p>
-
-  <div class="tier-grid">
-
-    <div class="tier">
-      <h3 class="tier-name">Claimed Placement</h3>
-      <p class="tier-desc">Branded company profile on a high domain authority site. Best for companies establishing presence in the rankings.</p>
-      <div class="tier-price">$99<span class="tier-price-period">/mo</span></div>
-      <p class="tier-price-meta">90-day minimum</p>
-      <ul class="tier-features">
-        <li>High domain authority site listing</li>
-        <li>Branded logo placement</li>
-        <li>Custom company description</li>
-        <li>Direct website link</li>
-        <li>Indexed editorial placement</li>
+    <!-- OPTION 1: Free Claim -->
+    <div class="option-card">
+      <span class="option-tag free">Free</span>
+      <div class="option-name">Claim Your Profile</div>
+      <p class="option-tagline">Make sure your company's basic listing is accurate and up to date on the relevant industry review site.</p>
+      <ul class="option-features">
+        <li>Accurate company name &amp; description</li>
+        <li>Branded logo on profile</li>
+        <li>Direct link to your website</li>
+        <li>Listed in vendor directory</li>
+        <li>Submit corrections anytime</li>
       </ul>
-      <div class="tier-cta-group">
-        <a href="https://buy.stripe.com/28E28sclZbYD88L5lBd7q0k" class="tier-cta" target="_blank" rel="noopener">Get Started →</a>
-        <button class="tier-info-btn" data-tier="Claimed Placement" data-price="$99/mo">Request more info</button>
-      </div>
+      <button class="option-cta outline" onclick="scrollToForm('Free Claim')">Claim Free →</button>
     </div>
 
-    <div class="tier">
-      <h3 class="tier-name">Standard Placement</h3>
-      <p class="tier-desc">Solid category placement with cross-site syndication and indexed editorial coverage. Best for active growth stage.</p>
-      <div class="tier-price">$199<span class="tier-price-period">/mo</span></div>
-      <p class="tier-price-meta">90-day minimum</p>
-      <ul class="tier-features">
-        <li>Everything in Claimed</li>
-        <li>Mid-tier category placement</li>
-        <li>Cross-site syndication</li>
-        <li>Competitor comparison view</li>
+    <!-- OPTION 2: Verified Profile -->
+    <div class="option-card">
+      <span class="option-tag">Standard</span>
+      <div class="option-name">Verified Profile</div>
+      <p class="option-tagline">Enhanced profile with verified badge, extended description, and AI citation structure across our network sites.</p>
+      <ul class="option-features">
+        <li>Everything in Claim Your Profile</li>
+        <li>Verified vendor badge</li>
+        <li>Extended product description</li>
+        <li>Custom feature highlights</li>
         <li>AI citation structure</li>
+        <li>Monthly profile view reports</li>
       </ul>
-      <div class="tier-cta-group">
-        <a href="https://buy.stripe.com/14AaEYbhVd2H9cPcO3d7q0o" class="tier-cta" target="_blank" rel="noopener">Get Started →</a>
-        <button class="tier-info-btn" data-tier="Standard Placement" data-price="$199/mo">Request more info</button>
-      </div>
+      <button class="option-cta" onclick="scrollToForm('Verified Profile')">Request Quote →</button>
     </div>
 
-    <div class="tier popular">
-      <span class="tier-badge">Most Chosen</span>
-      <h3 class="tier-name">Enhanced Placement</h3>
-      <p class="tier-desc">Priority category placement with full cross-site syndication and indexed editorial coverage across the network.</p>
-      <div class="tier-price">$299<span class="tier-price-period">/mo</span></div>
-      <p class="tier-price-meta">90-day minimum</p>
-      <ul class="tier-features">
-        <li>Everything in Standard</li>
-        <li>Priority category placement</li>
-        <li>Network-wide syndication</li>
+    <!-- OPTION 3: Featured Placement & Editorial -->
+    <div class="option-card premium">
+      <span class="option-tag">Premium</span>
+      <div class="option-name">Featured Placement &amp; Editorial</div>
+      <p class="option-tagline">Premium category visibility, dedicated editorial coverage, and cross-network promotion across our 11 industry review sites.</p>
+      <ul class="option-features">
+        <li>Premium category placement</li>
+        <li>Company Spotlight editorial</li>
+        <li>Cross-network syndication</li>
         <li>AI citation optimization</li>
-        <li>Quarterly content refresh</li>
-      </ul>
-      <div class="tier-cta-group">
-        <a href="https://buy.stripe.com/cNicN61HlfaP60D5lBd7q0l" class="tier-cta" target="_blank" rel="noopener">Get Started →</a>
-        <button class="tier-info-btn" data-tier="Enhanced Placement" data-price="$299/mo">Request more info</button>
-      </div>
-    </div>
-
-    <div class="tier featured">
-      <span class="tier-badge">Top Tier</span>
-      <h3 class="tier-name">Featured Placement</h3>
-      <p class="tier-desc">Top-tier category placement with gold badge, Company Spotlight article, and full cross-network promotion. Limited per category.</p>
-      <div class="tier-price">$499<span class="tier-price-period">/mo</span></div>
-      <p class="tier-price-meta">Limited availability per category</p>
-      <ul class="tier-features">
-        <li>Everything in Enhanced</li>
-        <li>Top-tier category placement</li>
-        <li>Gold Featured Partner badge</li>
-        <li>Company Spotlight article</li>
         <li>Dedicated account support</li>
+        <li>Custom partnership options</li>
       </ul>
-      <div class="tier-cta-group">
-        <a href="https://buy.stripe.com/7sY4gA5XBbYD1KnbJZd7q0n" class="tier-cta" target="_blank" rel="noopener">Get Started →</a>
-        <button class="tier-info-btn" data-tier="Featured Placement" data-price="$499/mo">Request more info</button>
-      </div>
+      <button class="option-cta gold" onclick="scrollToForm('Featured Placement &amp; Editorial')">Inquire →</button>
     </div>
 
   </div>
@@ -368,142 +305,112 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--paper);-webk
 <section class="editorial-section">
   <div class="editorial-inner">
     <div class="editorial-intro">
-      <div class="section-label">Step 3 · Optional Add-On</div>
+      <div class="section-label">Optional Add-On</div>
       <h2 class="section-title">Editorial Review Subscriptions</h2>
-      
-      <p>Each Editorial Review is a <strong>dedicated 1,500-word editorial deep-dive</strong> published on Newswire newsroom — driving indexed editorial placements, AI citation authority, and brand credibility. More reviews per month = lower per-review rate.</p>
+      <p>For companies that want sustained editorial visibility, we publish <strong>dedicated editorial deep-dives</strong> on Newswire's newsroom — driving indexed editorial placements, AI citation authority, and brand credibility. Available as monthly subscriptions in multiple cadences.</p>
     </div>
-
-    <div class="editorial-grid">
-
-      <div class="editorial-tier">
-        <div class="editorial-tier-eyebrow">Tier 1 · Starter</div>
-        <h3 class="editorial-tier-name">1 Review / Month</h3>
-        <p class="editorial-tier-desc">A single dedicated editorial review per month. Best for testing the format or single-product companies.</p>
-        <div class="editorial-tier-price">$800<span class="editorial-tier-period">/month</span></div>
-        <p class="editorial-tier-meta">$800 per review</p>
-        <ul class="editorial-tier-features">
-          <li>1 editorial review per month</li>
-          <li>~1,500 words per review</li>
-          <li>Published on Newswire newsroom</li>
-          <li>3 indexed editorial placements</li>
-          <li>AI citation optimization</li>
-          <li>Quarterly content refresh</li>
-        </ul>
-        <div class="editorial-cta-group">
-          <a href="https://buy.stripe.com/3cI6oI3PtfaP3SveWbd7q0f" class="editorial-cta" target="_blank" rel="noopener">Subscribe →</a>
-          <button class="tier-info-btn" data-tier="Editorial Review Tier 1" data-price="$800/mo">Request more info</button>
-        </div>
-      </div>
-
-      <div class="editorial-tier">
-        <div class="editorial-tier-eyebrow">Tier 2 · Growth</div>
-        <h3 class="editorial-tier-name">2 Reviews / Month</h3>
-        <p class="editorial-tier-desc">Two dedicated reviews per month. Best for companies with multiple products, channels, or services to feature.</p>
-        <div class="editorial-tier-price">$1,500<span class="editorial-tier-period">/month</span></div>
-        <p class="editorial-tier-meta savings">$750 per review · Save $100/mo</p>
-        <ul class="editorial-tier-features">
-          <li>2 editorial reviews per month</li>
-          <li>~1,500 words each</li>
-          <li>Published on Newswire newsroom</li>
-          <li>6 indexed editorial placements</li>
-          <li>AI citation optimization</li>
-          <li>Bi-weekly cadence</li>
-          <li>Quarterly refresh</li>
-        </ul>
-        <div class="editorial-cta-group">
-          <a href="https://buy.stripe.com/aFaeVe1Hl3s71KndS7d7q0g" class="editorial-cta" target="_blank" rel="noopener">Subscribe →</a>
-          <button class="tier-info-btn" data-tier="Editorial Review Tier 2" data-price="$1,500/mo">Request more info</button>
-        </div>
-      </div>
-
-      <div class="editorial-tier">
-        <div class="editorial-tier-eyebrow">Tier 3 · Network</div>
-        <h3 class="editorial-tier-name">4 Reviews / Month</h3>
-        <p class="editorial-tier-desc">Four dedicated reviews per month. Best for networks, multi-channel operators, and full-coverage strategies.</p>
-        <div class="editorial-tier-price">$2,400<span class="editorial-tier-period">/month</span></div>
-        <p class="editorial-tier-meta savings">$600 per review · Save $800/mo</p>
-        <ul class="editorial-tier-features">
-          <li>4 editorial reviews per month</li>
-          <li>~1,500 words each</li>
-          <li>Published on Newswire newsroom</li>
-          <li>12 indexed editorial placements</li>
-          <li>AI citation optimization</li>
-          <li>Weekly publication cadence</li>
-          <li>Priority editorial scheduling</li>
-        </ul>
-        <div class="editorial-cta-group">
-          <a href="https://buy.stripe.com/eVq8wQdq3faP9cP8xNd7q0h" class="editorial-cta" target="_blank" rel="noopener">Subscribe →</a>
-          <button class="tier-info-btn" data-tier="Editorial Review Tier 3" data-price="$2,400/mo">Request more info</button>
-        </div>
-      </div>
-
+    <div class="editorial-callout">
+      <h3>Sustained editorial coverage, multiple cadences</h3>
+      <p>Editorial Review Subscriptions can be tailored to your company's volume of products, channels, or services. Choose from monthly, bi-weekly, or weekly publication cadences.</p>
+      <ul>
+        <li>~1,500 words per dedicated review</li>
+        <li>Published on Newswire newsroom</li>
+        <li>Indexed editorial placements + AI citation optimization</li>
+        <li>Choose your cadence: 1, 2, or 4 reviews per month</li>
+        <li>Quarterly content refresh on existing reviews</li>
+      </ul>
+      <button class="editorial-cta" onclick="scrollToForm('Editorial Review Subscription')">Inquire About Editorial Reviews →</button>
     </div>
+  </div>
+</section>
 
-    <div class="bundle">
-      <div class="bundle-content">
-        <h3>Bundle: Placement + Editorial Reviews</h3>
-        <p>Combine a placement tier with Editorial Review subscriptions for maximum visibility. Custom bundle pricing available for multi-channel networks and enterprise accounts.</p>
+<section class="disclosure-section">
+  <div class="disclosure-inner">
+    <div class="disclosure-eyebrow">Our Approach</div>
+    <h3 class="disclosure-title">How rankings and placements work</h3>
+    <p class="disclosure-text">
+      Listicle Liaison's network ranks vendors based on independent research, verified user reviews from G2, Capterra, TrustRadius, and other public review sources, and category-specific feature evaluation. <strong>We do offer commercial placements</strong> — Verified Profiles, Featured Placement &amp; Editorial, and Editorial Review Subscriptions — and these are always clearly disclosed on the pages where they appear. Paid placements never override our editorial process, and our ranking criteria stay transparent and consistent.
+    </p>
+    <p class="disclosure-text">
+      <a href="https://listicleliaison.com/pages/disclosure.html">Read our full Advertising Disclosure →</a>
+    </p>
+  </div>
+</section>
+
+<section class="inquiry-section" id="inquiry">
+  <div class="inquiry-inner">
+    <div class="inquiry-eyebrow">Step 3 · Tell Us About Your Company</div>
+    <h2 class="inquiry-title">Let's talk about getting listed</h2>
+    <p class="inquiry-sub">Share a few details about your company and what you're hoping to accomplish. Emma will respond within 24 hours with options, examples, and answers to your questions.</p>
+
+    <div class="form-card" id="formCard">
+      <div id="formWrapper">
+        <form id="inquiryForm" action="https://formspree.io/f/maqlbbzd" method="POST">
+          <input type="hidden" name="_subject" value="Listicle Liaison — Get Listed Inquiry">
+          <input type="hidden" name="source_page" value="listicleliaison-pricing">
+          <input type="hidden" name="interest" id="interestField" value="">
+
+          <div class="form-row">
+            <div class="form-field">
+              <label>Your Name <span class="req">*</span></label>
+              <input type="text" name="name" required>
+            </div>
+            <div class="form-field">
+              <label>Email <span class="req">*</span></label>
+              <input type="email" name="email" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label>Company <span class="req">*</span></label>
+              <input type="text" name="company" required>
+            </div>
+            <div class="form-field">
+              <label>Company Website</label>
+              <input type="url" name="website" placeholder="https://...">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label>Which industry are you in? <span class="req">*</span></label>
+            <select name="industry" required>
+              <option value="">— Select an industry —</option>
+              <option value="Software">Software</option>
+              <option value="AI Tools">AI Tools</option>
+              <option value="Healthcare">Healthcare</option>
+              <option value="Financial Services">Financial Services</option>
+              <option value="Crypto &amp; Web3">Crypto &amp; Web3</option>
+              <option value="Casino &amp; Gaming">Casino &amp; Gaming</option>
+              <option value="Mining">Mining</option>
+              <option value="Local Business">Local Business</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label>What are you hoping to accomplish? (optional)</label>
+            <textarea name="goals" placeholder="Visibility, lead generation, AI citation authority, editorial credibility — whatever you have in mind."></textarea>
+          </div>
+
+          <button type="submit" class="form-submit" id="formSubmit">Send Inquiry</button>
+        </form>
       </div>
-      <a href="mailto:partnerships@listicleliaison.com?subject=Bundle%20Pricing%20Inquiry" class="bundle-cta">Request Custom Quote →</a>
-    </div>
 
+      <div class="form-success" id="formSuccess">
+        <div class="form-success-icon">✓</div>
+        <h4>Thanks — we'll be in touch!</h4>
+        <p>Your inquiry is in. Emma will respond within 24 hours with details, recommendations, and answers to your questions.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="help">
-  <h3>Not sure which plan fits?</h3>
-  <p>Email us your company name and website. We'll recommend the right plan and have you set up within 24 hours.</p>
+  <h3>Prefer email?</h3>
+  <p>Send your company name, website, and a quick note about what you're trying to accomplish. We'll respond within 24 hours.</p>
   <a href="mailto:partnerships@listicleliaison.com">partnerships@listicleliaison.com</a>
 </section>
-
-<div class="disclosure">
-  <p>All payments redirect to our onboarding form where you'll customize your placement.</p>
-  <p>90-day minimum commitment on placement tiers. 90-day minimum on Editorial Review subscriptions.</p>
-</div>
-
-<!-- Request Info Modal -->
-<div class="modal-overlay" id="infoModal">
-  <div class="modal">
-    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
-    <div id="modalForm">
-      <div class="modal-eyebrow" id="modalTier">Request More Info</div>
-      <h3>Tell us a little about your company</h3>
-      <p class="modal-sub">We'll respond within 24 hours with details, examples, and answers to your questions. No commitment.</p>
-      <form id="infoForm" action="https://formspree.io/f/maqlbbzd" method="POST">
-        <input type="hidden" name="_subject" value="Pricing Page — Info Request">
-        <input type="hidden" name="tier_interest" id="tierInterestInput" value="">
-        <input type="hidden" name="source_page" value="listicleliaison-pricing">
-        <div class="form-field">
-          <label>Your Name <span class="req">*</span></label>
-          <input type="text" name="name" required>
-        </div>
-        <div class="form-field">
-          <label>Email <span class="req">*</span></label>
-          <input type="email" name="email" required>
-        </div>
-        <div class="form-field">
-          <label>Company <span class="req">*</span></label>
-          <input type="text" name="company" required>
-        </div>
-        <div class="form-field">
-          <label>Company Website</label>
-          <input type="url" name="website" placeholder="https://...">
-        </div>
-        <div class="form-field">
-          <label>What questions do you have? (optional)</label>
-          <textarea name="questions" placeholder="Tell us what you'd like to know more about..."></textarea>
-        </div>
-        <button type="submit" class="form-submit" id="formSubmit">Send Inquiry</button>
-      </form>
-    </div>
-    <div class="form-success" id="formSuccess">
-      <div class="form-success-icon">✓</div>
-      <h4>Thanks — we'll be in touch!</h4>
-      <p>Your inquiry is in. Emma will respond within 24 hours with details and answers to your questions.</p>
-    </div>
-  </div>
-</div>
 
 <footer class="footer">
   <div class="footer-inner">
@@ -546,55 +453,25 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--paper);-webk
 </footer>
 
 <script>
-// Billing toggle (visual only - actual checkout uses Stripe links above)
-document.querySelectorAll('.billing-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.billing-btn').forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
-  });
-});
-
-// Modal open/close
-const modal = document.getElementById('infoModal');
-const modalClose = document.getElementById('modalClose');
-const modalTier = document.getElementById('modalTier');
-const tierInput = document.getElementById('tierInterestInput');
-
-document.querySelectorAll('.tier-info-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    const tier = this.getAttribute('data-tier');
-    const price = this.getAttribute('data-price');
-    modalTier.textContent = tier + ' · ' + price;
-    tierInput.value = tier + ' (' + price + ')';
-    document.getElementById('modalForm').style.display = 'block';
-    document.getElementById('formSuccess').classList.remove('active');
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-function closeModal() {
-  modal.classList.remove('active');
-  document.body.style.overflow = '';
+// Scroll to form when option CTA clicked, and pre-fill the interest hidden field
+function scrollToForm(interest) {
+  document.getElementById('interestField').value = interest;
+  document.getElementById('inquiry').scrollIntoView({ behavior: 'smooth' });
+  setTimeout(function() {
+    var firstInput = document.querySelector('#inquiryForm input[name="name"]');
+    if (firstInput) firstInput.focus();
+  }, 600);
 }
 
-modalClose.addEventListener('click', closeModal);
-modal.addEventListener('click', function(e) {
-  if (e.target === modal) closeModal();
-});
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeModal();
-});
-
-// Form submission
-document.getElementById('infoForm').addEventListener('submit', function(e) {
+// Form submission with conversion tracking
+document.getElementById('inquiryForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  const form = this;
-  const btn = document.getElementById('formSubmit');
+  var form = this;
+  var btn = document.getElementById('formSubmit');
   btn.textContent = 'Sending...';
   btn.disabled = true;
-  const data = new FormData(form);
+  var data = new FormData(form);
+
   fetch('https://formspree.io/f/maqlbbzd', {
     method: 'POST',
     body: data,
@@ -615,7 +492,7 @@ document.getElementById('infoForm').addEventListener('submit', function(e) {
           'currency': 'USD'
         });
       }
-      document.getElementById('modalForm').style.display = 'none';
+      document.getElementById('formWrapper').style.display = 'none';
       document.getElementById('formSuccess').classList.add('active');
       form.reset();
     } else {
@@ -627,10 +504,9 @@ document.getElementById('infoForm').addEventListener('submit', function(e) {
   .catch(function(err) {
     btn.textContent = 'Send Inquiry';
     btn.disabled = false;
-    alert('Network error. Please try again.');
+    alert('Network error. Please try again or email partnerships@listicleliaison.com');
   });
 });
 </script>
-
 </body>
 </html>
