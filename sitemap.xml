@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Homepage -->
   <url>
     <loc>https://listicleliaison.com/</loc>
     <lastmod>2026-05-14</lastmod>
@@ -9,7 +8,6 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Core Conversion Pages -->
   <url>
     <loc>https://listicleliaison.com/pages/pricing.html</loc>
     <lastmod>2026-05-14</lastmod>
@@ -25,18 +23,31 @@
   </url>
 
   <url>
-    <loc>https://listicleliaison.com/pages/get-listed-forex-finance.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://listicleliaison.com/pages/compare.html</loc>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- About / Company Pages -->
+  <url>
+    <loc>https://listicleliaison.com/pages/get-listed.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <url>
     <loc>https://listicleliaison.com/pages/about.html</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://listicleliaison.com/pages/contact.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <url>
@@ -46,7 +57,13 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Blog -->
+  <url>
+    <loc>https://listicleliaison.com/blog/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <url>
     <loc>https://listicleliaison.com/blog/gold-trading-signals-2026-cpi-context.html</loc>
     <lastmod>2026-05-14</lastmod>
@@ -54,7 +71,34 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Legal / Policy Pages -->
+  <url>
+    <loc>https://listicleliaison.com/pages/newsroom.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://listicleliaison.com/pages/newsroom/forex-vip-signal-ranking-may-2026.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://listicleliaison.com/pages/newsroom/forex-gold-trading-signals-may-2026.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://listicleliaison.com/pages/newsroom/ai-search-cites-listicles-network-may-2026.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <url>
     <loc>https://listicleliaison.com/pages/disclosure.html</loc>
     <lastmod>2026-04-02</lastmod>
