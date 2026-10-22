@@ -62,7 +62,7 @@ textarea.form-input{min-height:120px;resize:vertical}
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-18137816472');
-  gtag('config', 'G-NKRB1C59Q4');
+  gtag('config', 'G-P8P36G6MZV');
 </script>
 </head>
 <body>
@@ -71,12 +71,13 @@ textarea.form-input{min-height:120px;resize:vertical}
 
 <div class="page-header">
   <h1>Set up your listing</h1>
-  <p>Thank you for your purchase! Please fill out the information below and we'll have your listing live within 24 hours.</p>
+  <p>Thank you for your purchase. Basic Visibility is live within 2 business days of this completed form. Enhanced and Optimal highlighted listings and the Sponsored spot are live within 5 to 7 business days. The first announcement article and press release are published within 2 to 3 weeks, after you approve the draft.</p>
 </div>
 
 <div class="container">
   <form action="https://formspree.io/f/maqlbbzd" method="POST" id="onboardForm">
     <input type="hidden" name="_subject" value="New Listing Setup Submission">
+    <input type="hidden" name="session_id" id="sessionId" value="">
 
     <div class="form-card">
       <h2>Your plan</h2>
@@ -85,9 +86,11 @@ textarea.form-input{min-height:120px;resize:vertical}
         <label class="form-label required">Which plan did you purchase?</label>
         <select class="form-input" name="plan_tier" required id="planSelect" onchange="showTierFields()">
           <option value="">Select your plan...</option>
-          <option value="Claimed Profile ($99/mo)">Claimed Profile — $99/mo</option>
-          <option value="Enhanced Listing ($299/mo)">Enhanced Listing — $299/mo</option>
-          <option value="Featured Partner ($699/mo)">Featured Partner — $699/mo</option>
+          <option value="Basic Visibility">Basic Visibility</option>
+          <option value="Enhanced Visibility">Enhanced Visibility</option>
+          <option value="Optimal Visibility">Optimal Visibility</option>
+          <option value="One-time Announcement">One-time Announcement</option>
+          <option value="AI Visibility Tracking add-on">AI Visibility Tracking add-on</option>
         </select>
       </div>
       <div class="form-group">
@@ -106,8 +109,8 @@ textarea.form-input{min-height:120px;resize:vertical}
       </div>
 
       <div class="form-group">
-        <label class="form-label required">Company website</label>
-        <input type="url" class="form-input" name="company_website" placeholder="https://yourcompany.com" required>
+        <label class="form-label required">Website or booking URL</label>
+        <input type="url" class="form-input" name="website_or_booking_url" placeholder="https://yourcompany.com or your booking page" required>
       </div>
 
       <div class="form-group">
@@ -192,76 +195,69 @@ textarea.form-input{min-height:120px;resize:vertical}
       </div>
     </div>
 
-    <div class="form-card" id="claimedFields">
-      <div class="tier-badge tier-claimed">CLAIMED PROFILE</div>
-      <h2>Profile customization</h2>
-      <div class="form-card-sub">Included with your Claimed Profile</div>
+    <div class="form-card" id="upsell">
+      <h2>Add AI Visibility Tracking</h2>
+      <div class="form-card-sub">Optional. It is not included with Basic, Enhanced, Optimal, or the One-time Announcement.</div>
+      <p style="font-size:14px;color:var(--ink-2);margin-bottom:12px">A monthly report from ai-mentions.com showing whether ChatGPT, Perplexity, and Claude mention the business. One business. Month to month.</p>
+      <a href="https://buy.stripe.com/6oU5kEclZgeT1Kng0fd7q0w" target="_blank" rel="noopener">Add AI Visibility Tracking, +$49/mo →</a>
+    </div>
 
+    <div class="form-card">
+      <h2>Verification</h2>
+      <div class="form-card-sub">We confirm the business is real and operating before the Verified mark goes on.</div>
       <div class="form-group">
-        <label class="form-label">Highlight tag</label>
-        <div class="form-sublabel">A short badge that appears on your listing (e.g. "Best for SMBs", "AI-Powered", "Free Trial Available")</div>
-        <input type="text" class="form-input" name="highlight_tag" placeholder="e.g. Best for Enterprise">
+        <label class="form-label">License number</label>
+        <input type="text" class="form-input" name="license_number" placeholder="If a license applies">
       </div>
-
       <div class="form-group">
-        <label class="form-label">Secondary tag</label>
-        <input type="text" class="form-input" name="secondary_tag" placeholder="e.g. Free Trial Available">
+        <label class="form-label">License state</label>
+        <input type="text" class="form-input" name="license_state" placeholder="State that issued the license">
+      </div>
+      <div class="form-group">
+        <label class="form-label required">Street address</label>
+        <input type="text" class="form-input" name="street_address" placeholder="Street, city, state, postal code" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Review profile URLs</label>
+        <div class="form-sublabel">One URL per line. Google, Yelp, industry review sites, or other public profiles.</div>
+        <textarea class="form-input" name="review_profile_urls" placeholder="https://"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Awards, with links</label>
+        <textarea class="form-input" name="awards" placeholder="Award name and the URL that documents it"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Photos</label>
+        <div class="form-sublabel">Paste image URLs, or a link to a folder we can open. You can also email files to partnerships@listicleliaison.com.</div>
+        <textarea class="form-input" name="photos" placeholder="https:// or a shared folder link"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label required">Services</label>
+        <textarea class="form-input" name="services" placeholder="The services this listing should show" required></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label required">Hours</label>
+        <input type="text" class="form-input" name="hours" placeholder="Mon–Fri 9–5, or by appointment" required>
       </div>
     </div>
 
     <div class="form-card" id="enhancedFields" style="display:none">
-      <div class="tier-badge tier-enhanced">ENHANCED LISTING</div>
-      <h2>Enhanced features</h2>
-      <div class="form-card-sub">Additional features included with your Enhanced Listing</div>
-
+      <div class="tier-badge tier-enhanced">ENHANCED VISIBILITY</div>
+      <h2>Announcement draft notes</h2>
+      <div class="form-card-sub">Used for the announcement article. Enhanced publishes quarterly. Optimal publishes monthly. The One-time Announcement publishes once.</div>
       <div class="form-group">
-        <label class="form-label">Lead capture CTA button text</label>
-        <div class="form-sublabel">The button text visitors will click (e.g. "Request Demo", "Start Free Trial", "Get Pricing")</div>
-        <input type="text" class="form-input" name="cta_text" placeholder="e.g. Request a Demo">
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">CTA button link</label>
-        <div class="form-sublabel">Where the button should link to</div>
-        <input type="url" class="form-input" name="cta_url" placeholder="https://yourcompany.com/demo">
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Key differentiators (up to 3)</label>
-        <div class="form-sublabel">What sets you apart from competitors? These appear as feature highlights.</div>
-        <input type="text" class="form-input" name="differentiator_1" placeholder="Differentiator 1" style="margin-bottom:8px">
-        <input type="text" class="form-input" name="differentiator_2" placeholder="Differentiator 2" style="margin-bottom:8px">
-        <input type="text" class="form-input" name="differentiator_3" placeholder="Differentiator 3">
+        <label class="form-label">What should the announcement say?</label>
+        <textarea class="form-input" name="announcement_notes" placeholder="The facts you want in the draft. You approve the draft before it publishes."></textarea>
       </div>
     </div>
 
-    <div class="form-card" id="featuredFields" style="display:none">
-      <div class="tier-badge tier-featured">FEATURED PARTNER</div>
-      <h2>Featured Partner details</h2>
-      <div class="form-card-sub">For your Company Spotlight article and cross-network promotion</div>
-
+    <div class="form-card" id="optimalFields" style="display:none">
+      <div class="tier-badge tier-claimed">OPTIMAL VISIBILITY</div>
+      <h2>Sponsored spot</h2>
+      <div class="form-card-sub">One labeled Sponsored box above the organic list, at most one per category. It is not a rank.</div>
       <div class="form-group">
-        <label class="form-label">Company founding story</label>
-        <div class="form-sublabel">Tell us your origin story in 3-5 sentences. This will be used in your Company Spotlight article.</div>
-        <textarea class="form-input" name="founding_story" placeholder="How was the company started? What problem were you solving?"></textarea>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Key achievements or metrics</label>
-        <div class="form-sublabel">Customer count, revenue milestones, awards, notable clients — anything that builds credibility</div>
-        <textarea class="form-input" name="achievements" placeholder="e.g. Trusted by 10,000+ companies, Winner of G2 Best Software 2026, 99.9% uptime"></textarea>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Quote from founder or executive</label>
-        <div class="form-sublabel">A quote we can feature in your Spotlight article</div>
-        <textarea class="form-input" name="executive_quote" placeholder="Include the quote and the person's name and title"></textarea>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Additional images or assets</label>
-        <div class="form-sublabel">Links to product screenshots, team photos, or marketing assets for your Spotlight</div>
-        <input type="text" class="form-input" name="additional_assets" placeholder="Links to images or email them to partnerships@listicleliaison.com">
+        <label class="form-label">Category for the Sponsored spot</label>
+        <input type="text" class="form-input" name="sponsored_category" placeholder="City and category, if it differs from the listing below">
       </div>
     </div>
 
@@ -276,37 +272,48 @@ textarea.form-input{min-height:120px;resize:vertical}
         <label class="form-label required">Contact email</label>
         <input type="email" class="form-input" name="contact_email" placeholder="For listing updates and communications" required>
       </div>
+      <div class="form-group">
+        <label class="form-label required">Monthly report email address</label>
+        <div class="form-sublabel">Where we send the monthly report. No login needed.</div>
+        <input type="email" class="form-input" name="report_email" placeholder="reports@yourcompany.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label required">Listing(s) to attach</label>
+        <div class="form-sublabel">City, category, and business name. One listing per line.</div>
+        <textarea class="form-input" name="listings_to_attach" placeholder="Nashville · HVAC · Acme Heating" required></textarea>
+      </div>
     </div>
 
     <button type="submit" class="form-btn">Submit Listing Information &rarr;</button>
-    <p style="font-size:12px;color:var(--ink-4);margin-top:12px;text-align:center">We'll have your listing updated within 24 hours of submission. Questions? Email partnerships@listicleliaison.com</p>
+    <p style="font-size:12px;color:var(--ink-4);margin-top:12px;text-align:center">Basic Visibility is live within 2 business days of this completed form. Enhanced and Optimal highlighted listings and the Sponsored spot are live within 5 to 7 business days. The first announcement article and press release are published within 2 to 3 weeks, after you approve the draft. Questions? Email partnerships@listicleliaison.com</p>
   </form>
 
   <div class="success-msg" id="successMsg">
     <h2>Listing information received!</h2>
-    <p>We'll update your listing within 24 hours. You'll receive a confirmation email when it's live. Thank you for choosing Listicle Liaison!</p>
+    <p>Basic Visibility is live within 2 business days. Enhanced and Optimal highlighted listings and the Sponsored spot are live within 5 to 7 business days. The first announcement is published within 2 to 3 weeks, after you approve the draft. Thank you for choosing Listicle Liaison.</p>
   </div>
 </div>
 
 <script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var session = document.getElementById('sessionId');
+  if (session) session.value = params.get('session_id') || '';
+})();
+
 function showTierFields() {
   var plan = document.getElementById('planSelect').value;
-  var claimed = document.getElementById('claimedFields');
   var enhanced = document.getElementById('enhancedFields');
-  var featured = document.getElementById('featuredFields');
+  var optimal = document.getElementById('optimalFields');
+  var upsell = document.getElementById('upsell');
+  var isAddonOnly = plan.indexOf('AI Visibility Tracking') > -1;
+  var showAnnouncement = plan.indexOf('Enhanced') > -1 || plan.indexOf('Optimal') > -1 || plan.indexOf('One-time') > -1;
 
-  claimed.style.display = 'block';
-  enhanced.style.display = 'none';
-  featured.style.display = 'none';
-
-  if (plan.indexOf('Enhanced') > -1) {
-    enhanced.style.display = 'block';
-  }
-  if (plan.indexOf('Featured') > -1) {
-    enhanced.style.display = 'block';
-    featured.style.display = 'block';
-  }
+  enhanced.style.display = showAnnouncement ? 'block' : 'none';
+  optimal.style.display = plan.indexOf('Optimal') > -1 ? 'block' : 'none';
+  upsell.style.display = isAddonOnly ? 'none' : 'block';
 }
+showTierFields();
 </script>
 
 </body>
