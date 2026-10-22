@@ -1,0 +1,49 @@
+{
+  "redirects": [
+    {
+      "source": "/pages/listicleliaison-pricing.html",
+      "destination": "/pages/pricing.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/compare.html",
+      "destination": "/pages/pricing.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/get-listed-casino.html",
+      "destination": "/pages/pricing.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/get-listed-editorial.html",
+      "destination": "/pages/pricing.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/get-listed-link-building.html",
+      "destination": "/pages/pricing.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/get-listed-forex-finance.html",
+      "destination": "/pages/pricing.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/listicleliaison-index.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/ll-partners.html",
+      "destination": "/pages/partners.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/newswroom.html",
+      "destination": "/pages/newsroom.html",
+      "statusCode": 301
+    }
+  ]
+}
