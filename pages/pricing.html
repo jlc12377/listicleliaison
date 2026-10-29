@@ -114,12 +114,25 @@
         "name": "AI Visibility Tracking",
         "price": "49",
         "priceCurrency": "USD",
-        "description": "Add-on. A monthly report showing whether ChatGPT, Perplexity, and Claude mention the business. Not included in any plan.",
+        "description": "Add-on. A monthly report showing whether ChatGPT, Perplexity, and Claude mention the business. Also available annually at $490/yr. Not included in any plan.",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
           "price": "49",
           "priceCurrency": "USD",
           "billingDuration": "P1M"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "AI Visibility Tracking – Annual",
+        "price": "490",
+        "priceCurrency": "USD",
+        "description": "Add-on. The same AI Visibility Tracking report, billed annually at $490/yr. Not included in any plan.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "490",
+          "priceCurrency": "USD",
+          "billingDuration": "P1Y"
         }
       },
       {
@@ -150,7 +163,10 @@ const LL_CHECKOUT = {
   basic:    { monthly: "https://buy.stripe.com/14A14o0Dh1jZ74H4hxd7q0x", annual: "https://buy.stripe.com/7sYcN60Dh3s7ex9dS7d7q0A" },
   enhanced: { monthly: "https://buy.stripe.com/cNieVe85J4wbcp1bJZd7q0y", annual: "https://buy.stripe.com/28E5kE71F2o32Or5lBd7q0B" },
   optimal:  { monthly: "https://buy.stripe.com/7sY14oclZd2H4Wz01hd7q0z", annual: "https://buy.stripe.com/00w9AU4Tx3s7gFh9BRd7q0C" },
-  aiAddon:  { monthly: "https://buy.stripe.com/6oU5kEclZgeT1Kng0fd7q0w" },
+  aiAddon:  {
+    monthly: "https://buy.stripe.com/6oU5kEclZgeT1Kng0fd7q0w",
+    annual: "https://buy.stripe.com/3cIdRa71FgeTdt529pd7q0E"
+  },
   announcement: { once: "https://buy.stripe.com/dRm14o71Fd2Hcp18xNd7q0D" },
   // standalone (ai-mentions.com only, not on the LL pricing cards):
   aiReport:   "https://buy.stripe.com/cNieVeclZ8MrbkX15ld7q0u",   // $150 one-time
@@ -268,13 +284,6 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--paper);-webk
 .choice-title{font-weight:600;font-size:14px}
 .choice-price{font-family:var(--font-display);font-size:22px;letter-spacing:-.4px;white-space:nowrap}
 .choice-meta{display:block;font-size:13px;color:var(--ink-3);line-height:1.5;margin-top:2px}
-.choice.is-disabled{cursor:not-allowed}
-.choice.is-disabled .choice-title,
-.choice.is-disabled .choice-price,
-.choice.is-disabled .choice-meta,
-.choice.is-disabled input{opacity:.45}
-.order-note{display:none;font-size:12.5px;font-weight:400;color:var(--ink-3);margin-top:6px;line-height:1.5}
-.choice.is-disabled .order-note{display:block}
 .order-summary{background:var(--cream);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px}
 .order-summary h3{font-family:var(--font-display);font-size:22px;font-weight:600;margin-bottom:12px}
 .order-lines{list-style:none;margin:0 0 14px}
@@ -353,7 +362,7 @@ button.checkout{border:none;cursor:pointer;font-family:var(--font-body)}
         <li>Live within 2 business days of the completed onboarding form.</li>
       </ul>
       <a class="checkout" data-checkout href="#">Get Basic Visibility</a>
-      <a class="addon js-addon" href="#">Add AI Visibility Tracking, +$49/mo →</a>
+      <a class="addon js-addon" href="#">Add AI Visibility Tracking, +$49/mo or $490/yr →</a>
     </article>
 
     <article class="card chosen" id="enhanced" data-plan="enhanced">
@@ -373,7 +382,7 @@ button.checkout{border:none;cursor:pointer;font-family:var(--font-body)}
         <li>The highlighted listing is live within 5 to 7 business days. The first announcement article and press release are published within 2 to 3 weeks of the completed onboarding form, after you approve the draft.</li>
       </ul>
       <a class="checkout" data-checkout href="#">Get Enhanced Visibility</a>
-      <a class="addon js-addon" href="#">Add AI Visibility Tracking, +$49/mo →</a>
+      <a class="addon js-addon" href="#">Add AI Visibility Tracking, +$49/mo or $490/yr →</a>
     </article>
 
     <article class="card" id="optimal" data-plan="optimal">
@@ -392,7 +401,7 @@ button.checkout{border:none;cursor:pointer;font-family:var(--font-body)}
         <li>The Sponsored spot is live within 5 to 7 business days.</li>
       </ul>
       <a class="checkout" data-checkout href="#">Get Optimal Visibility</a>
-      <a class="addon js-addon" href="#">Add AI Visibility Tracking, +$49/mo →</a>
+      <a class="addon js-addon" href="#">Add AI Visibility Tracking, +$49/mo or $490/yr →</a>
     </article>
   </div>
 
@@ -410,13 +419,13 @@ button.checkout{border:none;cursor:pointer;font-family:var(--font-body)}
     <div>
       <div class="price">$695<span> one-time</span></div>
       <a class="checkout" id="announcementCheckout" href="#">Get the announcement</a>
-      <a class="addon js-addon" href="#">Add AI Visibility Tracking, +$49/mo →</a>
+      <a class="addon js-addon" href="#">Add AI Visibility Tracking, +$49/mo or $490/yr →</a>
     </div>
   </article>
 
   <section class="order" id="order" aria-labelledby="orderTitle">
     <h2 id="orderTitle">Build your order</h2>
-    <p class="order-lead">Choose one plan. You can add the announcement. On monthly billing, you can also add AI Visibility Tracking.</p>
+    <p class="order-lead">Choose one plan. You can add AI Visibility Tracking ($49/mo or $490/yr) and the announcement.</p>
     <div class="toggle" id="orderToggle" role="group" aria-label="Order billing">
       <button type="button" data-order-period="monthly" aria-pressed="true">Monthly</button>
       <button type="button" data-order-period="annual" aria-pressed="false">Annual</button>
@@ -463,14 +472,13 @@ button.checkout{border:none;cursor:pointer;font-family:var(--font-body)}
           <legend>Optional</legend>
           <div class="order-extras">
             <label class="choice" id="aiChoice">
-              <input type="checkbox" id="orderExtraAi" value="ai-tracking" aria-describedby="aiOrderNote">
+              <input type="checkbox" id="orderExtraAi" value="ai-tracking">
               <span class="choice-body">
                 <span class="choice-top">
                   <span class="choice-title">AI Visibility Tracking</span>
-                  <span class="choice-price">+$49/mo</span>
+                  <span class="choice-price" id="orderExtraAiPrice">+$49/mo</span>
                 </span>
-                <span class="choice-meta">A monthly report on whether ChatGPT, Perplexity, and Claude mention the business.</span>
-                <span class="order-note" id="aiOrderNote">AI Visibility Tracking is billed monthly, so it can be added to monthly plans only.</span>
+                <span class="choice-meta">Add-on. A monthly report on whether ChatGPT, Perplexity, and Claude mention the business. $49/mo, or $490/yr on annual billing.</span>
               </span>
             </label>
             <label class="choice" id="announcementChoice">
@@ -502,9 +510,10 @@ button.checkout{border:none;cursor:pointer;font-family:var(--font-body)}
 
   <section class="panel" id="ai-tracking">
     <h2>AI Visibility Tracking</h2>
-    <p>+$49/mo on any plan. A monthly report from ai-mentions.com showing whether ChatGPT, Perplexity, and Claude mention the business. It covers one business, and it can be added to any plan. It is not included in Basic, Enhanced, Optimal, or the One-time Announcement.</p>
+    <p>+$49/mo on any plan. Also available annually at $490/yr. A monthly report from ai-mentions.com showing whether ChatGPT, Perplexity, and Claude mention the business. It covers one business, and it can be added to any plan. It is not included in Basic, Enhanced, Optimal, or the One-time Announcement.</p>
     <p>Without a plan? Standalone tracking is $65/mo at <a href="https://www.ai-mentions.com">ai-mentions.com</a>.</p>
     <p><a class="js-addon" href="#">Add AI Visibility Tracking, +$49/mo →</a></p>
+    <p><a class="js-addon-annual" href="#">Add AI Visibility Tracking, $490/yr →</a></p>
   </section>
 
   <ul class="terms-box">
@@ -647,6 +656,7 @@ button.checkout{border:none;cursor:pointer;font-family:var(--font-body)}
     enhanced: { monthly: 299, annual: 2990 },
     optimal: { monthly: 699, annual: 6990 }
   };
+  var AI_AMOUNTS = { monthly: 49, annual: 490 };
   var REP_KEY = 'll_rep';
   var REP_TTL = 90 * 24 * 60 * 60 * 1000;
   var currentRep = '';
@@ -750,6 +760,13 @@ button.checkout{border:none;cursor:pointer;font-family:var(--font-body)}
     card.querySelector('[data-price]').innerHTML = price[0] + '<span>' + price[1] + '</span>';
     card.querySelector('[data-term]').textContent = TERMS[key][period];
     paintLink(card.querySelector('[data-checkout]'), resolve(key, period));
+    var addon = card.querySelector('.js-addon');
+    if (addon) {
+      paintLink(addon, resolve('aiAddon', period));
+      addon.textContent = period === 'annual'
+        ? 'Add AI Visibility Tracking, +$490/yr →'
+        : 'Add AI Visibility Tracking, +$49/mo or $490/yr →';
+    }
   }
 
   document.querySelectorAll('.card[data-plan]').forEach(function (card) {
@@ -763,9 +780,12 @@ button.checkout{border:none;cursor:pointer;font-family:var(--font-body)}
 
   paintLink(document.getElementById('announcementCheckout'), resolve('announcement', 'once'));
 
-  var addonUrl = resolve('aiAddon', 'monthly');
   document.querySelectorAll('.js-addon').forEach(function (link) {
-    paintLink(link, addonUrl);
+    if (link.closest('.card[data-plan]')) return;
+    paintLink(link, resolve('aiAddon', 'monthly'));
+  });
+  document.querySelectorAll('.js-addon-annual').forEach(function (link) {
+    paintLink(link, resolve('aiAddon', 'annual'));
   });
 
   function selectedOrderPlan() {
@@ -777,7 +797,7 @@ button.checkout{border:none;cursor:pointer;font-family:var(--font-body)}
     var extras = [];
     var ai = document.getElementById('orderExtraAi');
     var announcement = document.getElementById('orderExtraAnnouncement');
-    if (ai && ai.checked && !ai.disabled) extras.push('ai-tracking');
+    if (ai && ai.checked) extras.push('ai-tracking');
     if (announcement && announcement.checked) extras.push('announcement');
     return extras;
   }
@@ -812,14 +832,14 @@ button.checkout{border:none;cursor:pointer;font-family:var(--font-body)}
 
     var aiInput = document.getElementById('orderExtraAi');
     var aiChoice = document.getElementById('aiChoice');
-    if (annual) aiInput.checked = false;
-    aiInput.disabled = annual;
-    aiChoice.classList.toggle('is-disabled', annual);
+    var aiAmount = AI_AMOUNTS[orderInterval];
+    var aiLabel = annual ? '$490/yr' : '$49/mo';
+    document.getElementById('orderExtraAiPrice').textContent = '+' + aiLabel;
     document.getElementById('announcementChoice').classList.toggle(
       'is-selected',
       document.getElementById('orderExtraAnnouncement').checked
     );
-    aiChoice.classList.toggle('is-selected', aiInput.checked && !annual);
+    aiChoice.classList.toggle('is-selected', aiInput.checked);
 
     var plan = selectedOrderPlan();
     var recurring = ORDER_AMOUNTS[plan][orderInterval];
@@ -829,10 +849,10 @@ button.checkout{border:none;cursor:pointer;font-family:var(--font-body)}
     var lines = document.getElementById('orderLines');
     lines.textContent = '';
     addOrderLine(lines, PLAN_NAMES[plan], money(recurring) + suffix);
-    if (!annual && aiInput.checked) {
-      due += 49;
-      thenAmount += 49;
-      addOrderLine(lines, 'AI Visibility Tracking', '$49/mo');
+    if (aiInput.checked) {
+      due += aiAmount;
+      thenAmount += aiAmount;
+      addOrderLine(lines, 'AI Visibility Tracking', aiLabel);
     }
     if (document.getElementById('orderExtraAnnouncement').checked) {
       due += 695;

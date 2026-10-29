@@ -12,6 +12,7 @@ const ENV = {
   PRICE_OPTIMAL_MONTHLY: 'price_1OptimalMonthly',
   PRICE_OPTIMAL_ANNUAL: 'price_1OptimalAnnual',
   PRICE_AI_TRACKING_MONTHLY: 'price_1AiTrackingMonthly',
+  PRICE_AI_TRACKING_ANNUAL: 'price_1AiTrackingAnnual',
   PRICE_ANNOUNCEMENT: 'price_1Announcement',
 };
 
@@ -141,12 +142,13 @@ test('checkout uses built-in price ids when only the secret key is set', async (
       body: {
         plan: 'optimal',
         interval: 'annual',
-        extras: ['announcement'],
+        extras: ['ai-tracking', 'announcement'],
       },
     }, res);
     assert.equal(res.statusCode, 200);
     assert.deepEqual(seenParams.line_items, [
       { price: DEFAULT_PRICES.PRICE_OPTIMAL_ANNUAL, quantity: 1 },
+      { price: DEFAULT_PRICES.PRICE_AI_TRACKING_ANNUAL, quantity: 1 },
       { price: DEFAULT_PRICES.PRICE_ANNOUNCEMENT, quantity: 1 },
     ]);
   } finally {
