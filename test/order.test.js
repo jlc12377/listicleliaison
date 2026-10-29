@@ -20,6 +20,7 @@ const ENV = {
   PRICE_OPTIMAL_MONTHLY: 'price_1OptimalMonthly',
   PRICE_OPTIMAL_ANNUAL: 'price_1OptimalAnnual',
   PRICE_AI_TRACKING_MONTHLY: 'price_1AiTrackingMonthly',
+  PRICE_AI_TRACKING_ANNUAL: 'price_1AiTrackingAnnual',
   PRICE_ANNOUNCEMENT: 'price_1Announcement',
 };
 
@@ -33,6 +34,7 @@ test('env var list matches the Vercel names', () => {
     'PRICE_OPTIMAL_MONTHLY',
     'PRICE_OPTIMAL_ANNUAL',
     'PRICE_AI_TRACKING_MONTHLY',
+    'PRICE_AI_TRACKING_ANNUAL',
     'PRICE_ANNOUNCEMENT',
   ]);
 });
@@ -73,7 +75,7 @@ test('monthly plan with both extras is one subscription session', () => {
   assert.equal(fields.subscription_data.metadata.extras, 'ai-tracking,announcement');
 });
 
-test('annual plan can include the one-time announcement and not AI tracking', () => {
+test('annual plan can include the one-time announcement', () => {
   const order = validateOrder({
     plan: 'optimal',
     interval: 'annual',
@@ -87,14 +89,31 @@ test('annual plan can include the one-time announcement and not AI tracking', ()
   ]);
 });
 
-test('annual plus AI tracking is rejected', () => {
-  const order = validateOrder({
+test('AI tracking uses the same interval as the plan', () => {
+  const monthly = validateOrder({
     plan: 'basic',
-    interval: 'annual',
+    interval: 'monthly',
     extras: ['ai-tracking'],
   }, ENV);
-  assert.equal(order.ok, false);
-  assert.equal(order.status, 400);
+  assert.equal(monthly.ok, true);
+  assert.deepEqual(monthly.lineItems, [
+    { price: 'price_1BasicMonthly', quantity: 1 },
+    { price: 'price_1AiTrackingMonthly', quantity: 1 },
+  ]);
+
+  const annual = validateOrder({
+    plan: 'basic',
+    interval: 'annual',
+    extras: ['ai-tracking', 'announcement'],
+  }, ENV);
+  assert.equal(annual.ok, true);
+  assert.deepEqual(annual.lineItems, [
+    { price: 'price_1BasicAnnual', quantity: 1 },
+    { price: 'price_1AiTrackingAnnual', quantity: 1 },
+    { price: 'price_1Announcement', quantity: 1 },
+  ]);
+  assert.equal(annual.metadata.interval, 'annual');
+  assert.equal(annual.metadata.extras, 'ai-tracking,announcement');
 });
 
 test('missing or unknown input is rejected', () => {
@@ -127,6 +146,15 @@ test('missing secret or an explicit bad price id fails closed', () => {
     extras: ['announcement'],
   }, badPrice);
   assert.equal(order.status, 503);
+  const blankAnnualAi = { ...ENV, PRICE_AI_TRACKING_ANNUAL: '' };
+  assert.equal(
+    validateOrder({ plan: 'enhanced', interval: 'annual', extras: ['ai-tracking'] }, blankAnnualAi).status,
+    503
+  );
+  assert.equal(
+    validateOrder({ plan: 'enhanced', interval: 'monthly', extras: ['ai-tracking'] }, blankAnnualAi).ok,
+    true
+  );
   const badKey = { ...ENV, STRIPE_SECRET_KEY: 'pk_test_abc123' };
   assert.equal(validateOrder({ plan: 'basic', interval: 'monthly', extras: [] }, badKey).status, 503);
 });
@@ -140,6 +168,7 @@ test('unset price env vars use built-in Stripe price ids', () => {
     PRICE_OPTIMAL_MONTHLY: 'price_1UTCqXLCHEE1uM9TSrzZ5rvi',
     PRICE_OPTIMAL_ANNUAL: 'price_1UTCwxLCHEE1uM9Ta95ep0Sl',
     PRICE_AI_TRACKING_MONTHLY: 'price_1UT7RmLCHEE1uM9TBq4LZTDb',
+    PRICE_AI_TRACKING_ANNUAL: 'price_1UVrkOLCHEE1uM9THHN3K4QO',
     PRICE_ANNOUNCEMENT: 'price_1UTD00LCHEE1uM9TCZY7pxRj',
   });
 
@@ -176,6 +205,17 @@ test('unset price env vars use built-in Stripe price ids', () => {
     validateOrder({ plan: 'optimal', interval: 'annual' }, onlySecret).lineItems[0].price,
     'price_1UTCwxLCHEE1uM9Ta95ep0Sl'
   );
+
+  const annualAi = validateOrder({
+    plan: 'optimal',
+    interval: 'annual',
+    extras: ['ai-tracking'],
+  }, onlySecret);
+  assert.equal(annualAi.ok, true);
+  assert.deepEqual(annualAi.lineItems, [
+    { price: 'price_1UTCwxLCHEE1uM9Ta95ep0Sl', quantity: 1 },
+    { price: 'price_1UVrkOLCHEE1uM9THHN3K4QO', quantity: 1 },
+  ]);
 });
 
 test('site origin stays on this site', () => {
@@ -200,14 +240,19 @@ test('pricing page keeps the payment links and adds the order builder', () => {
     'https://buy.stripe.com/7sY14oclZd2H4Wz01hd7q0z',
     'https://buy.stripe.com/00w9AU4Tx3s7gFh9BRd7q0C',
     'https://buy.stripe.com/6oU5kEclZgeT1Kng0fd7q0w',
+    'https://buy.stripe.com/3cIdRa71FgeTdt529pd7q0E',
     'https://buy.stripe.com/dRm14o71Fd2Hcp18xNd7q0D',
   ];
   for (const link of links) assert.equal(html.includes(link), true);
 
   assert.match(html, /id="orderCheckout"/);
   assert.match(html, /id="orderExtraAi"/);
+  assert.match(html, /id="orderExtraAiPrice"/);
   assert.match(html, /id="orderExtraAnnouncement"/);
-  assert.match(html, /AI Visibility Tracking is billed monthly, so it can be added to monthly plans only\./);
+  assert.match(html, /Also available annually at \$490\/yr\./);
+  assert.match(html, /AI_AMOUNTS = \{ monthly: 49, annual: 490 \}/);
+  assert.equal(html.includes('monthly plans only'), false);
+  assert.equal(html.includes('aiInput.disabled'), false);
   assert.match(html, /Press release published on three news sites\./);
   assert.match(html, /function withRep/);
   assert.match(html, /client_reference_id/);
