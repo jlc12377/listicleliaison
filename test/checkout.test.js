@@ -1,6 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const checkout = require('../api/checkout');
+const { DEFAULT_PRICES } = require('../api/order');
 
 const ENV = {
   STRIPE_SECRET_KEY: 'sk_test_abc123',
@@ -106,6 +107,54 @@ test('checkout creates one session and returns its URL', async () => {
       { price: 'price_1Announcement', quantity: 1 },
     ]);
   });
+});
+
+test('checkout uses built-in price ids when only the secret key is set', async () => {
+  const keys = ['STRIPE_SECRET_KEY', ...Object.keys(DEFAULT_PRICES)];
+  const previous = {};
+  for (const key of keys) {
+    previous[key] = process.env[key];
+    delete process.env[key];
+  }
+  process.env.STRIPE_SECRET_KEY = 'sk_live_onlysecret';
+  try {
+    let seenParams = null;
+    const handler = checkout.createHandler({
+      stripeFactory(key) {
+        assert.equal(key, 'sk_live_onlysecret');
+        return {
+          checkout: {
+            sessions: {
+              async create(params) {
+                seenParams = params;
+                return { url: 'https://checkout.stripe.com/c/pay/cs_test_defaults' };
+              },
+            },
+          },
+        };
+      },
+    });
+    const res = mockRes();
+    await handler({
+      method: 'POST',
+      headers: { host: 'listicleliaison.com' },
+      body: {
+        plan: 'optimal',
+        interval: 'annual',
+        extras: ['announcement'],
+      },
+    }, res);
+    assert.equal(res.statusCode, 200);
+    assert.deepEqual(seenParams.line_items, [
+      { price: DEFAULT_PRICES.PRICE_OPTIMAL_ANNUAL, quantity: 1 },
+      { price: DEFAULT_PRICES.PRICE_ANNOUNCEMENT, quantity: 1 },
+    ]);
+  } finally {
+    for (const key of keys) {
+      if (previous[key] == null) delete process.env[key];
+      else process.env[key] = previous[key];
+    }
+  }
 });
 
 test('checkout accepts a JSON string body', async () => {

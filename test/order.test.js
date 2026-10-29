@@ -4,6 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const {
   ENV_VARS,
+  DEFAULT_PRICES,
   sanitizeRep,
   validateOrder,
   sessionFields,
@@ -115,7 +116,7 @@ test('a plan-only order omits rep fields when no rep is present', () => {
   assert.equal(fields.metadata.extras, undefined);
 });
 
-test('missing secret or price id fails closed', () => {
+test('missing secret or an explicit bad price id fails closed', () => {
   assert.equal(validateOrder({ plan: 'basic', interval: 'monthly', extras: [] }, {}).status, 503);
   const missingPrice = { ...ENV, PRICE_BASIC_MONTHLY: '' };
   assert.equal(validateOrder({ plan: 'basic', interval: 'monthly', extras: [] }, missingPrice).status, 503);
@@ -128,6 +129,53 @@ test('missing secret or price id fails closed', () => {
   assert.equal(order.status, 503);
   const badKey = { ...ENV, STRIPE_SECRET_KEY: 'pk_test_abc123' };
   assert.equal(validateOrder({ plan: 'basic', interval: 'monthly', extras: [] }, badKey).status, 503);
+});
+
+test('unset price env vars use built-in Stripe price ids', () => {
+  assert.deepEqual(DEFAULT_PRICES, {
+    PRICE_BASIC_MONTHLY: 'price_1UTCosLCHEE1uM9TSM9YqBLb',
+    PRICE_BASIC_ANNUAL: 'price_1UTCvcLCHEE1uM9TnGUfpjnO',
+    PRICE_ENHANCED_MONTHLY: 'price_1UTCpdLCHEE1uM9TsDyKab4X',
+    PRICE_ENHANCED_ANNUAL: 'price_1UTCwSLCHEE1uM9T57MIOhlK',
+    PRICE_OPTIMAL_MONTHLY: 'price_1UTCqXLCHEE1uM9TSrzZ5rvi',
+    PRICE_OPTIMAL_ANNUAL: 'price_1UTCwxLCHEE1uM9Ta95ep0Sl',
+    PRICE_AI_TRACKING_MONTHLY: 'price_1UT7RmLCHEE1uM9TBq4LZTDb',
+    PRICE_ANNOUNCEMENT: 'price_1UTD00LCHEE1uM9TCZY7pxRj',
+  });
+
+  const onlySecret = { STRIPE_SECRET_KEY: 'sk_test_abc123' };
+  const monthly = validateOrder({
+    plan: 'enhanced',
+    interval: 'monthly',
+    extras: ['ai-tracking', 'announcement'],
+  }, onlySecret);
+  assert.equal(monthly.ok, true);
+  assert.deepEqual(monthly.lineItems, [
+    { price: 'price_1UTCpdLCHEE1uM9TsDyKab4X', quantity: 1 },
+    { price: 'price_1UT7RmLCHEE1uM9TBq4LZTDb', quantity: 1 },
+    { price: 'price_1UTD00LCHEE1uM9TCZY7pxRj', quantity: 1 },
+  ]);
+
+  assert.equal(
+    validateOrder({ plan: 'basic', interval: 'monthly' }, onlySecret).lineItems[0].price,
+    'price_1UTCosLCHEE1uM9TSM9YqBLb'
+  );
+  assert.equal(
+    validateOrder({ plan: 'basic', interval: 'annual' }, onlySecret).lineItems[0].price,
+    'price_1UTCvcLCHEE1uM9TnGUfpjnO'
+  );
+  assert.equal(
+    validateOrder({ plan: 'enhanced', interval: 'annual' }, onlySecret).lineItems[0].price,
+    'price_1UTCwSLCHEE1uM9T57MIOhlK'
+  );
+  assert.equal(
+    validateOrder({ plan: 'optimal', interval: 'monthly' }, onlySecret).lineItems[0].price,
+    'price_1UTCqXLCHEE1uM9TSrzZ5rvi'
+  );
+  assert.equal(
+    validateOrder({ plan: 'optimal', interval: 'annual' }, onlySecret).lineItems[0].price,
+    'price_1UTCwxLCHEE1uM9Ta95ep0Sl'
+  );
 });
 
 test('site origin stays on this site', () => {

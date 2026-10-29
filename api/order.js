@@ -15,6 +15,19 @@ const EXTRA_PRICE_ENV = {
   announcement: 'PRICE_ANNOUNCEMENT',
 };
 
+// Used when that env var is unset. A set variable replaces its default,
+// including a blank value, which still fails closed.
+const DEFAULT_PRICES = {
+  PRICE_BASIC_MONTHLY: 'price_1UTCosLCHEE1uM9TSM9YqBLb',
+  PRICE_BASIC_ANNUAL: 'price_1UTCvcLCHEE1uM9TnGUfpjnO',
+  PRICE_ENHANCED_MONTHLY: 'price_1UTCpdLCHEE1uM9TsDyKab4X',
+  PRICE_ENHANCED_ANNUAL: 'price_1UTCwSLCHEE1uM9T57MIOhlK',
+  PRICE_OPTIMAL_MONTHLY: 'price_1UTCqXLCHEE1uM9TSrzZ5rvi',
+  PRICE_OPTIMAL_ANNUAL: 'price_1UTCwxLCHEE1uM9Ta95ep0Sl',
+  PRICE_AI_TRACKING_MONTHLY: 'price_1UT7RmLCHEE1uM9TBq4LZTDb',
+  PRICE_ANNOUNCEMENT: 'price_1UTD00LCHEE1uM9TCZY7pxRj',
+};
+
 const EXTRA_ORDER = ['ai-tracking', 'announcement'];
 
 const ENV_VARS = [
@@ -35,7 +48,10 @@ function sanitizeRep(value) {
 }
 
 function readPrice(env, name) {
-  const value = env && typeof env[name] === 'string' ? env[name].trim() : '';
+  const set = !!(env && Object.prototype.hasOwnProperty.call(env, name));
+  const value = set
+    ? (typeof env[name] === 'string' ? env[name].trim() : '')
+    : (DEFAULT_PRICES[name] || '');
   if (!/^price_[A-Za-z0-9]+$/.test(value)) return '';
   return value;
 }
@@ -149,6 +165,7 @@ function siteOrigin(req) {
 
 module.exports = {
   ENV_VARS,
+  DEFAULT_PRICES,
   PLAN_PRICE_ENV,
   EXTRA_PRICE_ENV,
   sanitizeRep,
