@@ -172,7 +172,7 @@ const LL_CHECKOUT = {
   --font-body:'Sora',-apple-system,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 16px)}
 body{font-family:var(--font-body);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;line-height:1.6}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:rgba(10,10,10,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,165,60,.15)}
 .nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;justify-content:space-between}
@@ -252,8 +252,48 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--paper);-webk
 .footer-col a:hover{color:var(--gold)}
 .footer-bottom{max-width:var(--max-w);margin:28px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.25)}
 .footer-bottom a{color:rgba(255,255,255,.25);text-decoration:none;margin-left:14px}
+.order{margin-top:22px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px}
+.order h2{font-family:var(--font-display);font-size:28px;font-weight:600;margin-bottom:6px}
+.order-lead{color:var(--ink-3);font-size:14.5px;max-width:640px}
+.order.is-annual .free-badge{display:inline-block}
+.order-layout{display:grid;grid-template-columns:1.4fr .8fr;gap:24px;align-items:start;margin-top:8px}
+.order fieldset{border:none;margin:0;padding:0;min-width:0}
+.order legend{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:16px 0 8px}
+.order-plans,.order-extras{display:flex;flex-direction:column;gap:10px}
+.choice{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);cursor:pointer}
+.choice.is-selected{border:2px solid var(--gold);background:var(--gold-pale);padding:13px 15px}
+.choice input{accent-color:var(--gold-deep);width:16px;height:16px;margin-top:4px;flex:none}
+.choice-body{flex:1;min-width:0}
+.choice-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.choice-title{font-weight:600;font-size:14px}
+.choice-price{font-family:var(--font-display);font-size:22px;letter-spacing:-.4px;white-space:nowrap}
+.choice-meta{display:block;font-size:13px;color:var(--ink-3);line-height:1.5;margin-top:2px}
+.choice.is-disabled{cursor:not-allowed}
+.choice.is-disabled .choice-title,
+.choice.is-disabled .choice-price,
+.choice.is-disabled .choice-meta,
+.choice.is-disabled input{opacity:.45}
+.order-note{display:none;font-size:12.5px;font-weight:400;color:var(--ink-3);margin-top:6px;line-height:1.5}
+.choice.is-disabled .order-note{display:block}
+.order-summary{background:var(--cream);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px}
+.order-summary h3{font-family:var(--font-display);font-size:22px;font-weight:600;margin-bottom:12px}
+.order-lines{list-style:none;margin:0 0 14px}
+.order-lines li{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;padding:8px 0;border-bottom:1px solid var(--border);color:var(--ink-2)}
+.order-due{display:flex;justify-content:space-between;align-items:baseline;margin:8px 0 4px}
+.order-due span{font-size:13px;font-weight:600}
+.order-due strong{font-family:var(--font-display);font-size:32px;font-weight:600;letter-spacing:-.5px}
+.order-after,.order-term{font-size:13px;color:var(--ink-3)}
+.order-term{margin-bottom:14px}
+.order-summary .checkout{background:var(--gold);color:#fff}
+.checkout[aria-disabled="true"]{opacity:.75;pointer-events:none}
+.order.is-busy .toggle,.order.is-busy .order-plans,.order.is-busy .order-extras{pointer-events:none}
+button.checkout{border:none;cursor:pointer;font-family:var(--font-body)}
+@media(min-width:901px){
+  .order-summary{position:sticky;top:calc(var(--nav-h) + 16px)}
+}
 @media(max-width:900px){
-  .plans,.announce,.footer-inner{grid-template-columns:1fr}
+  .plans,.announce,.footer-inner,.order-layout{grid-template-columns:1fr}
+  .choice-top{flex-direction:column;align-items:flex-start;gap:2px}
   .hero h1{font-size:34px}
   .nav-links{display:none;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--black);flex-direction:column;padding:16px 24px;gap:12px}
   .nav-links.open{display:flex}
@@ -373,6 +413,92 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--paper);-webk
       <a class="addon js-addon" href="#">Add AI Visibility Tracking, +$49/mo →</a>
     </div>
   </article>
+
+  <section class="order" id="order" aria-labelledby="orderTitle">
+    <h2 id="orderTitle">Build your order</h2>
+    <p class="order-lead">Choose one plan. You can add the announcement. On monthly billing, you can also add AI Visibility Tracking.</p>
+    <div class="toggle" id="orderToggle" role="group" aria-label="Order billing">
+      <button type="button" data-order-period="monthly" aria-pressed="true">Monthly</button>
+      <button type="button" data-order-period="annual" aria-pressed="false">Annual</button>
+    </div>
+    <div class="free-badge">2 months free</div>
+    <div class="order-layout">
+      <div>
+        <fieldset>
+          <legend>Plan</legend>
+          <div class="order-plans">
+            <label class="choice">
+              <input type="radio" name="order-plan" value="basic" id="orderPlanBasic">
+              <span class="choice-body">
+                <span class="choice-top">
+                  <span class="choice-title">Basic Visibility</span>
+                  <span class="choice-price" data-order-price="basic">$99/mo</span>
+                </span>
+                <span class="choice-meta">A verified listing on the network of review sites.</span>
+              </span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="order-plan" value="enhanced" id="orderPlanEnhanced" checked>
+              <span class="choice-body">
+                <span class="choice-top">
+                  <span class="choice-title">Enhanced Visibility</span>
+                  <span class="choice-price" data-order-price="enhanced">$299/mo</span>
+                </span>
+                <span class="choice-meta">Everything in Basic, plus a highlighted listing.</span>
+              </span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="order-plan" value="optimal" id="orderPlanOptimal">
+              <span class="choice-body">
+                <span class="choice-top">
+                  <span class="choice-title">Optimal Visibility</span>
+                  <span class="choice-price" data-order-price="optimal">$699/mo</span>
+                </span>
+                <span class="choice-meta">Everything in Enhanced, plus one Sponsored spot.</span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Optional</legend>
+          <div class="order-extras">
+            <label class="choice" id="aiChoice">
+              <input type="checkbox" id="orderExtraAi" value="ai-tracking" aria-describedby="aiOrderNote">
+              <span class="choice-body">
+                <span class="choice-top">
+                  <span class="choice-title">AI Visibility Tracking</span>
+                  <span class="choice-price">+$49/mo</span>
+                </span>
+                <span class="choice-meta">A monthly report on whether ChatGPT, Perplexity, and Claude mention the business.</span>
+                <span class="order-note" id="aiOrderNote">AI Visibility Tracking is billed monthly, so it can be added to monthly plans only.</span>
+              </span>
+            </label>
+            <label class="choice" id="announcementChoice">
+              <input type="checkbox" id="orderExtraAnnouncement" value="announcement">
+              <span class="choice-body">
+                <span class="choice-top">
+                  <span class="choice-title">Announcement</span>
+                  <span class="choice-price">$695</span>
+                </span>
+                <span class="choice-meta">Press release published on three news sites.</span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+      <aside class="order-summary">
+        <h3>Total</h3>
+        <ul class="order-lines" id="orderLines"></ul>
+        <div class="order-due">
+          <span>Due today</span>
+          <strong id="orderDue">$299</strong>
+        </div>
+        <p class="order-after" id="orderAfter">Then $299/mo</p>
+        <p class="order-term" id="orderTerm">90-day minimum, then month to month</p>
+        <a class="checkout" id="orderCheckout" href="https://buy.stripe.com/cNieVe85J4wbcp1bJZd7q0y">Checkout</a>
+      </aside>
+    </div>
+  </section>
 
   <section class="panel" id="ai-tracking">
     <h2>AI Visibility Tracking</h2>
@@ -516,6 +642,79 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--paper);-webk
       annual: 'Billed annually: pay for 10 months, get 12'
     }
   };
+  var ORDER_AMOUNTS = {
+    basic: { monthly: 99, annual: 990 },
+    enhanced: { monthly: 299, annual: 2990 },
+    optimal: { monthly: 699, annual: 6990 }
+  };
+  var REP_KEY = 'll_rep';
+  var REP_TTL = 90 * 24 * 60 * 60 * 1000;
+  var currentRep = '';
+  var orderInterval = 'monthly';
+  var orderBusy = false;
+
+  function sanitizeRep(value) {
+    return String(value || '').toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 32);
+  }
+
+  function readStoredRep() {
+    try {
+      var raw = localStorage.getItem(REP_KEY);
+      if (!raw) return '';
+      var data = JSON.parse(raw);
+      if (!data || typeof data.rep !== 'string' || typeof data.expires !== 'number' || data.expires < Date.now()) {
+        localStorage.removeItem(REP_KEY);
+        return '';
+      }
+      var stored = sanitizeRep(data.rep);
+      if (!stored) localStorage.removeItem(REP_KEY);
+      return stored;
+    } catch (err) {
+      return '';
+    }
+  }
+
+  function writeStoredRep(rep) {
+    try {
+      localStorage.setItem(REP_KEY, JSON.stringify({
+        rep: rep,
+        expires: Date.now() + REP_TTL
+      }));
+    } catch (err) {}
+  }
+
+  function captureRep() {
+    var params = new URLSearchParams(window.location.search);
+    if (params.has('rep')) {
+      var fromUrl = sanitizeRep(params.get('rep'));
+      if (fromUrl) {
+        currentRep = fromUrl;
+        writeStoredRep(fromUrl);
+        return;
+      }
+    }
+    currentRep = readStoredRep();
+  }
+
+  function withRep(url) {
+    if (!currentRep || !url || url.indexOf('https://buy.stripe.com/') !== 0) return url;
+    var hash = '';
+    var base = url;
+    var hashAt = url.indexOf('#');
+    if (hashAt !== -1) {
+      hash = url.slice(hashAt);
+      base = url.slice(0, hashAt);
+    }
+    if (/[?&]client_reference_id=/.test(base)) return url;
+    var join = base.indexOf('?') === -1 ? '?' : '&';
+    return base + join + 'client_reference_id=' + encodeURIComponent('rep_' + currentRep) + hash;
+  }
+
+  function money(amount) {
+    return '$' + amount.toLocaleString('en-US');
+  }
+
+  captureRep();
 
   function mailto(planKey, period) {
     var subject = PLAN_NAMES[planKey] + (period ? ' ' + period : '');
@@ -530,8 +729,9 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--paper);-webk
   }
 
   function paintLink(anchor, url) {
-    anchor.href = url;
-    if (url.indexOf('mailto:') === 0) {
+    var finalUrl = withRep(url);
+    anchor.href = finalUrl;
+    if (finalUrl.indexOf('mailto:') === 0) {
       anchor.removeAttribute('target');
       anchor.rel = 'nofollow';
     } else {
@@ -567,6 +767,146 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--paper);-webk
   document.querySelectorAll('.js-addon').forEach(function (link) {
     paintLink(link, addonUrl);
   });
+
+  function selectedOrderPlan() {
+    var chosen = document.querySelector('input[name="order-plan"]:checked');
+    return chosen ? chosen.value : 'enhanced';
+  }
+
+  function selectedOrderExtras() {
+    var extras = [];
+    var ai = document.getElementById('orderExtraAi');
+    var announcement = document.getElementById('orderExtraAnnouncement');
+    if (ai && ai.checked && !ai.disabled) extras.push('ai-tracking');
+    if (announcement && announcement.checked) extras.push('announcement');
+    return extras;
+  }
+
+  function addOrderLine(list, label, value) {
+    var li = document.createElement('li');
+    var name = document.createElement('span');
+    var price = document.createElement('span');
+    name.textContent = label;
+    price.textContent = value;
+    li.appendChild(name);
+    li.appendChild(price);
+    list.appendChild(li);
+  }
+
+  function renderOrder() {
+    var annual = orderInterval === 'annual';
+    var orderRoot = document.getElementById('order');
+    orderRoot.classList.toggle('is-annual', annual);
+    document.querySelectorAll('#orderToggle button').forEach(function (btn) {
+      btn.setAttribute('aria-pressed', btn.getAttribute('data-order-period') === orderInterval ? 'true' : 'false');
+    });
+    document.querySelectorAll('[data-order-price]').forEach(function (el) {
+      var key = el.getAttribute('data-order-price');
+      var amount = ORDER_AMOUNTS[key][orderInterval];
+      el.textContent = money(amount) + (annual ? '/yr' : '/mo');
+    });
+    document.querySelectorAll('.order-plans .choice').forEach(function (label) {
+      var input = label.querySelector('input');
+      label.classList.toggle('is-selected', !!(input && input.checked));
+    });
+
+    var aiInput = document.getElementById('orderExtraAi');
+    var aiChoice = document.getElementById('aiChoice');
+    if (annual) aiInput.checked = false;
+    aiInput.disabled = annual;
+    aiChoice.classList.toggle('is-disabled', annual);
+    document.getElementById('announcementChoice').classList.toggle(
+      'is-selected',
+      document.getElementById('orderExtraAnnouncement').checked
+    );
+    aiChoice.classList.toggle('is-selected', aiInput.checked && !annual);
+
+    var plan = selectedOrderPlan();
+    var recurring = ORDER_AMOUNTS[plan][orderInterval];
+    var due = recurring;
+    var thenAmount = recurring;
+    var suffix = annual ? '/yr' : '/mo';
+    var lines = document.getElementById('orderLines');
+    lines.textContent = '';
+    addOrderLine(lines, PLAN_NAMES[plan], money(recurring) + suffix);
+    if (!annual && aiInput.checked) {
+      due += 49;
+      thenAmount += 49;
+      addOrderLine(lines, 'AI Visibility Tracking', '$49/mo');
+    }
+    if (document.getElementById('orderExtraAnnouncement').checked) {
+      due += 695;
+      addOrderLine(lines, 'Announcement', '$695 one-time');
+    }
+    document.getElementById('orderDue').textContent = money(due);
+    document.getElementById('orderAfter').textContent = 'Then ' + money(thenAmount) + suffix;
+    document.getElementById('orderTerm').textContent = TERMS[plan][orderInterval];
+    var checkout = document.getElementById('orderCheckout');
+    if (!orderBusy) checkout.href = withRep(resolve(plan, orderInterval));
+  }
+
+  var orderRoot = document.getElementById('order');
+  orderRoot.addEventListener('click', function (event) {
+    var periodBtn = event.target.closest('#orderToggle button');
+    if (!periodBtn) return;
+    orderInterval = periodBtn.getAttribute('data-order-period');
+    renderOrder();
+  });
+  orderRoot.addEventListener('change', renderOrder);
+  renderOrder();
+
+  document.getElementById('orderCheckout').addEventListener('click', function (event) {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+    event.preventDefault();
+    if (orderBusy) return;
+    orderBusy = true;
+    var link = event.currentTarget;
+    var plan = selectedOrderPlan();
+    var extras = selectedOrderExtras();
+    var fallback = withRep(resolve(plan, orderInterval));
+    link.setAttribute('aria-disabled', 'true');
+    link.textContent = 'Opening checkout...';
+    orderRoot.classList.add('is-busy');
+    var payload = { plan: plan, interval: orderInterval, extras: extras };
+    if (currentRep) payload.rep = currentRep;
+    var controller = typeof AbortController === 'function' ? new AbortController() : null;
+    var timer = setTimeout(function () {
+      if (controller) controller.abort();
+    }, 12000);
+
+    fetch('/api/checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload),
+      signal: controller ? controller.signal : undefined
+    }).then(function (response) {
+      if (!response.ok) throw new Error('checkout failed');
+      return response.json();
+    }).then(function (data) {
+      if (!data || typeof data.url !== 'string' || data.url.indexOf('https://checkout.stripe.com/') !== 0) {
+        throw new Error('missing url');
+      }
+      window.location.assign(data.url);
+    }).catch(function () {
+      window.location.assign(fallback);
+    }).finally(function () {
+      clearTimeout(timer);
+    });
+  });
+
+  function scrollToHash() {
+    var hash = window.location.hash;
+    if (!hash || hash.length < 2) return;
+    var el;
+    try { el = document.getElementById(decodeURIComponent(hash.slice(1))); }
+    catch (err) { return; }
+    if (!el) return;
+    el.scrollIntoView({ block: 'start' });
+  }
+  scrollToHash();
+  window.addEventListener('hashchange', scrollToHash);
+  window.addEventListener('load', scrollToHash);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(scrollToHash);
 
   var form = document.getElementById('inquiryForm');
   form.addEventListener('submit', function (e) {

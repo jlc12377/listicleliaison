@@ -1,0 +1,176 @@
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const {
+  ENV_VARS,
+  sanitizeRep,
+  validateOrder,
+  sessionFields,
+  siteOrigin,
+} = require('../api/order');
+
+const ENV = {
+  STRIPE_SECRET_KEY: 'sk_test_abc123',
+  PRICE_BASIC_MONTHLY: 'price_1BasicMonthly',
+  PRICE_BASIC_ANNUAL: 'price_1BasicAnnual',
+  PRICE_ENHANCED_MONTHLY: 'price_1EnhancedMonthly',
+  PRICE_ENHANCED_ANNUAL: 'price_1EnhancedAnnual',
+  PRICE_OPTIMAL_MONTHLY: 'price_1OptimalMonthly',
+  PRICE_OPTIMAL_ANNUAL: 'price_1OptimalAnnual',
+  PRICE_AI_TRACKING_MONTHLY: 'price_1AiTrackingMonthly',
+  PRICE_ANNOUNCEMENT: 'price_1Announcement',
+};
+
+test('env var list matches the Vercel names', () => {
+  assert.deepEqual(ENV_VARS, [
+    'STRIPE_SECRET_KEY',
+    'PRICE_BASIC_MONTHLY',
+    'PRICE_BASIC_ANNUAL',
+    'PRICE_ENHANCED_MONTHLY',
+    'PRICE_ENHANCED_ANNUAL',
+    'PRICE_OPTIMAL_MONTHLY',
+    'PRICE_OPTIMAL_ANNUAL',
+    'PRICE_AI_TRACKING_MONTHLY',
+    'PRICE_ANNOUNCEMENT',
+  ]);
+});
+
+test('sanitizeRep keeps lowercase letters, digits, and hyphens, max 32', () => {
+  assert.equal(sanitizeRep('Lisa'), 'lisa');
+  assert.equal(sanitizeRep('Lisa Smith!'), 'lisasmith');
+  assert.equal(sanitizeRep('lisa-ann'), 'lisa-ann');
+  assert.equal(sanitizeRep('A'.repeat(40)), 'a'.repeat(32));
+  assert.equal(sanitizeRep('!!!'), '');
+  assert.equal(sanitizeRep(null), '');
+  assert.equal(sanitizeRep(12), '');
+});
+
+test('monthly plan with both extras is one subscription session', () => {
+  const order = validateOrder({
+    plan: 'enhanced',
+    interval: 'monthly',
+    extras: ['announcement', 'ai-tracking', 'ai-tracking'],
+    rep: 'Lisa',
+    price: 'price_hacker',
+  }, ENV);
+  assert.equal(order.ok, true);
+  assert.equal(order.mode, 'subscription');
+  assert.deepEqual(order.lineItems, [
+    { price: 'price_1EnhancedMonthly', quantity: 1 },
+    { price: 'price_1AiTrackingMonthly', quantity: 1 },
+    { price: 'price_1Announcement', quantity: 1 },
+  ]);
+  const fields = sessionFields(order);
+  assert.equal(fields.mode, 'subscription');
+  assert.equal(fields.client_reference_id, 'rep_lisa');
+  assert.equal(fields.metadata.rep, 'lisa');
+  assert.equal(fields.metadata.plan, 'enhanced');
+  assert.equal(fields.metadata.interval, 'monthly');
+  assert.equal(fields.metadata.extras, 'ai-tracking,announcement');
+  assert.equal(fields.subscription_data.metadata.rep, 'lisa');
+  assert.equal(fields.subscription_data.metadata.extras, 'ai-tracking,announcement');
+});
+
+test('annual plan can include the one-time announcement and not AI tracking', () => {
+  const order = validateOrder({
+    plan: 'optimal',
+    interval: 'annual',
+    extras: ['announcement'],
+    rep: 'lisa',
+  }, ENV);
+  assert.equal(order.ok, true);
+  assert.deepEqual(order.lineItems, [
+    { price: 'price_1OptimalAnnual', quantity: 1 },
+    { price: 'price_1Announcement', quantity: 1 },
+  ]);
+});
+
+test('annual plus AI tracking is rejected', () => {
+  const order = validateOrder({
+    plan: 'basic',
+    interval: 'annual',
+    extras: ['ai-tracking'],
+  }, ENV);
+  assert.equal(order.ok, false);
+  assert.equal(order.status, 400);
+});
+
+test('missing or unknown input is rejected', () => {
+  assert.equal(validateOrder(null, ENV).status, 400);
+  assert.equal(validateOrder({ plan: 'vip', interval: 'monthly', extras: [] }, ENV).status, 400);
+  assert.equal(validateOrder({ plan: 'basic', interval: 'weekly', extras: [] }, ENV).status, 400);
+  assert.equal(validateOrder({ plan: 'basic', interval: 'monthly', extras: 'ai-tracking' }, ENV).status, 400);
+  assert.equal(validateOrder({ plan: 'basic', interval: 'monthly', extras: ['coupon'] }, ENV).status, 400);
+});
+
+test('a plan-only order omits rep fields when no rep is present', () => {
+  const order = validateOrder({ plan: 'basic', interval: 'monthly' }, ENV);
+  assert.equal(order.ok, true);
+  assert.deepEqual(order.lineItems, [{ price: 'price_1BasicMonthly', quantity: 1 }]);
+  const fields = sessionFields(order);
+  assert.equal(fields.client_reference_id, undefined);
+  assert.equal(fields.metadata.rep, undefined);
+  assert.equal(fields.subscription_data.metadata.rep, undefined);
+  assert.equal(fields.metadata.extras, undefined);
+});
+
+test('missing secret or price id fails closed', () => {
+  assert.equal(validateOrder({ plan: 'basic', interval: 'monthly', extras: [] }, {}).status, 503);
+  const missingPrice = { ...ENV, PRICE_BASIC_MONTHLY: '' };
+  assert.equal(validateOrder({ plan: 'basic', interval: 'monthly', extras: [] }, missingPrice).status, 503);
+  const badPrice = { ...ENV, PRICE_ANNOUNCEMENT: 'prod_announcement' };
+  const order = validateOrder({
+    plan: 'basic',
+    interval: 'monthly',
+    extras: ['announcement'],
+  }, badPrice);
+  assert.equal(order.status, 503);
+  const badKey = { ...ENV, STRIPE_SECRET_KEY: 'pk_test_abc123' };
+  assert.equal(validateOrder({ plan: 'basic', interval: 'monthly', extras: [] }, badKey).status, 503);
+});
+
+test('site origin stays on this site', () => {
+  assert.equal(siteOrigin({ headers: { host: 'listicleliaison.com' } }), 'https://listicleliaison.com');
+  assert.equal(siteOrigin({ headers: { host: 'www.listicleliaison.com' } }), 'https://www.listicleliaison.com');
+  assert.equal(
+    siteOrigin({ headers: { 'x-forwarded-host': 'listicle-liaison-git-preview.vercel.app' } }),
+    'https://listicle-liaison-git-preview.vercel.app'
+  );
+  assert.equal(siteOrigin({ headers: { host: 'localhost:3000' } }), 'http://localhost:3000');
+  assert.equal(siteOrigin({ headers: { host: 'evil.example' } }), 'https://listicleliaison.com');
+  assert.equal(siteOrigin({ headers: {} }), 'https://listicleliaison.com');
+});
+
+test('pricing page keeps the payment links and adds the order builder', () => {
+  const html = fs.readFileSync(path.join(__dirname, '../pages/pricing.html'), 'utf8');
+  const links = [
+    'https://buy.stripe.com/14A14o0Dh1jZ74H4hxd7q0x',
+    'https://buy.stripe.com/7sYcN60Dh3s7ex9dS7d7q0A',
+    'https://buy.stripe.com/cNieVe85J4wbcp1bJZd7q0y',
+    'https://buy.stripe.com/28E5kE71F2o32Or5lBd7q0B',
+    'https://buy.stripe.com/7sY14oclZd2H4Wz01hd7q0z',
+    'https://buy.stripe.com/00w9AU4Tx3s7gFh9BRd7q0C',
+    'https://buy.stripe.com/6oU5kEclZgeT1Kng0fd7q0w',
+    'https://buy.stripe.com/dRm14o71Fd2Hcp18xNd7q0D',
+  ];
+  for (const link of links) assert.equal(html.includes(link), true);
+
+  assert.match(html, /id="orderCheckout"/);
+  assert.match(html, /id="orderExtraAi"/);
+  assert.match(html, /id="orderExtraAnnouncement"/);
+  assert.match(html, /AI Visibility Tracking is billed monthly, so it can be added to monthly plans only\./);
+  assert.match(html, /Press release published on three news sites\./);
+  assert.match(html, /function withRep/);
+  assert.match(html, /client_reference_id/);
+  assert.match(html, /ll_rep/);
+  assert.match(html, /90 \* 24 \* 60 \* 60 \* 1000/);
+  assert.match(html, /\.replace\(\/\[\^a-z0-9-\]\/g, ''\)\.slice\(0, 32\)/);
+  assert.match(html, /scroll-padding-top:calc\(var\(--nav-h\) \+ 16px\)/);
+  assert.equal(html.includes('Franklin'), false);
+
+  const order = html.slice(html.indexOf('id="order"'), html.indexOf('id="ai-tracking"'));
+  assert.equal(/guarantee/i.test(order), false);
+  assert.match(order, /network of review sites/);
+  assert.equal(fs.existsSync(path.join(__dirname, '../pages/thank-you.html')), true);
+});

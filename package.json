@@ -1,0 +1,11 @@
+{
+  "name": "listicle-liaison",
+  "private": true,
+  "description": "Listicle Liaison site and Stripe checkout.",
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "stripe": "^18.5.0"
+  }
+}
